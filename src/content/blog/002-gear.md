@@ -36,6 +36,10 @@ category: 'カメラ・機材'
       <span class="spec">514g（ボディのみ）</span>
       <span class="spec">手ブレ補正 7段</span>
     </div>
+    <div class="gear-links">
+      <a href="https://amzn.to/4nGKmcj" target="_blank" rel="noopener noreferrer sponsored" class="gear-link">Sony α7C II をAmazonで見る →</a>
+      <a href="https://amzn.to/3PnwwPq" target="_blank" rel="noopener noreferrer sponsored" class="gear-link">ハンドグリップをAmazonで見る →</a>
+    </div>
   </div>
 </div>
 
@@ -50,6 +54,7 @@ category: 'カメラ・機材'
     <p class="lens-name">Tamron<br>20-40mm</p>
     <p class="lens-aperture">F/2.8 Di III VXD</p>
     <p class="lens-comment">旅行の相棒。広角から標準域をカバーしてて、これ1本でだいたいなんでも撮れる。コンパクトなのに写りがしっかりしてて気に入ってます。</p>
+    <a href="https://amzn.to/3RGZMRM" target="_blank" rel="noopener noreferrer sponsored" class="lens-link">Amazonで見る →</a>
   </div>
   <div class="lens-card">
     <span class="lens-number">02</span>
@@ -57,6 +62,7 @@ category: 'カメラ・機材'
     <p class="lens-name">Tamron<br>35-100mm</p>
     <p class="lens-aperture">F/2.8 Di III VXD</p>
     <p class="lens-comment">標準から中望遠域。ポートレートや食べ物を撮るときに出番が多い。35mmと100mmの差って結構大きくて、1本でかなり使い分けできます。</p>
+    <a href="https://amzn.to/4uRmoxq" target="_blank" rel="noopener noreferrer sponsored" class="lens-link">Amazonで見る →</a>
   </div>
   <div class="lens-card">
     <span class="lens-number">03</span>
@@ -64,6 +70,7 @@ category: 'カメラ・機材'
     <p class="lens-name">Sony FE<br>55mm</p>
     <p class="lens-aperture">F1.8 ZA (Zeiss)</p>
     <p class="lens-comment">単焦点の一本。ボケが綺麗で、夜や室内でも頼れる。ズームできない分、自分が動くので撮り方が変わって面白い。</p>
+    <a href="https://amzn.to/4ucWdkF" target="_blank" rel="noopener noreferrer sponsored" class="lens-link">Amazonで見る →</a>
   </div>
 </div>
 

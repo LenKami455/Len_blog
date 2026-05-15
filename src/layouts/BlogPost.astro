@@ -404,6 +404,38 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], category
 	flex-shrink: 0;
 }
 
+/* ── Amazon links ────────────────────────────────── */
+.prose :global(.gear-links) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 1.1rem;
+	padding-top: 1.1rem;
+	border-top: 1px solid var(--color-border);
+}
+.prose :global(.gear-link),
+.prose :global(.lens-link) {
+	display: inline-block;
+	font-size: 0.75rem;
+	letter-spacing: 0.06em;
+	color: var(--color-accent);
+	text-decoration: none;
+	padding: 0.35em 0.9em;
+	border: 1px solid var(--color-accent);
+	border-radius: var(--radius-sm);
+	transition: background .2s, color .2s;
+}
+.prose :global(.gear-link:hover),
+.prose :global(.lens-link:hover) {
+	background: var(--color-accent);
+	color: #fff;
+}
+.prose :global(.lens-link) {
+	display: block;
+	margin-top: 0.75rem;
+	text-align: center;
+}
+
 /* ── Sign-off ─────────────────────────────────────── */
 .prose :global(.sign-off) {
 	text-align: center;
