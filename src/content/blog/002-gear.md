@@ -76,15 +76,15 @@ category: 'カメラ・機材'
 
 <div class="photo-trio">
   <figure>
-    <img src="/A7C03895-web.jpg" alt="Tamron 20-40mm で撮影" />
+    <img src="/images/002-gear/A7C03895.jpg" alt="Tamron 20-40mm で撮影" />
     <figcaption>Tamron 20-40mm</figcaption>
   </figure>
   <figure>
-    <img src="/A7C04038-web.jpg" alt="Tamron 35-100mm で撮影" />
+    <img src="/images/002-gear/A7C04038.jpg" alt="Tamron 35-100mm で撮影" />
     <figcaption>Tamron 35-100mm</figcaption>
   </figure>
   <figure>
-    <img src="/A7C02146-web.jpg" alt="Sony 55mm F1.8 ZA で撮影" />
+    <img src="/images/002-gear/A7C02146.jpg" alt="Sony 55mm F1.8 ZA で撮影" />
     <figcaption>Sony 55mm F1.8 ZA</figcaption>
   </figure>
 </div>
