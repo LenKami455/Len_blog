@@ -1,0 +1,114 @@
+---
+import { SITE_TITLE, SNS_LINKS } from '../consts';
+import SocialIcons from './SocialIcons.astro';
+
+const today = new Date();
+---
+
+<footer class="site-footer">
+	<div class="footer-inner">
+		<div class="footer-brand">
+			<p class="footer-title">{SITE_TITLE}</p>
+			<p class="footer-desc">旅の記録、コーヒーの話、好きなものをゆるやかに。</p>
+		</div>
+
+		<nav class="footer-nav" aria-label="フッターナビゲーション">
+			<a href="/blog">記事</a>
+			<a href="/tags">タグ</a>
+			<a href="/about">About</a>
+			<a href="/search">検索</a>
+		</nav>
+
+		<div class="footer-social">
+			{SNS_LINKS.map((link) => (
+				<a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+					<SocialIcons icon={link.icon} size={20} />
+				</a>
+			))}
+		</div>
+
+		<p class="footer-copy">&copy; {today.getFullYear()} {SITE_TITLE}</p>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		background: var(--color-text);
+		color: #B5A898;
+		margin-top: 6rem;
+	}
+	.footer-inner {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 3rem 2rem 2rem;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 1.5rem 3rem;
+		align-items: start;
+	}
+	.footer-brand { grid-column: 1; }
+	.footer-title {
+		font-family: var(--font-serif);
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #EDE6D8;
+		margin: 0 0 0.4rem;
+		letter-spacing: 0.03em;
+	}
+	.footer-desc {
+		font-size: 0.83rem;
+		color: #8A7A6A;
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.footer-nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 1.2rem;
+		align-items: center;
+	}
+	.footer-nav a {
+		font-size: 0.85rem;
+		color: #B5A898;
+		text-decoration: none;
+		transition: color .2s;
+	}
+	.footer-nav a:hover { color: #EDE6D8; }
+
+	.footer-social {
+		grid-column: 2;
+		grid-row: 1;
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+	.footer-social a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		color: #8A7A6A;
+		border-radius: var(--radius-sm);
+		transition: color .2s;
+	}
+	.footer-social a:hover { color: #EDE6D8; }
+
+	.footer-copy {
+		grid-column: 1 / -1;
+		font-size: 0.78rem;
+		color: #6A5C50;
+		margin: 1rem 0 0;
+		padding-top: 1.5rem;
+		border-top: 1px solid #3A2E26;
+	}
+
+	@media (max-width: 640px) {
+		.footer-inner {
+			grid-template-columns: 1fr;
+			padding: 2rem 1rem 1.5rem;
+		}
+		.footer-social { grid-column: 1; grid-row: auto; }
+	}
+</style>

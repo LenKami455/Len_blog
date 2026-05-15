@@ -1,0 +1,451 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SNS_LINKS } from '../consts';
+---
+
+<html lang="ja">
+	<head>
+		<BaseHead title={`About | ${SITE_TITLE}`} description="このブログと、書いてる人のこと" />
+	</head>
+	<body>
+		<Header />
+
+		<main class="about-wrap">
+			<div class="about-container">
+
+				<!-- ── Page hero ───────────────────────── -->
+				<div class="page-hero">
+					<span class="page-label">self introduction</span>
+					<h1 class="page-title">about.</h1>
+					<p class="page-subtitle">このブログと、書いてる人のこと</p>
+				</div>
+
+				<!-- ── Profile card ────────────────────── -->
+				<section class="profile-wrap">
+					<div class="profile-card">
+						<div class="avatar-col">
+							<div class="avatar">
+								<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path d="M18 10 Q17 7 18 4" stroke="var(--color-accent-h)" stroke-width="1.5" stroke-linecap="round"/>
+									<path d="M24 10 Q23 6 24 3" stroke="var(--color-accent-h)" stroke-width="1.5" stroke-linecap="round"/>
+									<path d="M30 10 Q29 7 30 4" stroke="var(--color-accent-h)" stroke-width="1.5" stroke-linecap="round"/>
+									<path d="M12 15 h28 l-3 20 a3 3 0 0 1-3 2.5 H18 a3 3 0 0 1-3-2.5 Z" fill="var(--color-accent-h)" opacity="0.25"/>
+									<path d="M12 15 h28 l-3 20 a3 3 0 0 1-3 2.5 H18 a3 3 0 0 1-3-2.5 Z" stroke="var(--color-accent-h)" stroke-width="1.5" fill="none"/>
+									<path d="M40 18 Q48 18 48 24 Q48 30 40 30" stroke="var(--color-accent-h)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+									<ellipse cx="26" cy="38.5" rx="17" ry="2.5" fill="var(--color-accent-h)" opacity="0.2"/>
+									<ellipse cx="26" cy="38.5" rx="17" ry="2.5" stroke="var(--color-accent-h)" stroke-width="1.2" fill="none"/>
+								</svg>
+							</div>
+							<div>
+								<p class="avatar-name">Len</p>
+								<p class="avatar-handle">旅と写真と<br/>コーヒーと。</p>
+							</div>
+						</div>
+
+						<div class="profile-text">
+							<p class="lead-line">はじめまして、Lenといいます。</p>
+							<p>
+								旅と写真とコーヒーが好きです。休日はカメラを持って街をうろうろするか、家でコーヒーを淹れながらぼーっとするか、どっちかです。
+							</p>
+							<p>
+								モノ選びにはちょっとこだわりがあって、食器とかインテリアとかガジェットとか、「これだ」と思ったものを長く使いたい派。気に入ったものをここでちょこちょこ紹介していきます。
+							</p>
+							<p>
+								SNSに書ける文字数じゃ全然足りなくなってきたので、ブログを始めました。好きなことを好きなだけ語れる場所、作りました。
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<div class="divider" aria-hidden="true">· · ·</div>
+
+				<!-- ── 好きなこと ────────────────────── -->
+				<section>
+					<p class="section-label">好きなこと</p>
+					<div class="likes-grid">
+						<div class="like-card">
+							<span class="like-icon" aria-hidden="true">✈️</span>
+							<p class="like-title">旅行</p>
+							<p class="like-desc">国内も海外も。計画しすぎず、気になった路地に入っていくスタイル。旅先のローカルな食堂や市場が好き。おいしい食べ物とコーヒーと。</p>
+						</div>
+						<div class="like-card">
+							<span class="like-icon" aria-hidden="true">📷</span>
+							<p class="like-title">写真</p>
+							<p class="like-desc">日常の何気ない光と影を撮るのが好き。うまい写真より「あのとき確かにいた」と思える一枚が撮れると嬉しい。スナップおおめ。</p>
+						</div>
+						<div class="like-card">
+							<span class="like-icon" aria-hidden="true">☕</span>
+							<p class="like-title">コーヒー</p>
+							<p class="like-desc">朝のハンドドリップが日課。豆の産地や焙煎度にハマりだしてから沼が深くなっています。浅煎りが好き。</p>
+						</div>
+						<div class="like-card">
+							<span class="like-icon" aria-hidden="true">🫙</span>
+							<p class="like-title">モノ選び</p>
+							<p class="like-desc">食器、インテリア、ガジェットなど。ちょっとこだわりが強め。気に入ったものをずっと使い続けたいタイプ。</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- ── Q&A ───────────────────────────── -->
+				<section>
+					<p class="section-label">Q &amp; A</p>
+					<div class="qa-list">
+
+						<div class="qa-item">
+							<span class="qa-q-mark" aria-hidden="true">Q</span>
+							<div>
+								<p class="qa-q">コーヒーはどんな飲み方が好きですか？</p>
+								<p class="qa-a">基本はブラックのドリップです。エスプレッソマシンも持ってます。朝はちょっと酸味のある浅煎りで頭を起こして、夜はまったりした深煎りやカフェラテを。旅先でエスプレッソ文化に触れてから、短いコーヒーも好きになりました。</p>
+							</div>
+						</div>
+
+						<div class="qa-item">
+							<span class="qa-q-mark" aria-hidden="true">Q</span>
+							<div>
+								<p class="qa-q">カメラは何を使っていますか？</p>
+								<p class="qa-a">メインボディはSony α7C IIです。旅にはコンパクトに行きたいので、だいたい1〜2本に絞って持ち出す感じ。</p>
+								<div class="spec-tags">
+									<span class="spec-tag spec-tag--body">Sony α7C II</span>
+									<span class="spec-tag">Tamron 20-40mm F/2.8 Di III VXD</span>
+									<span class="spec-tag">Tamron 35-100mm F/2.8 Di III VXD</span>
+									<span class="spec-tag">Sony FE 55mm F1.8 ZA</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="qa-item">
+							<span class="qa-q-mark" aria-hidden="true">Q</span>
+							<div>
+								<p class="qa-q">旅行はどんなペースで行きますか？</p>
+								<p class="qa-a">年に4〜5回くらいです。3連休や長期休暇を使って、近場は日帰りや1泊で。海外は年1回行けたら嬉しいくらい。アジアが多いです。北欧にいつか絶対行きたい。</p>
+							</div>
+						</div>
+
+						<div class="qa-item">
+							<span class="qa-q-mark" aria-hidden="true">Q</span>
+							<div>
+								<p class="qa-q">ブログを始めたきっかけは？</p>
+								<p class="qa-a">「好きなものを好きなだけ語れる場所がほしい」という単純な動機です。あとは自分用の記録として残しておきたかったというのもあります。</p>
+							</div>
+						</div>
+
+					</div>
+				</section>
+
+				<!-- ── Contact ────────────────────────── -->
+				<div class="contact-box">
+					<p class="ct-label">contact</p>
+					<p class="ct-title">気軽に話しかけてください</p>
+					<p class="ct-text">
+						おすすめのカフェや旅先、気になるモノのことなど<br/>
+						なんでもお気軽にどうぞ。
+					</p>
+					<div class="contact-links">
+						{SNS_LINKS.map((link) => (
+							<a href={link.href} target="_blank" rel="noopener noreferrer" class="contact-btn">
+								{link.label}
+							</a>
+						))}
+					</div>
+				</div>
+
+			</div>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+/* ── Wrapper ────────────────────────────────── */
+.about-wrap {
+	min-height: 60vh;
+}
+.about-container {
+	max-width: 740px;
+	margin: 0 auto;
+	padding: 0 1.5rem 5rem;
+}
+
+/* ── Page hero ──────────────────────────────── */
+.page-hero {
+	padding: 3.5rem 0 0;
+	text-align: center;
+}
+.page-label {
+	display: block;
+	font-size: 0.65rem;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
+	color: var(--color-accent-h);
+	margin-bottom: 0.75rem;
+}
+.page-title {
+	font-family: 'Georgia', var(--font-serif);
+	font-style: italic;
+	font-size: clamp(2.4rem, 8vw, 3.2rem);
+	font-weight: 400;
+	color: var(--color-text);
+	line-height: 1;
+	margin: 0 0 0.75rem;
+	letter-spacing: -0.01em;
+}
+.page-subtitle {
+	font-size: 0.78rem;
+	letter-spacing: 0.2em;
+	color: var(--color-text-muted);
+	margin: 0;
+}
+
+/* ── Profile card ───────────────────────────── */
+.profile-wrap { padding-top: 3.2rem; }
+.profile-card {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	padding: 2.5rem 2.75rem;
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	gap: 2.5rem;
+	align-items: start;
+	box-shadow: var(--shadow-sm);
+}
+.avatar-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.9rem;
+}
+.avatar {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	background: var(--color-accent-bg);
+	border: 2px solid var(--color-border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+.avatar svg { width: 52px; height: 52px; }
+.avatar-name {
+	font-family: 'Georgia', var(--font-serif);
+	font-style: italic;
+	font-size: 1.35rem;
+	color: var(--color-accent);
+	letter-spacing: 0.04em;
+	text-align: center;
+	margin: 0;
+}
+.avatar-handle {
+	font-family: var(--font-sans);
+	font-size: 0.65rem;
+	letter-spacing: 0.12em;
+	color: var(--color-text-light);
+	text-align: center;
+	line-height: 1.7;
+	margin: 0;
+}
+.profile-text .lead-line {
+	font-family: var(--font-serif);
+	font-size: 1rem;
+	font-weight: 400;
+	color: var(--color-text);
+	line-height: 1.9;
+	margin-bottom: 1.1rem;
+}
+.profile-text p {
+	font-size: 0.875rem;
+	line-height: 2.1;
+	color: var(--color-text-muted);
+	margin-bottom: 1rem;
+}
+.profile-text p:last-child { margin-bottom: 0; }
+
+/* ── Divider ────────────────────────────────── */
+.divider {
+	text-align: center;
+	padding: 2.5rem 0;
+	color: var(--color-accent-h);
+	font-size: 1rem;
+	letter-spacing: 0.5em;
+}
+
+/* ── Section label ──────────────────────────── */
+.section-label {
+	font-size: 0.65rem;
+	letter-spacing: 0.35em;
+	color: var(--color-accent-h);
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+}
+.section-label::after {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background: var(--color-border);
+}
+
+/* ── Likes grid ─────────────────────────────── */
+.likes-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	margin-bottom: 3rem;
+}
+.like-card {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	padding: 1.4rem 1.5rem;
+	position: relative;
+	overflow: hidden;
+	box-shadow: var(--shadow-sm);
+}
+.like-card::before {
+	content: '';
+	position: absolute;
+	top: 0; left: 0;
+	width: 3px; height: 100%;
+	background: var(--color-accent-h);
+	opacity: 0.55;
+}
+.like-icon {
+	font-size: 1.4rem;
+	margin-bottom: 0.6rem;
+	display: block;
+}
+.like-title {
+	font-family: var(--font-serif);
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--color-text);
+	margin-bottom: 0.4rem;
+	letter-spacing: 0.04em;
+}
+.like-desc {
+	font-size: 0.78rem;
+	line-height: 1.9;
+	color: var(--color-text-muted);
+}
+
+/* ── Q&A ────────────────────────────────────── */
+.qa-list { margin-bottom: 3.5rem; }
+.qa-item {
+	border-bottom: 1px solid var(--color-border);
+	padding: 1.5rem 0;
+	display: grid;
+	grid-template-columns: 22px 1fr;
+	gap: 1rem;
+}
+.qa-item:first-child { border-top: 1px solid var(--color-border); }
+.qa-q-mark {
+	font-family: 'Georgia', serif;
+	font-size: 1.1rem;
+	font-style: italic;
+	color: var(--color-accent-h);
+	line-height: 1;
+	margin-top: 0.15rem;
+}
+.qa-q {
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--color-accent);
+	margin-bottom: 0.5rem;
+	letter-spacing: 0.04em;
+}
+.qa-a {
+	font-size: 0.875rem;
+	line-height: 2;
+	color: var(--color-text-muted);
+}
+.spec-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.875rem;
+}
+.spec-tag {
+	background: var(--color-accent-bg);
+	color: var(--color-accent);
+	font-size: 0.68rem;
+	letter-spacing: 0.04em;
+	padding: 0.3em 0.7em;
+	border-radius: var(--radius-sm);
+}
+.spec-tag--body {
+	background: var(--color-text);
+	color: rgba(255,255,255,0.82);
+}
+
+/* ── Contact ────────────────────────────────── */
+.contact-box {
+	background: var(--color-text);
+	border-radius: var(--radius-lg);
+	padding: 2.5rem 2.75rem;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.ct-label {
+	font-size: 0.65rem;
+	letter-spacing: 0.35em;
+	color: var(--color-accent-h);
+	text-transform: uppercase;
+	margin-bottom: 0.75rem;
+}
+.ct-title {
+	font-family: var(--font-serif);
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: rgba(255,255,255,0.9);
+	margin-bottom: 0.6rem;
+	letter-spacing: 0.07em;
+}
+.ct-text {
+	font-size: 0.8rem;
+	color: rgba(255,255,255,0.48);
+	line-height: 2;
+	margin-bottom: 1.5rem;
+}
+.contact-links {
+	display: flex;
+	justify-content: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+.contact-btn {
+	display: inline-block;
+	padding: 0.55em 1.4em;
+	border: 1px solid rgba(168,116,78,0.45);
+	border-radius: 24px;
+	font-size: 0.72rem;
+	letter-spacing: 0.18em;
+	color: var(--color-accent-h);
+	text-decoration: none;
+	transition: background .2s, border-color .2s;
+}
+.contact-btn:hover {
+	background: rgba(168,116,78,0.15);
+	border-color: var(--color-accent-h);
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 600px) {
+	.profile-card {
+		grid-template-columns: 1fr;
+		padding: 1.75rem 1.5rem;
+		gap: 1.75rem;
+	}
+	.avatar-col {
+		flex-direction: row;
+		align-items: center;
+	}
+	.likes-grid { grid-template-columns: 1fr; }
+	.contact-box { padding: 2rem 1.5rem; }
+}
+</style>

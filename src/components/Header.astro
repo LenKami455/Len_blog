@@ -1,0 +1,139 @@
+---
+import { SNS_LINKS } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+import SiteLogo from './SiteLogo.astro';
+import SocialIcons from './SocialIcons.astro';
+---
+
+<header class="site-header">
+	<div class="header-inner">
+
+		<!-- ロゴ（左端固定） -->
+		<SiteLogo />
+
+		<!-- ナビゲーション（右側に均等配置） -->
+		<nav class="header-nav" aria-label="メインナビゲーション">
+			<HeaderLink href="/blog">記事</HeaderLink>
+			<HeaderLink href="/tags">タグ</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+
+			<!-- 検索 -->
+			<a href="/search" class="nav-icon-btn" aria-label="検索">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+					fill="none" stroke="currentColor" stroke-width="2"
+					stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<circle cx="11" cy="11" r="8"/>
+					<line x1="21" y1="21" x2="16.65" y2="16.65"/>
+				</svg>
+			</a>
+
+			<span class="nav-sep" aria-hidden="true"></span>
+
+			<!-- SNS -->
+			{SNS_LINKS.map((link) => (
+				<a href={link.href} target="_blank" rel="noopener noreferrer"
+					class="nav-icon-btn" aria-label={link.label}>
+					<SocialIcons icon={link.icon} size={16} />
+				</a>
+			))}
+		</nav>
+
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		background: rgba(248, 245, 240, 0.94);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	/* ── 横一列・均等割りコンテナ ─────────── */
+	.header-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		/* clamp でウィンドウ幅に合わせて左右パディングを伸縮 */
+		padding: 0 clamp(1rem, 4vw, 3rem);
+		height: 64px;
+		display: flex;
+		align-items: center;
+		/* ロゴ左端・ナビ右端、間のスペースがウィンドウ幅で伸縮 */
+		justify-content: space-between;
+		gap: clamp(0.5rem, 3vw, 2rem);
+	}
+
+	/* ── ナビゲーション ──────────────────── */
+	.header-nav {
+		display: flex;
+		align-items: center;
+		/* 各アイテム間の gap がウィンドウ幅で伸縮 */
+		gap: clamp(0.1rem, 1.8vw, 1.1rem);
+		flex-shrink: 0;
+	}
+
+	/* テキストリンク */
+	.header-nav :global(a) {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.35em clamp(0.3em, 1vw, 0.65em);
+		font-family: 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
+		font-size: clamp(0.78rem, 1.2vw, 0.9rem);
+		color: #666;
+		text-decoration: none;
+		border-radius: var(--radius-sm);
+		transition: color .18s, background .18s;
+		white-space: nowrap;
+		letter-spacing: 0.04em;
+	}
+	.header-nav :global(a:hover),
+	.header-nav :global(a.active) {
+		color: #333;
+		background: var(--color-bg-alt);
+	}
+	.header-nav :global(a.active) {
+		font-weight: 700;
+	}
+
+	/* アイコンボタン（検索・SNS） */
+	.nav-icon-btn {
+		width: 32px !important;
+		height: 32px !important;
+		padding: 0 !important;
+		justify-content: center;
+		color: #888 !important;
+		flex-shrink: 0;
+	}
+	.nav-icon-btn:hover {
+		color: var(--color-accent) !important;
+	}
+
+	/* 縦区切り */
+	.nav-sep {
+		display: inline-block;
+		width: 1px;
+		height: 16px;
+		background: var(--color-border);
+		flex-shrink: 0;
+		margin: 0 clamp(0.1rem, 0.5vw, 0.3rem);
+	}
+
+	/* ── タブレット：SNSを非表示、間隔を詰める ── */
+	@media (max-width: 768px) {
+		.header-inner { height: 56px; }
+		.nav-sep,
+		.header-nav a[target="_blank"] {
+			display: none !important;
+		}
+	}
+
+	/* ── スマホ：ロゴを小さく ───────────── */
+	@media (max-width: 480px) {
+		:global(.k) { font-size: 1.05rem; }
+		:global(.h) { font-size: 0.75rem; }
+		:global(.dot) { font-size: 1.05rem; }
+	}
+</style>

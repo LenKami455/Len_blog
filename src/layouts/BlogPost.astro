@@ -1,0 +1,289 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, tags = [], category } = Astro.props;
+---
+
+<html lang="ja">
+	<head>
+		<BaseHead title={`${title} | ${SITE_TITLE}`} description={description} image={heroImage} />
+	</head>
+
+	<body>
+		<Header />
+
+		<article class="article-wrap">
+			<!-- Hero image -->
+			{heroImage && (
+				<div class="article-hero">
+					<Image width={1200} height={540} src={heroImage} alt={title} />
+				</div>
+			)}
+
+			<div class="article-container">
+				<!-- Sidebar (sticky on desktop) -->
+				<aside class="article-aside">
+					<div class="aside-inner">
+						<div class="aside-date">
+							<span class="aside-label">公開日</span>
+							<FormattedDate date={pubDate} />
+						</div>
+						{updatedDate && (
+							<div class="aside-date">
+								<span class="aside-label">更新日</span>
+								<FormattedDate date={updatedDate} />
+							</div>
+						)}
+						{tags.length > 0 && (
+							<div class="aside-tags">
+								<span class="aside-label">タグ</span>
+								<div class="tags-list">
+									{tags.map((tag) => (
+										<a href={`/tags/${tag}/`} class="tag-pill">#{tag}</a>
+									))}
+								</div>
+							</div>
+						)}
+						<a href="/blog" class="back-link">← 記事一覧</a>
+					</div>
+				</aside>
+
+				<!-- Main content -->
+				<div class="article-main">
+					<header class="article-header">
+						{category && (
+							<a href={`/tags/${category}/`} class="article-category">{category}</a>
+						)}
+						<h1 class="article-title">{title}</h1>
+						<p class="article-description">{description}</p>
+						<div class="article-meta-mobile">
+							<span class="meta-date"><FormattedDate date={pubDate} /></span>
+							{tags.length > 0 && (
+								<div class="tags-list tags-list--inline">
+									{tags.map((tag) => (
+										<a href={`/tags/${tag}/`} class="tag-pill">#{tag}</a>
+									))}
+								</div>
+							)}
+						</div>
+						<hr class="article-divider" />
+					</header>
+
+					<div class="prose">
+						<slot />
+					</div>
+
+					<footer class="article-footer">
+						<div class="article-footer-tags">
+							{tags.map((tag) => (
+								<a href={`/tags/${tag}/`} class="tag-pill tag-pill--lg">#{tag}</a>
+							))}
+						</div>
+						<a href="/blog" class="btn-back">← 記事一覧に戻る</a>
+					</footer>
+				</div>
+			</div>
+		</article>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+.article-wrap { min-height: 60vh; }
+
+/* ── Hero image ─────────────────────────────────── */
+.article-hero {
+	width: 100%;
+	max-height: 480px;
+	overflow: hidden;
+}
+.article-hero img {
+	width: 100%;
+	height: 480px;
+	object-fit: cover;
+	display: block;
+	border-radius: 0;
+}
+
+/* ── Layout ─────────────────────────────────────── */
+.article-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 3rem 2rem 5rem;
+	display: grid;
+	grid-template-columns: 220px 1fr;
+	gap: 4rem;
+	align-items: start;
+}
+
+/* ── Aside ──────────────────────────────────────── */
+.article-aside {
+	position: sticky;
+	top: 80px;
+}
+.aside-inner {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.aside-date {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	font-size: 0.85rem;
+	color: var(--color-text);
+}
+.aside-label {
+	font-size: 0.72rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--color-text-light);
+}
+.aside-tags { display: flex; flex-direction: column; gap: 0.5rem; }
+.tags-list { display: flex; flex-wrap: wrap; gap: 0.4em; }
+.tags-list--inline { margin-top: 0.4rem; }
+.back-link {
+	display: inline-block;
+	font-size: 0.83rem;
+	color: var(--color-text-muted);
+	text-decoration: none;
+	padding-top: 1rem;
+	border-top: 1px solid var(--color-border);
+	transition: color .2s;
+}
+.back-link:hover { color: var(--color-accent); }
+
+/* ── Article header ─────────────────────────────── */
+.article-header { margin-bottom: 2rem; }
+.article-category {
+	display: inline-block;
+	margin-bottom: 0.9rem;
+	padding: 0.25em 0.9em;
+	background: var(--color-accent-bg);
+	color: var(--color-accent);
+	border-radius: var(--radius-sm);
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background .2s;
+}
+.article-category:hover { background: var(--color-accent); color: #fff; }
+.article-title {
+	font-family: var(--font-serif);
+	font-size: clamp(1.6rem, 4vw, 2.4rem);
+	font-weight: 700;
+	color: var(--color-text);
+	line-height: 1.3;
+	letter-spacing: 0.02em;
+	margin: 0 0 0.8rem;
+}
+.article-description {
+	font-size: 1.05rem;
+	color: var(--color-text-muted);
+	line-height: 1.7;
+	margin: 0 0 1.2rem;
+}
+.article-meta-mobile {
+	display: none;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.meta-date { font-size: 0.82rem; color: var(--color-text-light); }
+.article-divider { margin: 1.5rem 0 0; }
+
+/* ── 記事番号ラベル（No. 001 · first post） ─────── */
+.prose :global(.post-no) {
+	font-family: 'Georgia', serif;
+	font-style: italic;
+	font-size: 0.8rem;
+	letter-spacing: 0.18em;
+	color: var(--color-text-light);
+	margin: 0 0 0.5rem;
+}
+
+/* ── Prose (article body) ───────────────────────── */
+.prose {
+	font-size: 1.05rem;
+	line-height: 1.95;
+	color: var(--color-text);
+}
+.prose :global(h2) {
+	font-family: var(--font-serif);
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin: 3rem 0 1rem;
+	color: var(--color-text);
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--color-border);
+}
+.prose :global(h3) {
+	font-family: var(--font-serif);
+	font-size: 1.2rem;
+	margin: 2.2rem 0 0.75rem;
+}
+.prose :global(p)     { margin-bottom: 1.8rem; }
+.prose :global(img)   { border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin: 1.5rem 0; }
+.prose :global(a)     { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+.prose :global(blockquote) {
+	border-left: 3px solid var(--color-accent);
+	padding: 0.6em 1.2em;
+	margin: 2rem 0;
+	background: var(--color-accent-bg);
+	border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+	color: var(--color-text-muted);
+	font-style: italic;
+}
+.prose :global(ul), .prose :global(ol) { padding-left: 1.6em; margin-bottom: 1.8rem; }
+.prose :global(li) { margin-bottom: 0.5rem; }
+
+/* ── Article footer ─────────────────────────────── */
+.article-footer {
+	margin-top: 3.5rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--color-border);
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.article-footer-tags { display: flex; flex-wrap: wrap; gap: 0.5em; }
+.tag-pill--lg { font-size: 0.88rem !important; padding: 0.3em 0.9em !important; }
+.btn-back {
+	display: inline-block;
+	font-size: 0.88rem;
+	color: var(--color-text-muted);
+	text-decoration: none;
+	padding: 0.6em 1.2em;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	transition: border-color .2s, color .2s;
+	align-self: flex-start;
+}
+.btn-back:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 860px) {
+	.article-container {
+		grid-template-columns: 1fr;
+		gap: 0;
+		padding: 2rem 1.5rem 4rem;
+	}
+	.article-aside { display: none; }
+	.article-meta-mobile { display: flex; }
+}
+@media (max-width: 600px) {
+	.article-hero img { height: 240px; }
+	.article-container { padding: 1.5rem 1rem 3rem; }
+}
+</style>
