@@ -74,6 +74,21 @@ category: 'カメラ・機材'
   </div>
 </div>
 
+<div class="photo-trio">
+  <figure>
+    <img src="/A7C03895.jpg" alt="Tamron 20-40mm で撮影" />
+    <figcaption>Tamron 20-40mm</figcaption>
+  </figure>
+  <figure>
+    <img src="/A7C04038.jpg" alt="Tamron 35-100mm で撮影" />
+    <figcaption>Tamron 35-100mm</figcaption>
+  </figure>
+  <figure>
+    <img src="/A7C02146.jpg" alt="Sony 55mm F1.8 ZA で撮影" />
+    <figcaption>Sony 55mm F1.8 ZA</figcaption>
+  </figure>
+</div>
+
 ## どのレンズをいつ使うか
 
 旅行で街を歩くなら20-40mm一択に近い。軽いし、広角も標準も撮れるし、なんならこれで十分じゃんってなることも多い。ただ、望遠がほしい場面—市場で離れたところから撮りたいとか、ポートレートを撮るとか—そういうときは35-100mmが必要になってくる。
