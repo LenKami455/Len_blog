@@ -69,52 +69,10 @@ category: 'コーヒー'
   <p>岐阜・美濃焼で作られた円錐型ドリッパー。20本の深いリブが空気の通り道をしっかり確保して、お湯と抽出のスピード連動性が高いのが特徴です。V60用の円錐フィルターとKalita用のウェーブフィルター、どちらも使えるのも面白いところ。フィルターで抽出の傾向も変えられる。2019年の世界大会でチャンピオンが使用したことで一気に注目を集めました。</p>
 </div>
 
-<!-- ⑥ ORIGAMI オレンジ -->
+<!-- ⑥ ORIGAMI mikage（購入1個目） -->
 <div class="dripper-block">
   <div class="dripper-header">
     <span class="dripper-num">06</span>
-    <div>
-      <p class="dripper-brand">ORIGAMI</p>
-      <p class="dripper-name">ドリッパー S</p>
-      <span class="dripper-name-en">Dripper S · Limited Orange</span>
-      <span class="color-badge color-orange">限定オレンジカラー</span>
-    </div>
-    <span class="use-badge">普段使いのメイン</span>
-  </div>
-  <div class="dripper-body">
-    <img src="/images/004-dripper/origami_orange.jpg" alt="ORIGAMI ドリッパー 限定オレンジ" />
-    <p>
-      ORIGAMIの1個目。最初に買ったやつで、今も一番使ってる頻度が高いです。限定のオレンジカラーで、見た目が明るくてテンション上がる色味。キッチンに置いてあるとそれだけで気分がいい。
-    </p>
-    <p>
-      ORIGAMIは抽出スピードが速いのが特徴で、注いだお湯がすーっと抜けていく感じ。その分、淹れ方の自由度が高くて、ゆっくり注げばどっしり、早く注げばすっきり、みたいにコントロールしやすいです。V60に似てるけど、もう少し操作感が手に伝わりやすい印象。
-    </p>
-    <p>
-      円錐フィルターとウェーブフィルターどちらも使えるので、その日の気分や豆に合わせてフィルターを変えるのも楽しい。円錐フィルターだとコクが出やすく、ウェーブにするとよりクリーンになる。このあたりをいじるのが地味に好き。
-    </p>
-    <div class="info-row">
-      <div><p class="info-label">抽出方式</p><p class="info-value">透過式（円錐 or ウェーブ対応）</p></div>
-      <div><p class="info-label">向いてる豆</p><p class="info-value">浅煎り〜中煎り（なんでも対応）</p></div>
-      <div><p class="info-label">難易度</p><p class="info-value">★★★☆☆（速いので少し慣れが必要）</p></div>
-      <div><p class="info-label">こんな人に</p><p class="info-value">色や見た目にこだわりたい・幅広く試したい人</p></div>
-    </div>
-    <div class="dripper-links">
-      <a href="https://amzn.to/4eKHKrv" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--amazon">陶器版をAmazonで見る →</a>
-      <a href="https://a.r10.to/hY3aLV" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--rakuten">陶器版を楽天で見る →</a>
-      <a href="https://amzn.to/4dIG4xH" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--amazon">樹脂版をAmazonで見る →</a>
-      <a href="https://a.r10.to/hPfaIn" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--rakuten">樹脂版を楽天で見る →</a>
-    </div>
-  </div>
-  <div class="personal-note">
-    <span class="note-icon">💬</span>
-    <span>ORIGAMIで一番最初に買ったやつ。限定のオレンジカラーが好きで、今も使用頻度はダントツで高い。</span>
-  </div>
-</div>
-
-<!-- ⑦ ORIGAMI mikage -->
-<div class="dripper-block">
-  <div class="dripper-header">
-    <span class="dripper-num">07</span>
     <div>
       <p class="dripper-brand">ORIGAMI</p>
       <p class="dripper-name">ドリッパー S</p>
@@ -126,30 +84,68 @@ category: 'コーヒー'
   <div class="dripper-body">
     <img src="/images/004-dripper/origami_stone.jpg" alt="ORIGAMI ドリッパー 限定 mikage" />
     <p>
-      ORIGAMIの2個目。こちらも限定カラーで「mikage（御影）」というシリーズ。御影石のような柄のマットな質感で、オレンジとはまったく違う雰囲気。落ち着いた色味でかっこよくて、これが出たとき即決で買いました。
+      ORIGAMIの最初の1個。限定カラー「mikage（御影）」というシリーズで、御影石のような柄のマットな質感に一目惚れして即決しました。落ち着いた色味でかっこよくて、これがORIGAMIを買うきっかけになったやつです。
     </p>
     <p>
-      抽出の特性はオレンジと同じドリッパーなので変わりません。ただ、手に持ったときの質感が少し違って、mikageのほうがマットでずっしりした印象。色によって同じドリッパーでも雰囲気が全然変わるのが面白くて、そこもORIGAMIを集めてしまう理由の一つだったりします。
+      ORIGAMIは抽出スピードが速いのが特徴で、注いだお湯がすーっと抜けていく感じ。その分、淹れ方の自由度が高くて、ゆっくり注げばどっしり、早く注げばすっきり、みたいにコントロールしやすいです。V60に似てるけど、もう少し操作感が手に伝わりやすい印象。
     </p>
     <p>
-      使用頻度でいうとオレンジよりは少なめで、「この豆にはmikageの雰囲気で飲みたい」みたいな日に使ってます。コーヒーって味だけじゃなくて、器具の見た目とか雰囲気も込みで楽しむものだと思っているので、それでいい気がしてます。
+      mikageは手に持ったときのマットでずっしりした質感が好きで、「この豆の雰囲気にはmikageがいい」みたいな日に使ってます。コーヒーって味だけじゃなくて、器具の見た目とか雰囲気も込みで楽しむものだと思っているので、それでいい気がしてます。
     </p>
     <div class="info-row">
       <div><p class="info-label">抽出方式</p><p class="info-value">透過式（円錐 or ウェーブ対応）</p></div>
-      <div><p class="info-label">向いてる豆</p><p class="info-value">なんでも（オレンジと同スペック）</p></div>
-      <div><p class="info-label">難易度</p><p class="info-value">★★★☆☆</p></div>
+      <div><p class="info-label">向いてる豆</p><p class="info-value">なんでも対応</p></div>
+      <div><p class="info-label">難易度</p><p class="info-value">★★★☆☆（速いので少し慣れが必要）</p></div>
       <div><p class="info-label">こんな人に</p><p class="info-value">渋くてかっこいい色が好きな人</p></div>
     </div>
     <div class="dripper-links">
       <a href="https://amzn.to/4eKHKrv" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--amazon">陶器版をAmazonで見る →</a>
       <a href="https://a.r10.to/hY3aLV" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--rakuten">陶器版を楽天で見る →</a>
+    </div>
+  </div>
+  <div class="personal-note">
+    <span class="note-icon">💬</span>
+    <span>ORIGAMIで一番最初に買ったやつ。この渋い色味に惚れてORIGAMI沼に入りました。</span>
+  </div>
+</div>
+
+<!-- ⑦ ORIGAMI オレンジ（購入2個目） -->
+<div class="dripper-block">
+  <div class="dripper-header">
+    <span class="dripper-num">07</span>
+    <div>
+      <p class="dripper-brand">ORIGAMI</p>
+      <p class="dripper-name">ドリッパー S</p>
+      <span class="dripper-name-en">Dripper S · Limited Orange</span>
+      <span class="color-badge color-orange">限定オレンジカラー</span>
+    </div>
+    <span class="use-badge">普段使いのメイン</span>
+  </div>
+  <div class="dripper-body">
+    <img src="/images/004-dripper/origami_orange.jpg" alt="ORIGAMI ドリッパー 限定オレンジ" />
+    <p>
+      mikageの次に買ったORIGAMIの2個目。限定のオレンジカラーで、mikageとは真逆の明るい色味。キッチンに置いてあるとそれだけでテンションが上がる。
+    </p>
+    <p>
+      ドリッパーとしての特性はmikageと同じですが、使い分けとしてはこちらが普段使いのメインになっています。明るい色のほうが朝のコーヒーには気分が合う気がして、気づいたらこっちを手に取ることが多い。
+    </p>
+    <p>
+      円錐フィルターとウェーブフィルターどちらも使えるので、その日の気分や豆に合わせてフィルターを変えるのも楽しい。円錐フィルターだとコクが出やすく、ウェーブにするとよりクリーンになる。このあたりをいじるのが地味に好き。
+    </p>
+    <div class="info-row">
+      <div><p class="info-label">抽出方式</p><p class="info-value">透過式（円錐 or ウェーブ対応）</p></div>
+      <div><p class="info-label">向いてる豆</p><p class="info-value">浅煎り〜中煎り（なんでも対応）</p></div>
+      <div><p class="info-label">難易度</p><p class="info-value">★★★☆☆（速いので少し慣れが必要）</p></div>
+      <div><p class="info-label">こんな人に</p><p class="info-value">明るい色が好き・幅広く試したい人</p></div>
+    </div>
+    <div class="dripper-links">
       <a href="https://amzn.to/4dIG4xH" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--amazon">樹脂版をAmazonで見る →</a>
       <a href="https://a.r10.to/hPfaIn" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--rakuten">樹脂版を楽天で見る →</a>
     </div>
   </div>
   <div class="personal-note">
     <span class="note-icon">💬</span>
-    <span>即決した限定カラー。機能は同じでも、色や質感が違うだけで全然別の道具みたいに感じるのが面白い。</span>
+    <span>mikageに続いて買った2個目。今は使用頻度はダントツでこっちが多い。朝の明るい色は気分が上がる。</span>
   </div>
 </div>
 
@@ -203,6 +199,14 @@ category: 'コーヒー'
 </div>
 
 こうして並べてみると、全部ちゃんと役割が違っていて、無駄じゃなかったなと思えてほっとします。ドリッパー沼にはまだ底がある気がするんですが、ひとまず今のところはこの8個で十分満足してます。次に気になってるのはあるけど、それはまたいつか。
+
+<div class="next-banner">
+  <div>
+    <p class="nb-label">Prev Post · vol.1</p>
+    <p class="nb-text"><a href="/blog/003-dripper-hario/" style="color:inherit;text-decoration:none;">使ってるドリッパーを全部紹介してみる。<br/>HARIO編</a></p>
+  </div>
+  <span class="next-arrow">←</span>
+</div>
 
 <div class="sign-off">
   <p class="s-name">— Len</p>
