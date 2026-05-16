@@ -14,6 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], category
 <html lang="ja">
 	<head>
 		<BaseHead title={`${title} | ${SITE_TITLE}`} description={description} image={heroImage} />
+		<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 	</head>
 
 	<body>
@@ -92,7 +93,28 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], category
 			</div>
 		</article>
 
+		<!-- コメント欄 -->
+		<div class="comment-section">
+			<div class="comment-inner">
+				<h2 class="comment-title">コメント</h2>
+				<div id="waline"></div>
+			</div>
+		</div>
+
 		<Footer />
+
+		<!-- Waline コメント初期化 -->
+		<script type="module">
+			import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+			init({
+				el: '#waline',
+				serverURL: 'https://waline-rho-woad.vercel.app',
+				lang: 'ja',
+				placeholder: 'コメントを書く...',
+				requiredMeta: ['nick'],
+				login: 'disable',
+			});
+		</script>
 
 		<!-- Lightbox -->
 		<div id="lightbox" aria-hidden="true">
@@ -137,6 +159,38 @@ document.addEventListener('keydown', (e) => {
 
 <style>
 .article-wrap { min-height: 60vh; }
+
+/* ── コメント欄 ─────────────────────────────────── */
+.comment-section {
+	background: var(--color-bg-alt);
+	border-top: 1px solid var(--color-border);
+	padding: 3rem 0 4rem;
+}
+.comment-inner {
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+.comment-title {
+	font-family: var(--font-serif);
+	font-size: 1.2rem;
+	color: var(--color-text);
+	margin-bottom: 1.75rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--color-border);
+}
+/* Waline カラー調整 */
+:root {
+	--waline-theme-color: #8B5E3C;
+	--waline-active-color: #8B5E3C;
+	--waline-bgcolor: var(--color-surface);
+	--waline-bgcolor-light: var(--color-bg-alt);
+	--waline-border-color: var(--color-border);
+	--waline-font-size: 0.88rem;
+}
+@media (max-width: 600px) {
+	.comment-inner { padding: 0 1rem; }
+}
 
 /* ── Hero image ─────────────────────────────────── */
 .article-hero {
