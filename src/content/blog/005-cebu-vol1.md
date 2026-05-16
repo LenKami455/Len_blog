@@ -2,7 +2,7 @@
 title: 'セブ島に行ってきた。vol.1'
 description: '同期と2人でセブ島3泊4日。カメラを直前購入して挑んだ旅。夜市でフィリピン美人に出会い、リゾートでひたすらだらだらした記録。'
 pubDate: '2026-05-16T00:05:00'
-heroImage: '/images/005-cebu/day2-pool.jpg'
+heroImage: '/images/005-cebu/day2-pool.webp'
 tags: ['旅行', 'セブ島', 'フィリピン', '2人旅', 'カメラデビュー']
 category: '旅'
 ---
@@ -47,11 +47,11 @@ category: '旅'
 
 夜市で食べる予定だったのに結局座れないまま、じゃあとなってジョリビーへ。フィリピンのファストフードチェーンで、マクドナルドより人気とか言われてるやつ。フィリピン美人との邂逅→ジョリビーという初日の流れ、かなり好き。
 
-<img src="/images/005-cebu/day1-night-market.jpg" alt="夜市の雰囲気" />
+<img src="/images/005-cebu/day1-night-market.webp" alt="夜市の雰囲気" />
 
 <div class="pg-2">
-  <img src="/images/005-cebu/day1-jollibee.jpg" alt="ジョリビー" />
-  <img src="/images/005-cebu/day1-portrait.jpg" alt="フィリピン美人と" />
+  <img src="/images/005-cebu/day1-jollibee.webp" alt="ジョリビー" />
+  <img src="/images/005-cebu/day1-portrait.webp" alt="フィリピン美人と" />
 </div>
 <p class="img-caption">夜市は席が空かなくてジョリビーへ。これはこれでめちゃくちゃ現地っぽい。</p>
 
@@ -67,7 +67,7 @@ SUPやったり、プールで泳いだり、チェアに寝転んでぼーっ�
 
 カメラはリゾートでもずっと持ち歩いてた。水面の光とかプールサイドの影とかヤシの木とか、南国の光って全部が撮りたくなる構図になる。設定もまだよくわかってない段階だったのに、わりとちゃんと撮れてたから南国の光の力を感じた。ありがとう南国。
 
-<img src="/images/005-cebu/day2-pool.jpg" alt="プランテーションベイのプール" />
+<img src="/images/005-cebu/day2-pool.webp" alt="プランテーションベイのプール" />
 
 <video src="/videos/Day2-Sup.mp4" autoplay loop muted playsinline class="blog-video"></video>
 <p class="img-caption">SUP、思ったより全然難しくなかった。</p>

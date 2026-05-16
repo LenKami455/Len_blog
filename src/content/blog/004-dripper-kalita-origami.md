@@ -2,7 +2,7 @@
 title: '使ってるドリッパーを全部紹介してみる。Kalita & ORIGAMI編'
 description: 'ドリッパー全部紹介の後半戦。Kalitaのウェーブドリッパーが1個と、ORIGAMIが3個。ORIGAMIが多い。'
 pubDate: '2026-05-16T00:04:00'
-heroImage: '/images/004-dripper/origami_stone.jpg'
+heroImage: '/images/004-dripper/origami_stone.webp'
 tags: ['コーヒー', 'ドリッパー', 'Kalita', 'ORIGAMI', '器具紹介']
 category: 'コーヒー'
 ---
@@ -34,7 +34,7 @@ category: 'コーヒー'
     <span class="use-badge">安定して飲みたいとき</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/004-dripper/kalitawave.jpg" alt="Kalita ウェーブドリッパー 美濃焼" />
+    <img src="/images/004-dripper/kalitawave.webp" alt="Kalita ウェーブドリッパー 美濃焼" />
     <p>
       Kalitaウェーブシリーズは、底が平らなフラットボトムで穴が3つというのが最大の特徴。そのフラットな底面にウェーブ（波型）のペーパーフィルターを組み合わせることで、お湯が粉全体に均一に広がる仕組みになっています。「注ぎ方がちょっとブレても味が安定する」という設計で、HARIO V60とは真逆のアプローチ。
     </p>
@@ -83,7 +83,7 @@ category: 'コーヒー'
     <span class="use-badge">眺めて癒される</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/004-dripper/origami_stone.jpg" alt="ORIGAMI ドリッパー 限定 mikage" />
+    <img src="/images/004-dripper/origami_stone.webp" alt="ORIGAMI ドリッパー 限定 mikage" />
     <p>
       ORIGAMIの最初の1個。限定カラー「mikage（御影）」というシリーズで、御影石のような柄のマットな質感に一目惚れして即決しました。落ち着いた色味でかっこよくて、これがORIGAMIを買うきっかけになったやつです。
     </p>
@@ -123,7 +123,7 @@ category: 'コーヒー'
     <span class="use-badge">普段使いのメイン</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/004-dripper/origami_orange.jpg" alt="ORIGAMI ドリッパー 限定オレンジ" />
+    <img src="/images/004-dripper/origami_orange.webp" alt="ORIGAMI ドリッパー 限定オレンジ" />
     <p>
       mikageの次に買ったORIGAMIの2個目。限定のオレンジカラーで、mikageとは真逆の明るい色味。キッチンに置いてあるとそれだけでテンションが上がる。
     </p>
@@ -162,7 +162,7 @@ category: 'コーヒー'
     <span class="use-badge">最近気になってるやつ</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/004-dripper/origami_pinn.jpg" alt="ORIGAMI Pinn Dripper" />
+    <img src="/images/004-dripper/origami_pinn.webp" alt="ORIGAMI Pinn Dripper" />
     <p>
       ORIGAMIとLEAVES COFFEE ROASTERSの共同開発で生まれた新しいドリッパー。通常のORIGAMIドリッパーが角度60°なのに対し、Pinnは55°と少し急な角度で設計されています。これによってコーヒーベッドの面積が小さくなり、お湯が全体に均一に行き渡りやすくなるのが特徴。
     </p>

@@ -2,7 +2,7 @@
 title: '今使ってる機材をまとめてみる。'
 description: 'カメラを始めて1年。現在のボディとレンズ3本の構成をまとめました。旅行での使い分けも。'
 pubDate: '2026-05-16T00:02:00'
-heroImage: '/images/002-gear/a7c2.jpg'
+heroImage: '/images/002-gear/a7c2.webp'
 tags: ['カメラ', 'レンズ', 'Sony', '機材紹介']
 category: 'カメラ・機材'
 ---
@@ -22,7 +22,7 @@ category: 'カメラ・機材'
 
 <div class="gear-card">
   <div class="gear-card-inner">
-    <img src="/images/002-gear/a7c2.jpg" alt="Sony α7C II" class="gear-photo" />
+    <img src="/images/002-gear/a7c2.webp" alt="Sony α7C II" class="gear-photo" />
     <p class="gear-eyebrow">Body</p>
     <p class="gear-name">ソニー α7C II</p>
     <span class="gear-name-en">Sony α7C II / ILCE-7CM2</span>
@@ -62,14 +62,14 @@ category: 'カメラ・機材'
   </div>
   <div class="lb-body">
     <div class="lb-main">
-      <img src="/images/002-gear/20-40.jpg" alt="Tamron 20-40mm" class="lb-gear-img" />
+      <img src="/images/002-gear/20-40.webp" alt="Tamron 20-40mm" class="lb-gear-img" />
       <div class="lb-desc">
         <p>カメラを買ってしばらく後、誕生日に彼女に買ってもらったレンズ。旅行の相棒で、広角から標準域をカバーしてて、これ1本でだいたいなんでも撮れる。コンパクトなのに写りがしっかりしてて気に入ってます。</p>
         <p>旅行に持ち出すとき「1本だけ選べ」と言われたら確実にこれ。軽いし、広角側でも標準側でも使えるし、F2.8通しなので夜もある程度いける。コストパフォーマンスも高くて、Tamronの中でも特におすすめしたい1本です。</p>
       </div>
     </div>
     <div class="lb-sample">
-      <img src="/images/002-gear/A7C03895.jpg" alt="Tamron 20-40mm 作例" />
+      <img src="/images/002-gear/A7C03895.webp" alt="Tamron 20-40mm 作例" />
       <p class="lb-caption">作例 — Tamron 20-40mm</p>
     </div>
     <div class="dripper-links">
@@ -91,14 +91,14 @@ category: 'カメラ・機材'
   </div>
   <div class="lb-body">
     <div class="lb-main">
-      <img src="/images/002-gear/35-100.jpg" alt="Tamron 35-100mm" class="lb-gear-img" />
+      <img src="/images/002-gear/35-100.webp" alt="Tamron 35-100mm" class="lb-gear-img" />
       <div class="lb-desc">
         <p>標準から中望遠域をカバーするズームレンズ。ポートレートや食べ物を撮るときに出番が多い。35mmと100mmの差って結構大きくて、1本でかなり使い分けできます。</p>
         <p>20-40mmと一緒に持ち出すと、20mmから100mmまでをF2.8通しでカバーできる。旅行先でカフェに入ったり、街の雑踏をちょっと離れて撮ったりするときは、こっちに切り替えます。</p>
       </div>
     </div>
     <div class="lb-sample">
-      <img src="/images/002-gear/A7C04038.jpg" alt="Tamron 35-100mm 作例" />
+      <img src="/images/002-gear/A7C04038.webp" alt="Tamron 35-100mm 作例" />
       <p class="lb-caption">作例 — Tamron 35-100mm</p>
     </div>
     <div class="dripper-links">
@@ -120,14 +120,14 @@ category: 'カメラ・機材'
   </div>
   <div class="lb-body">
     <div class="lb-main">
-      <img src="/images/002-gear/55.jpg" alt="Sony FE 55mm F1.8 ZA" class="lb-gear-img" />
+      <img src="/images/002-gear/55.webp" alt="Sony FE 55mm F1.8 ZA" class="lb-gear-img" />
       <div class="lb-desc">
         <p>単焦点の一本。ボケが綺麗で、夜や室内でも頼れる。ズームできない分、自分が動くので撮り方が変わって面白い。</p>
         <p>「今日はこれだけ持って出かける」みたいな日専用。1本に縛ることで逆にいろいろ考えながら撮れるので、気分転換にもなる。Zeissの描写は正直一番好きで、写りという点では3本の中でダントツだと思ってます。</p>
       </div>
     </div>
     <div class="lb-sample">
-      <img src="/images/002-gear/A7C02146.jpg" alt="Sony 55mm F1.8 ZA 作例" />
+      <img src="/images/002-gear/A7C02146.webp" alt="Sony 55mm F1.8 ZA 作例" />
       <p class="lb-caption">作例 — Sony FE 55mm F1.8 ZA</p>
     </div>
     <div class="dripper-links">

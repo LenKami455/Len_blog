@@ -2,7 +2,7 @@
 title: 'セブ島に行ってきた。vol.3'
 description: '最終日はセブシティ観光。カフェ、マゼランクロス、要塞をまわって、夜市でレチョンとステーキ。そして世界一うまいマンゴージュースを飲んだ話。'
 pubDate: '2026-05-16T00:07:00'
-heroImage: '/images/005-cebu/mango.jpg'
+heroImage: '/images/005-cebu/mango.webp'
 tags: ['旅行', 'セブ島', 'マゼランクロス', 'レチョン', 'マンゴー', '最終回']
 category: '旅'
 ---
@@ -27,13 +27,13 @@ category: '旅'
 近くにあるサン・ペドロ要塞も寄った。16世紀に建てられたフィリピン最古の要塞で、石造りの壁がどっしりしてて雰囲気がある。歴史的な場所でカメラを持って歩くの、旅っぽくていい。
 
 <div class="pg-3">
-  <img src="/images/005-cebu/cafe.jpg" alt="カフェ" />
-  <img src="/images/005-cebu/kyoukai2.jpg" alt="マゼランクロス教会" />
-  <img src="/images/005-cebu/yousai1.jpg" alt="サン・ペドロ要塞" />
+  <img src="/images/005-cebu/cafe.webp" alt="カフェ" />
+  <img src="/images/005-cebu/kyoukai2.webp" alt="マゼランクロス教会" />
+  <img src="/images/005-cebu/yousai1.webp" alt="サン・ペドロ要塞" />
 </div>
 <p class="img-caption">カフェ / マゼランクロス / サン・ペドロ要塞</p>
 
-<img src="/images/005-cebu/cebucity.jpg" alt="セブシティの街並み" />
+<img src="/images/005-cebu/cebucity.webp" alt="セブシティの街並み" />
 
 <h2 class="section-title">夜市で豚の丸焼きとステーキ。</h2>
 
@@ -42,8 +42,8 @@ category: '旅'
 セブのレチョンは有名で、皮がパリッとして中がジューシー。たしかにうまかった。スパイスが効いてて、皮の食感が特に好きだった。そのあとステーキも食べた。最終日の胃袋は強い。
 
 <div class="pg-2">
-  <img src="/images/005-cebu/rechon.jpg" alt="レチョン" />
-  <img src="/images/005-cebu/stake.jpg" alt="ステーキ" />
+  <img src="/images/005-cebu/rechon.webp" alt="レチョン" />
+  <img src="/images/005-cebu/stake.webp" alt="ステーキ" />
 </div>
 <p class="img-caption">最終日の夜は食べたいものを全部食べた。</p>
 
@@ -62,8 +62,8 @@ category: '旅'
 </div>
 
 <div class="pg-2">
-  <img src="/images/005-cebu/mango.jpg" alt="マンゴージュース" />
-  <img src="/images/005-cebu/mercado2.jpg" alt="最後の夜市" />
+  <img src="/images/005-cebu/mango.webp" alt="マンゴージュース" />
+  <img src="/images/005-cebu/mercado2.webp" alt="最後の夜市" />
 </div>
 
 <h2 class="section-title">飛行機乗る前にスパへ。</h2>

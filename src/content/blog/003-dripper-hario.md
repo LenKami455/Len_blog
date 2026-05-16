@@ -2,7 +2,7 @@
 title: '使ってるドリッパーを全部紹介してみる。HARIO編'
 description: '気づいたらドリッパーが8個になってた。2回に分けて全部紹介します。まずはHARIO祭り。'
 pubDate: '2026-05-16T00:03:00'
-heroImage: '/images/003-dripper/v60.jpg'
+heroImage: '/images/003-dripper/v60.webp'
 tags: ['コーヒー', 'ドリッパー', 'HARIO', '器具紹介']
 category: 'コーヒー'
 ---
@@ -32,7 +32,7 @@ category: 'コーヒー'
     <span class="use-badge">最近あまり使ってない</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/003-dripper/v60.jpg" alt="HARIO V60 ドリッパー" />
+    <img src="/images/003-dripper/v60.webp" alt="HARIO V60 ドリッパー" />
     <p>
       はじめて買ったドリッパーがこれです。コーヒーにちょっとハマりだしたころ、「ドリッパーといえばV60」みたいな雰囲気があって、なんとなく選びました。円錐形の大きな一つ穴が特徴で、お湯の注ぎ方で味が変わるというのが面白い。速く注げばすっきり、ゆっくり注げばどっしり、というやつ。
     </p>
@@ -71,7 +71,7 @@ category: 'コーヒー'
     <span class="use-badge">浅煎りで使いがち</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/003-dripper/v60neo.jpg" alt="HARIO V60 ドリッパー NEO" />
+    <img src="/images/003-dripper/v60neo.webp" alt="HARIO V60 ドリッパー NEO" />
     <p>
       V60の考え方はそのままに、もっと安定して使えるようにアップデートされたモデル。72本という細かいリブがペーパーとの間に均一な空間をつくって、お湯の流れが安定するのが特徴です。注ぎ方がちょっとブレてもそこまで味が崩れにくくなってる、ということで買いました。
     </p>
@@ -112,7 +112,7 @@ category: 'コーヒー'
     <span class="use-badge">楽したいときに</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/003-dripper/mugen.jpg" alt="HARIO V60 MUGEN ドリッパー" />
+    <img src="/images/003-dripper/mugen.webp" alt="HARIO V60 MUGEN ドリッパー" />
     <p>
       MUGENはちょっと変わったドリッパーで、お湯を1回注ぐだけで抽出が完了するというコンセプトです。通常のV60はスパイラルリブがあるんですが、MUGENにはリブがない代わりに内側に星形の溝があって、フィルターがドリッパーに密着することで、自動的にちょうどいいスピードで抽出が進みます。蒸らしも不要。
     </p>
@@ -153,7 +153,7 @@ category: 'コーヒー'
     <span class="use-badge">中深〜深煎りに</span>
   </div>
   <div class="dripper-body">
-    <img src="/images/003-dripper/alpha.jpg" alt="HARIO ALPHA ドリッパー" />
+    <img src="/images/003-dripper/alpha.webp" alt="HARIO ALPHA ドリッパー" />
     <p>
       HARIO台湾が開発した、日本では2025年から取り扱いが始まったわりと新しいドリッパーです。V60と同じ円錐形・一つ穴のデザインですが、24本の上下交互の長短リブが特徴で、フィルターがドリッパーに密着する構造になってます。
     </p>

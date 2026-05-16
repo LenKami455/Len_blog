@@ -2,7 +2,7 @@
 title: 'セブ島に行ってきた。vol.2'
 description: '早朝2時半集合でオスロブへ。ジンベエザメ、イワシの群れ、ウミガメ。全部本物だった。夜はサムギョプサル。'
 pubDate: '2026-05-16T00:06:00'
-heroImage: '/images/005-cebu/umigame.jpg'
+heroImage: '/images/005-cebu/umigame.webp'
 tags: ['旅行', 'セブ島', 'ジンベエザメ', 'オスロブ', 'サムギョプサル']
 category: '旅'
 ---
@@ -61,14 +61,14 @@ category: '旅'
 
 <video src="/videos/Umigame.mp4" autoplay loop muted playsinline class="blog-video"></video>
 
-<img src="/images/005-cebu/umigame.jpg" alt="ウミガメ" />
+<img src="/images/005-cebu/umigame.webp" alt="ウミガメ" />
 <p class="img-caption">ジンベエザメも最高だったけど、ウミガメが個人的MVP。顔がいい。</p>
 
 <h2 class="section-title">夜はサムギョプサル。</h2>
 
 大満足で帰ってきて、夜はサムギョプサル。フィリピンで韓国料理、という組み合わせだけど、セブは韓国人観光客が多いこともあって韓国料理屋が結構ある。豚が新鮮で肉質がしっかりしてて美味しかった。早朝から動いた体に、肉と炭酸水が沁みた。
 
-<img src="/images/005-cebu/samugyopusaru.jpg" alt="サムギョプサル" />
+<img src="/images/005-cebu/samugyopusaru.webp" alt="サムギョプサル" />
 <p class="img-caption">2時半起きの体に、肉と炭酸水が沁みる。最高の締め。</p>
 
 <div class="tip-box">
