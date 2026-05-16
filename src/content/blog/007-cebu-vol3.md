@@ -7,7 +7,7 @@ tags: ['旅行', 'セブ島', 'マゼランクロス', 'レチョン', 'マン�
 category: '旅'
 ---
 
-<p class="post-no">No. 007 &nbsp;·&nbsp; travel · Cebu vol.3 / 3</p>
+<p class="post-no">No. 007 &nbsp;·&nbsp; travel · Cebu vol.3 / 3 &nbsp;·&nbsp; 2025.9.14–17</p>
 
 ---
 

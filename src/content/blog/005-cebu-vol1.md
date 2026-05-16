@@ -7,7 +7,7 @@ tags: ['旅行', 'セブ島', 'フィリピン', '2人旅', 'カメラデビュ�
 category: '旅'
 ---
 
-<p class="post-no">No. 005 &nbsp;·&nbsp; travel · Cebu vol.1 / 3</p>
+<p class="post-no">No. 005 &nbsp;·&nbsp; travel · Cebu vol.1 / 3 &nbsp;·&nbsp; 2025.9.14–17</p>
 
 ---
 

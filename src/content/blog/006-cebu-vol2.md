@@ -7,7 +7,7 @@ tags: ['旅行', 'セブ島', 'ジンベエザメ', 'オスロブ', 'サムギ�
 category: '旅'
 ---
 
-<p class="post-no">No. 006 &nbsp;·&nbsp; travel · Cebu vol.2 / 3</p>
+<p class="post-no">No. 006 &nbsp;·&nbsp; travel · Cebu vol.2 / 3 &nbsp;·&nbsp; 2025.9.14–17</p>
 
 ---
 
