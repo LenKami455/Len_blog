@@ -2,7 +2,7 @@
 title: 'フォトログ vol.1'
 description: 'カメラを買ってから最初の数ヶ月。2025年夏〜秋の記録。'
 pubDate: '2026-05-16T00:08:00'
-heroImage: '/images/photolog/vol1/a7c00157.jpg'
+heroImage: '/images/photolog/vol1/a7c00157.webp'
 tags: ['フォトログ', '写真', '2025']
 category: 'フォトログ'
 ---
@@ -23,7 +23,7 @@ category: 'フォトログ'
 
 <div class="pl-grid">
   <div class="pl-item pl-item--wide">
-    <img src="/images/photolog/vol1/a7c00011.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00011.webp" alt="" />
     <span class="pl-cap"></span>
   </div>
 </div>
@@ -35,43 +35,43 @@ category: 'フォトログ'
 
 <div class="pl-grid">
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00135.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00135.webp" alt="" />
     <span class="pl-cap">初めて撮った写真</span>
   </div>
   <div class="pl-item pl-item--wide">
-    <img src="/images/photolog/vol1/a7c00157.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00157.webp" alt="" />
     <span class="pl-cap">友達とナガスパ・白鯨</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00163.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00163.webp" alt="" />
     <span class="pl-cap">くじらかわいいね</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00193.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00193.webp" alt="" />
     <span class="pl-cap">目が回る</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00217.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00217.webp" alt="" />
     <span class="pl-cap">夜のライトアップ白鯨</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00231.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00231.webp" alt="" />
     <span class="pl-cap">花火難しいね</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00236.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00236.webp" alt="" />
     <span class="pl-cap">ぱぁ</span>
   </div>
   <div class="pl-item pl-item--wide">
-    <img src="/images/photolog/vol1/a7c00265.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00265.webp" alt="" />
     <span class="pl-cap">宿 水辺</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00279.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00279.webp" alt="" />
     <span class="pl-cap">おはなかわいいね</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00305.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00305.webp" alt="" />
     <span class="pl-cap">パンとエスプレッソ</span>
   </div>
 </div>

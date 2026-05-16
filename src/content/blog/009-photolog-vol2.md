@@ -2,7 +2,7 @@
 title: 'フォトログ vol.2'
 description: '大正・大阪万博。2025年9月下旬の記録。'
 pubDate: '2026-05-16T00:09:00'
-heroImage: '/images/photolog/vol1/a7c01049.jpg'
+heroImage: '/images/photolog/vol1/a7c01049.webp'
 tags: ['フォトログ', '写真', '2025']
 category: 'フォトログ'
 ---
@@ -23,15 +23,15 @@ category: 'フォトログ'
 
 <div class="pl-grid">
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00683.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00683.webp" alt="" />
     <span class="pl-cap">大正らへん</span>
   </div>
   <div class="pl-item pl-item--wide">
-    <img src="/images/photolog/vol1/a7c00686.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00686.webp" alt="" />
     <span class="pl-cap">彼女・後ろ姿</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00732.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00732.webp" alt="" />
     <span class="pl-cap">どこだこれ</span>
   </div>
 </div>
@@ -43,27 +43,27 @@ category: 'フォトログ'
 
 <div class="pl-grid">
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00778.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00778.webp" alt="" />
     <span class="pl-cap">大阪万博・なんかのオブジェ</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00814.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00814.webp" alt="" />
     <span class="pl-cap">大阪万博・木の丸いやつ</span>
   </div>
   <div class="pl-item pl-item--wide">
-    <img src="/images/photolog/vol1/a7c00893.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00893.webp" alt="" />
     <span class="pl-cap">大阪万博・湖</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c00922.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c00922.webp" alt="" />
     <span class="pl-cap">大阪万博・ポーランドのイケオジ</span>
   </div>
   <div class="pl-item pl-item--wide">
-    <img src="/images/photolog/vol1/a7c01049.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c01049.webp" alt="" />
     <span class="pl-cap">大阪万博・サンセット</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c01098.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c01098.webp" alt="" />
     <span class="pl-cap">大阪万博・ミャクミャク</span>
   </div>
 </div>
@@ -75,11 +75,11 @@ category: 'フォトログ'
 
 <div class="pl-grid">
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c01189.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c01189.webp" alt="" />
     <span class="pl-cap">はんばーがー！</span>
   </div>
   <div class="pl-item">
-    <img src="/images/photolog/vol1/a7c01207.jpg" alt="" />
+    <img src="/images/photolog/vol1/a7c01207.webp" alt="" />
     <span class="pl-cap">どこかのカフェ</span>
   </div>
 </div>
