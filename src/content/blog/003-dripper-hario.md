@@ -2,6 +2,7 @@
 title: '使ってるドリッパーを全部紹介してみる。HARIO編'
 description: '気づいたらドリッパーが8個になってた。2回に分けて全部紹介します。まずはHARIO祭り。'
 pubDate: '2026-05-16'
+heroImage: '/images/003-dripper/v60.jpg'
 tags: ['コーヒー', 'ドリッパー', 'HARIO', '器具紹介']
 category: 'コーヒー'
 ---

@@ -2,6 +2,7 @@
 title: '使ってるドリッパーを全部紹介してみる。Kalita & ORIGAMI編'
 description: 'ドリッパー全部紹介の後半戦。Kalitaのウェーブドリッパーが1個と、ORIGAMIが3個。ORIGAMIが多い。'
 pubDate: '2026-05-16'
+heroImage: '/images/004-dripper/origami_stone.jpg'
 tags: ['コーヒー', 'ドリッパー', 'Kalita', 'ORIGAMI', '器具紹介']
 category: 'コーヒー'
 ---

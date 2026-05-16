@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -24,7 +23,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], category
 			<!-- Hero image -->
 			{heroImage && (
 				<div class="article-hero">
-					<Image width={1200} height={540} src={heroImage} alt={title} />
+					<img src={heroImage} alt={title} loading="lazy" />
 				</div>
 			)}
 
@@ -349,6 +348,14 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.gear-card-inner) {
 	padding: 1.75rem 2rem;
 }
+.prose :global(.gear-photo) {
+	width: 100%;
+	max-height: 380px;
+	object-fit: cover;
+	border-radius: var(--radius-md);
+	margin-bottom: 1.25rem;
+	display: block;
+}
 .prose :global(.gear-eyebrow) {
 	font-size: 0.65rem;
 	letter-spacing: 0.35em;
@@ -409,25 +416,41 @@ document.addEventListener('keydown', (e) => {
 	background: var(--color-surface);
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-md);
-	padding: 1.4rem 1.25rem;
+	padding: 0;
 	position: relative;
 	box-shadow: var(--shadow-sm);
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
-.prose :global(.lens-link) {
-	margin-top: auto !important;
+.prose :global(.lens-photo) {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	display: block;
+	flex-shrink: 0;
+}
+.prose :global(.lens-number),
+.prose :global(.lens-use),
+.prose :global(.lens-name),
+.prose :global(.lens-aperture),
+.prose :global(.lens-comment) {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
 }
 .prose :global(.lens-number) {
+	padding-top: 1rem;
 	font-family: 'Georgia', serif;
 	font-style: italic;
 	font-size: 2rem;
 	color: var(--color-border);
-	position: absolute;
-	top: 0.875rem;
-	right: 1.1rem;
 	line-height: 1;
 	user-select: none;
+}
+.prose :global(.lens-link) {
+	margin-top: auto !important;
+	margin-left: 1.25rem !important;
+	margin-right: 1.25rem !important;
 }
 .prose :global(.lens-use) {
 	font-size: 0.65rem;

@@ -2,6 +2,7 @@
 title: '今使ってる機材をまとめてみる。'
 description: 'カメラを始めて1年。現在のボディとレンズ3本の構成をまとめました。旅行での使い分けも。'
 pubDate: '2026-05-16'
+heroImage: '/images/002-gear/a7c2.jpg'
 tags: ['カメラ', 'レンズ', 'Sony', '機材紹介']
 category: 'カメラ・機材'
 ---
@@ -21,6 +22,7 @@ category: 'カメラ・機材'
 
 <div class="gear-card">
   <div class="gear-card-inner">
+    <img src="/images/002-gear/a7c2.jpg" alt="Sony α7C II" class="gear-photo" />
     <p class="gear-eyebrow">Body</p>
     <p class="gear-name">ソニー α7C II</p>
     <span class="gear-name-en">Sony α7C II / ILCE-7CM2</span>
@@ -50,14 +52,16 @@ category: 'カメラ・機材'
 <div class="lens-grid">
   <div class="lens-card">
     <span class="lens-number">01</span>
+    <img src="/images/002-gear/20-40.jpg" alt="Tamron 20-40mm F2.8" class="lens-photo" />
     <p class="lens-use">Wide · Standard</p>
     <p class="lens-name">Tamron<br>20-40mm</p>
     <p class="lens-aperture">F/2.8 Di III VXD</p>
-    <p class="lens-comment">旅行の相棒。広角から標準域をカバーしてて、これ1本でだいたいなんでも撮れる。コンパクトなのに写りがしっかりしてて気に入ってます。</p>
+    <p class="lens-comment">カメラを買ってしばらく後、誕生日に彼女に買ってもらったレンズ。旅行の相棒で、広角から標準域をカバーしてて、これ1本でだいたいなんでも撮れる。コンパクトなのに写りがしっかりしてて気に入ってます。</p>
     <a href="https://amzn.to/3RGZMRM" target="_blank" rel="noopener noreferrer sponsored" class="lens-link">Amazonで見る →</a>
   </div>
   <div class="lens-card">
     <span class="lens-number">02</span>
+    <img src="/images/002-gear/35-100.jpg" alt="Tamron 35-100mm F2.8" class="lens-photo" />
     <p class="lens-use">Standard · Tele</p>
     <p class="lens-name">Tamron<br>35-100mm</p>
     <p class="lens-aperture">F/2.8 Di III VXD</p>
@@ -66,6 +70,7 @@ category: 'カメラ・機材'
   </div>
   <div class="lens-card">
     <span class="lens-number">03</span>
+    <img src="/images/002-gear/55.jpg" alt="Sony FE 55mm F1.8 ZA" class="lens-photo" />
     <p class="lens-use">Single Focus</p>
     <p class="lens-name">Sony FE<br>55mm</p>
     <p class="lens-aperture">F1.8 ZA (Zeiss)</p>
