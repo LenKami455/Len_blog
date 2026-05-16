@@ -7,9 +7,17 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-const posts = (await getCollection('blog'))
+const allPosts = await getCollection('blog');
+
+const posts = allPosts
+	.filter(p => p.data.category !== 'フォトログ')
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 6);
+
+const latestPhotolog = allPosts
+	.filter(p => p.data.category === 'フォトログ')
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 1)[0];
 
 const categories = [
 	{
@@ -84,6 +92,22 @@ const categories = [
 					))}
 				</ul>
 			</div>
+		</section>
+
+		<!-- ── Photolog Banner ──────────────────────────────── -->
+		<section class="photolog-section">
+			<a href="/photolog" class="photolog-banner">
+				{latestPhotolog?.data.heroImage && (
+					<div class="photolog-bg" style={`background-image: url('${latestPhotolog.data.heroImage}')`}></div>
+				)}
+				<div class="photolog-overlay"></div>
+				<div class="photolog-inner">
+					<p class="photolog-eyebrow">photo log</p>
+					<p class="photolog-title">photolog.</p>
+					<p class="photolog-desc">カメラを持って歩いた記録。</p>
+					<span class="photolog-cta">見る →</span>
+				</div>
+			</a>
 		</section>
 
 		<!-- ── Latest Posts ──────────────────────────────── -->
@@ -385,6 +409,88 @@ const categories = [
 	color: var(--color-text-muted);
 	line-height: 1.6;
 	margin-top: 0.4rem;
+}
+
+/* ── Photolog Banner ────────────────────────────── */
+.photolog-section {
+	padding: 4rem 0;
+}
+.photolog-banner {
+	display: block;
+	position: relative;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	text-decoration: none;
+	overflow: hidden;
+	height: 260px;
+	border-radius: var(--radius-lg);
+}
+.photolog-bg {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	transition: transform .6s ease;
+}
+.photolog-banner:hover .photolog-bg {
+	transform: scale(1.03);
+}
+.photolog-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to right, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+}
+.photolog-inner {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 2.5rem;
+}
+.photolog-eyebrow {
+	font-family: 'Georgia', serif;
+	font-size: 0.65rem;
+	letter-spacing: 0.5em;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.55);
+	margin: 0 0 0.5rem;
+}
+.photolog-title {
+	font-family: 'Georgia', serif;
+	font-style: italic;
+	font-weight: 300;
+	font-size: clamp(2rem, 4vw, 3rem);
+	color: #fff;
+	margin: 0 0 0.6rem;
+	letter-spacing: -0.01em;
+	line-height: 1;
+}
+.photolog-desc {
+	font-size: 0.82rem;
+	color: rgba(255,255,255,0.72);
+	margin: 0 0 1.25rem;
+	letter-spacing: 0.08em;
+}
+.photolog-cta {
+	font-size: 0.82rem;
+	color: rgba(255,255,255,0.85);
+	letter-spacing: 0.12em;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+	padding-bottom: 2px;
+	align-self: flex-start;
+	transition: color .2s, border-color .2s;
+}
+.photolog-banner:hover .photolog-cta {
+	color: #fff;
+	border-color: rgba(255,255,255,0.8);
+}
+
+@media (max-width: 640px) {
+	.photolog-banner { height: 200px; padding: 0 1rem; }
+	.photolog-inner { padding: 0 1.5rem; }
 }
 
 /* ── Posts ─────────────────────────────────────── */
