@@ -69,7 +69,7 @@ category: '旅'
 大満足で帰ってきて、夜はサムギョプサル。フィリピンで韓国料理、という組み合わせだけど、セブは韓国人観光客が多いこともあって韓国料理屋が結構ある。豚が新鮮で肉質がしっかりしてて美味しかった。早朝から動いた体に、肉と炭酸水が沁みた。
 
 <img src="/images/005-cebu/samugyopusaru.jpg" alt="サムギョプサル" />
-<p class="img-caption">2時半起きの体に、肉とコーラが沁みる。最高の締め。</p>
+<p class="img-caption">2時半起きの体に、肉と炭酸水が沁みる。最高の締め。</p>
 
 <div class="tip-box">
   <span class="tip-icon">💬</span>
