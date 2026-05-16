@@ -1,0 +1,239 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .filter(p => p.data.category === 'フォトログ')
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long' });
+}
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <BaseHead title={`Photolog | ${SITE_TITLE}`} description="カメラを持って歩いた記録。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet" />
+  </head>
+  <body class="pl-body">
+    <Header />
+
+    <main class="pl-main">
+
+      <!-- ── Page header ───────────────── -->
+      <header class="pl-page-header">
+        <p class="pl-eyebrow">photo log</p>
+        <h1 class="pl-page-title">photolog.</h1>
+      </header>
+
+      <!-- ── Entry list ────────────────── -->
+      <div class="pl-entries">
+        {posts.map((post, i) => (
+          <a href={`/blog/${post.id}/`} class="pl-entry">
+
+            <!-- 写真 -->
+            {post.data.heroImage && (
+              <img
+                class="pl-entry-img"
+                src={post.data.heroImage}
+                alt={post.data.title}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            )}
+
+            <!-- テキスト：写真の右側に重ねる -->
+            <div class="pl-entry-text">
+              <p class="pl-entry-title">{post.data.title}</p>
+              <p class="pl-entry-desc">{post.data.description}</p>
+              <span class="pl-entry-date">{formatDate(post.data.pubDate)}</span>
+            </div>
+
+          </a>
+        ))}
+      </div>
+
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+/* ── Body ───────────────────────────────────── */
+.pl-body {
+  background: #fff;
+  color: #1a1a1a;
+}
+.pl-body :global(.site-header) {
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #ebebeb;
+}
+.pl-body :global(footer) {
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+
+/* ── Page header ────────────────────────────── */
+.pl-main {
+  min-height: 80vh;
+  /* global.css の max-width: 780px を上書き */
+  max-width: none;
+  padding: 0;
+}
+
+.pl-page-header {
+  padding: 4rem 4rem 3rem;
+}
+.pl-eyebrow {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.55em;
+  color: #ccc;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+.pl-page-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  color: #111;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin: 0;
+}
+
+/* ── Entries ────────────────────────────────── */
+.pl-entries {
+  padding: 1rem 0 6rem;
+}
+
+/* ── Entry ──────────────────────────────────── */
+.pl-entry {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 4rem;
+}
+.pl-entry:last-child { margin-bottom: 6rem; }
+
+/* 写真：右寄せで幅62% → 左38%がテキストエリア（白背景） */
+.pl-entry-img {
+  display: block;
+  width: 62%;
+  height: auto;
+  margin-left: auto;
+  transition: opacity .6s;
+}
+.pl-entry:hover .pl-entry-img { opacity: 0.93; }
+
+/* テキスト：写真の縦中央・左エリアに配置 */
+.pl-entry-text {
+  position: absolute;
+  left: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 33%;
+  text-align: left;
+  pointer-events: none;
+}
+
+.pl-entry-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: #111;
+}
+.pl-entry-desc {
+  font-family: 'Noto Serif JP', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  line-height: 2;
+  margin: 0 0 0.75rem;
+  color: #777;
+}
+.pl-entry-date {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  display: block;
+  color: #aaa;
+}
+
+/* ── Responsive ─────────────────────────────── */
+
+/* タブレット：写真フル幅、テキストを写真左下に白文字で重ねる */
+@media (max-width: 900px) {
+  .pl-entry { margin-bottom: 2.5rem; }
+  .pl-entry-img {
+    width: 100%;
+    display: block;
+  }
+
+  /* 写真下部にグラデーションオーバーレイ */
+  .pl-entry::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 60%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .pl-entry-text {
+    left: 2rem;
+    top: auto;
+    transform: none;
+    bottom: 2rem;
+    width: 70%;
+    z-index: 1;
+  }
+  .pl-entry-title {
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+  .pl-entry-desc {
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+  .pl-entry-date {
+    color: rgba(255,255,255,0.75);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+}
+
+/* スマホ：テキストを写真の下に出す */
+@media (max-width: 560px) {
+  .pl-page-header { padding: 3rem 1.25rem 2.5rem; }
+  .pl-entry { margin-bottom: 3rem; }
+  .pl-entry-text {
+    position: static;
+    width: 100%;
+    bottom: auto;
+    text-align: left;
+    padding: 1rem 1.25rem 0;
+    pointer-events: auto;
+  }
+  .pl-entry-title { color: #111; text-shadow: none; font-size: 1.6rem; }
+  .pl-entry-desc  { color: #888; text-shadow: none; }
+  .pl-entry-date  { color: #bbb; text-shadow: none; }
+}
+</style>

@@ -36,7 +36,7 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item">
     <img src="/images/photolog/vol1/a7c00135.webp" alt="" />
-    <span class="pl-cap">初めて撮った写真</span>
+    <span class="pl-cap">友達とナガスパ</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/vol1/a7c00157.webp" alt="" />

@@ -1,0 +1,411 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, heroImage } = Astro.props;
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('ja-JP', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+---
+
+<html lang="ja">
+  <head>
+    <BaseHead title={`${title} | ${SITE_TITLE}`} description={description} image={heroImage} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet" />
+  </head>
+
+  <body class="plp-body">
+
+    <article class="plp-article">
+
+      <!-- ── Article header ───────────────── -->
+      <header class="plp-header">
+        <a href="/photolog" class="plp-back">← photolog</a>
+        <h1 class="plp-title">{title}</h1>
+        <p class="plp-desc">{description}</p>
+        <time class="plp-date" datetime={pubDate.toISOString()}>
+          {formatDate(pubDate)}
+        </time>
+      </header>
+
+      <!-- ── Content ──────────────────────── -->
+      <div class="plp-prose">
+        <slot />
+      </div>
+
+    </article>
+
+    <Footer />
+
+    <!-- ── Floating nav ────────────────────── -->
+    <div class="plp-fab">
+      <a href="/photolog" class="plp-fab-btn plp-fab-back" aria-label="photolog一覧へ">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+      <button class="plp-fab-btn plp-fab-top" id="fab-top" aria-label="トップへ戻る">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" aria-hidden="true">
+      <button id="lightbox-close" aria-label="閉じる">✕</button>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+  </body>
+</html>
+
+<script>
+// ── Scroll to top ──
+document.getElementById('fab-top')?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ── FAB 表示制御（少しスクロールしたら出す）──
+const fab = document.querySelector('.plp-fab') as HTMLElement | null;
+window.addEventListener('scroll', () => {
+  if (!fab) return;
+  fab.style.opacity = window.scrollY > 200 ? '1' : '0';
+  fab.style.pointerEvents = window.scrollY > 200 ? 'auto' : 'none';
+}, { passive: true });
+
+// ── Lightbox ──
+const lightbox = document.getElementById('lightbox')!;
+const lbImg    = document.getElementById('lightbox-img') as HTMLImageElement;
+const lbClose  = document.getElementById('lightbox-close')!;
+
+document.querySelectorAll<HTMLImageElement>('.plp-prose img').forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => {
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  lbImg.src = '';
+}
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+<style>
+/* ── Base ───────────────────────────────────── */
+.plp-body {
+  background: #fff;
+  color: #1a1a1a;
+}
+.plp-body :global(footer) {
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+
+/* ── Article ────────────────────────────────── */
+.plp-article {
+  min-height: 70vh;
+}
+
+/* ── Header ─────────────────────────────────── */
+.plp-header {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem 4rem;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 0;
+}
+.plp-back {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: #bbb;
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color .2s;
+}
+.plp-back:hover { color: #555; }
+
+.plp-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  color: #111;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+.plp-desc {
+  font-family: 'Noto Serif JP', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: #999;
+  letter-spacing: 0.1em;
+  line-height: 2.1;
+  margin: 0 0 1.75rem;
+}
+.plp-date {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: #ccc;
+}
+
+/* ── Prose ──────────────────────────────────── */
+.plp-prose {
+  font-family: 'Noto Serif JP', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 2.2;
+  color: #333;
+}
+
+/* post-no label */
+.plp-prose :global(.post-no) {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: #ddd;
+  margin: 0;
+  padding: 3rem 2rem 0;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* intro blockquote */
+.plp-prose :global(blockquote) {
+  border-left: none;
+  padding: 2rem 2rem 0;
+  margin: 0 auto 0;
+  max-width: 680px;
+  background: none;
+  border-radius: 0;
+  font-style: normal;
+}
+.plp-prose :global(blockquote p) {
+  font-family: 'Noto Serif JP', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  line-height: 2.4;
+  margin: 0;
+}
+
+/* ── Month header ───────────────────────────── */
+.plp-prose :global(.pl-header) {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 5rem auto 3rem;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+.plp-prose :global(.pl-month) {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+  color: #ccc;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.plp-prose :global(.pl-header::after) {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ebebeb;
+}
+
+/* ── Photo grid → full-width vertical stack ─ */
+.plp-prose :global(.pl-grid) {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+/* 通常画像：横画像はほぼフル幅、縦画像は自然なサイズで中央 */
+.plp-prose :global(.pl-item) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.plp-prose :global(.pl-item img) {
+  /* クロップなし・自然サイズ表示 */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: opacity .3s;
+}
+.plp-prose :global(.pl-item:hover img) {
+  opacity: 0.96;
+}
+
+/* 縦画像は最大幅を絞って大きく見せる */
+.plp-prose :global(.pl-item:not(.pl-item--wide) img[src]) {
+  max-width: 680px;
+}
+
+/* wide はフル幅 */
+.plp-prose :global(.pl-item--wide img) {
+  max-width: 100%;
+}
+
+/* キャプション */
+.plp-prose :global(.pl-cap) {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: #bbb;
+  margin-top: 0.75rem;
+  text-align: right;
+  width: 100%;
+  max-width: 680px;
+  /* position: absolute を上書き */
+  position: static !important;
+  bottom: auto !important;
+  right: auto !important;
+  text-shadow: none !important;
+  color: #bbb !important;
+}
+.plp-prose :global(.pl-item--wide .pl-cap) {
+  max-width: 100%;
+}
+
+/* ── Sign-off ───────────────────────────────── */
+.plp-prose :global(.sign-off) {
+  text-align: center;
+  padding: 5rem 0 2rem;
+  border-top: 1px solid #ebebeb;
+  margin-top: 5rem;
+}
+.plp-prose :global(.sign-off .s-name) {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.06em;
+}
+.plp-prose :global(.sign-off .s-message) {
+  font-family: 'Noto Serif JP', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: #ddd;
+}
+
+/* ── Lightbox ───────────────────────────────── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+}
+#lightbox.active { display: flex; animation: lb-in .2s ease; }
+@keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
+#lightbox-img {
+  max-width: 100%;
+  max-height: 92vh;
+  object-fit: contain;
+  cursor: default;
+}
+#lightbox-close {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
+/* ── Floating nav ───────────────────────────── */
+.plp-fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.plp-fab-btn {
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0;
+  transition: border-color .2s, color .2s, box-shadow .2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.plp-fab-btn:hover {
+  border-color: #aaa;
+  color: #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 600px) {
+  .plp-header { padding: 3rem 1.25rem 3rem; }
+  .plp-prose :global(.pl-grid) { gap: 2rem; padding: 0 1.25rem; }
+  .plp-prose :global(.pl-header) { padding: 0 1.25rem; margin-top: 4rem; }
+  .plp-prose :global(.post-no) { padding: 2rem 1.25rem 0; }
+  .plp-prose :global(blockquote) { padding: 1.5rem 1.25rem 0; }
+  .plp-fab { bottom: 1.25rem; right: 1.25rem; }
+}
+</style>
