@@ -28,7 +28,7 @@ category: '旅'
 
 <div class="pg-3">
   <img src="/images/005-cebu/cafe.jpg" alt="カフェ" />
-  <img src="/images/005-cebu/kyoukai.jpg" alt="マゼランクロス教会" />
+  <img src="/images/005-cebu/kyoukai2.jpg" alt="マゼランクロス教会" />
   <img src="/images/005-cebu/yousai1.jpg" alt="サン・ペドロ要塞" />
 </div>
 <p class="img-caption">カフェ / マゼランクロス / サン・ペドロ要塞</p>
