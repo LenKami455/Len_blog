@@ -69,11 +69,8 @@ SUPやったり、プールで泳いだり、チェアに寝転んでぼーっ�
 
 <img src="/images/005-cebu/day2-pool.jpg" alt="プランテーションベイのプール" />
 
-<div class="pg-2">
-  <img src="/images/005-cebu/day2-sup.jpg" alt="SUP" />
-  <img src="/images/005-cebu/day2-resort.jpg" alt="リゾートの雰囲気" />
-</div>
-<p class="img-caption">プランテーションベイ、また行きたいくらいよかった。本当に。</p>
+<video src="/videos/Day2-Sup.mp4" autoplay loop muted playsinline class="blog-video"></video>
+<p class="img-caption">SUP、思ったより全然難しくなかった。</p>
 
 <div class="tip-box">
   <span class="tip-icon">🏖️</span>
