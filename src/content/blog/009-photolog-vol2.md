@@ -22,7 +22,7 @@ category: 'フォトログ'
 </div>
 
 <div class="pl-grid">
-  <div class="pl-item">
+  <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c00683.webp" alt="" />
     <span class="pl-cap">大正らへん</span>
   </div>
@@ -78,7 +78,7 @@ category: 'フォトログ'
     <img src="/images/photolog/vol1/a7c01189.webp" alt="" />
     <span class="pl-cap">はんばーがー！</span>
   </div>
-  <div class="pl-item">
+  <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c01207.webp" alt="" />
     <span class="pl-cap">どこかのカフェ</span>
   </div>

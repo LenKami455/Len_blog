@@ -22,9 +22,9 @@ category: 'フォトログ'
 </div>
 
 <div class="pl-grid">
-  <div class="pl-item pl-item--wide">
+  <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c00011.webp" alt="" />
-    <span class="pl-cap"></span>
+    <span class="pl-cap">カメラ買って初めて撮った写真</span>
   </div>
 </div>
 
@@ -42,11 +42,11 @@ category: 'フォトログ'
     <img src="/images/photolog/vol1/a7c00157.webp" alt="" />
     <span class="pl-cap">友達とナガスパ・白鯨</span>
   </div>
-  <div class="pl-item">
+  <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c00163.webp" alt="" />
     <span class="pl-cap">くじらかわいいね</span>
   </div>
-  <div class="pl-item">
+  <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c00193.webp" alt="" />
     <span class="pl-cap">目が回る</span>
   </div>
@@ -66,7 +66,7 @@ category: 'フォトログ'
     <img src="/images/photolog/vol1/a7c00265.webp" alt="" />
     <span class="pl-cap">宿 水辺</span>
   </div>
-  <div class="pl-item">
+  <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c00279.webp" alt="" />
     <span class="pl-cap">おはなかわいいね</span>
   </div>

@@ -126,7 +126,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
 .plp-header {
   max-width: 680px;
   margin: 0 auto;
-  padding: 4.5rem 2rem 4rem;
+  padding: 2.5rem 2rem 2.5rem;
   border-bottom: 1px solid #e8e8e8;
   margin-bottom: 0;
 }
@@ -186,7 +186,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   letter-spacing: 0.25em;
   color: #ddd;
   margin: 0;
-  padding: 3rem 2rem 0;
+  padding: 1.75rem 2rem 0;
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
@@ -196,7 +196,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
 /* intro blockquote */
 .plp-prose :global(blockquote) {
   border-left: none;
-  padding: 2rem 2rem 0;
+  padding: 1rem 2rem 0;
   margin: 0 auto 0;
   max-width: 680px;
   background: none;
@@ -218,8 +218,8 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin: 5rem auto 3rem;
-  max-width: 900px;
+  margin: 4rem auto 2.5rem;
+  max-width: 1200px;
   padding: 0 2rem;
 }
 .plp-prose :global(.pl-month) {
@@ -244,7 +244,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   flex-direction: column;
   gap: 3rem;
   margin: 0 auto 2rem;
-  max-width: 900px;
+  max-width: 1200px;
   padding: 0 2rem;
 }
 
@@ -269,9 +269,14 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   opacity: 0.96;
 }
 
-/* 縦画像は最大幅を絞って大きく見せる */
-.plp-prose :global(.pl-item:not(.pl-item--wide) img[src]) {
-  max-width: 680px;
+/* 横画像（通常）：1200px まで */
+.plp-prose :global(.pl-item:not(.pl-item--wide):not(.pl-item--portrait) img[src]) {
+  max-width: 1200px;
+}
+
+/* 縦画像：幅を絞って縦長を活かす */
+.plp-prose :global(.pl-item--portrait img) {
+  max-width: 480px;
 }
 
 /* wide はフル幅 */
@@ -279,7 +284,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   max-width: 100%;
 }
 
-/* キャプション */
+/* キャプション：画像の幅に揃える */
 .plp-prose :global(.pl-cap) {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
@@ -289,16 +294,16 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   margin-top: 0.75rem;
   text-align: right;
   width: 100%;
-  max-width: 680px;
-  /* position: absolute を上書き */
+  max-width: 100%; /* 横写真はフル幅 */
   position: static !important;
   bottom: auto !important;
   right: auto !important;
   text-shadow: none !important;
   color: #bbb !important;
 }
-.plp-prose :global(.pl-item--wide .pl-cap) {
-  max-width: 100%;
+/* 縦写真は画像幅（480px）に合わせる */
+.plp-prose :global(.pl-item--portrait .pl-cap) {
+  max-width: 480px;
 }
 
 /* ── Sign-off ───────────────────────────────── */
@@ -401,11 +406,11 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
 
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 600px) {
-  .plp-header { padding: 3rem 1.25rem 3rem; }
+  .plp-header { padding: 1.75rem 1.25rem 2rem; }
   .plp-prose :global(.pl-grid) { gap: 2rem; padding: 0 1.25rem; }
-  .plp-prose :global(.pl-header) { padding: 0 1.25rem; margin-top: 4rem; }
-  .plp-prose :global(.post-no) { padding: 2rem 1.25rem 0; }
-  .plp-prose :global(blockquote) { padding: 1.5rem 1.25rem 0; }
+  .plp-prose :global(.pl-header) { padding: 0 1.25rem; margin-top: 3rem; }
+  .plp-prose :global(.post-no) { padding: 1.25rem 1.25rem 0; }
+  .plp-prose :global(blockquote) { padding: 0.75rem 1.25rem 0; }
   .plp-fab { bottom: 1.25rem; right: 1.25rem; }
 }
 </style>
