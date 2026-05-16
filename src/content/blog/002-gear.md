@@ -1,7 +1,7 @@
 ---
 title: '今使ってる機材をまとめてみる。'
 description: 'カメラを始めて1年。現在のボディとレンズ3本の構成をまとめました。旅行での使い分けも。'
-pubDate: '2026-05-16'
+pubDate: '2026-05-16T00:02:00'
 heroImage: '/images/002-gear/a7c2.jpg'
 tags: ['カメラ', 'レンズ', 'Sony', '機材紹介']
 category: 'カメラ・機材'
