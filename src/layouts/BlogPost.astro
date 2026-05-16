@@ -9,6 +9,9 @@ import { SITE_TITLE } from '../consts';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, tags = [], category } = Astro.props;
+const pageUrl = Astro.url.href;
+const shareText = encodeURIComponent(title);
+const shareUrl = encodeURIComponent(pageUrl);
 ---
 
 <html lang="ja">
@@ -93,6 +96,27 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], category
 			</div>
 		</article>
 
+		<!-- シェアボタン -->
+		<div class="share-section">
+			<div class="share-inner">
+				<p class="share-label">この記事をシェア</p>
+				<div class="share-buttons">
+					<a href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&via=LenKamikawa`} target="_blank" rel="noopener noreferrer" class="share-btn share-btn--x">
+						<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+						X でシェア
+					</a>
+					<a href={`https://social-plugins.line.me/lineit/share?url=${shareUrl}`} target="_blank" rel="noopener noreferrer" class="share-btn share-btn--line">
+						<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+						LINE でシェア
+					</a>
+					<a href={`https://b.hatena.ne.jp/add?mode=confirm&url=${shareUrl}&title=${shareText}`} target="_blank" rel="noopener noreferrer" class="share-btn share-btn--hatena">
+						<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.47 0C22.42 0 24 1.58 24 3.53v16.94C24 22.42 22.42 24 20.47 24H3.53C1.58 24 0 22.42 0 20.47V3.53C0 1.58 1.58 0 3.53 0h16.94zm-3.705 14.47c-.57 0-1.032.46-1.032 1.03 0 .57.462 1.032 1.032 1.032.57 0 1.03-.462 1.03-1.032 0-.57-.46-1.03-1.03-1.03zm-5.515-1.928c-.005 0-.005 0 0 0-1.246.005-2.168.936-2.168 2.09 0 1.15.929 2.082 2.168 2.082 1.246 0 2.174-.932 2.174-2.082s-.928-2.085-2.174-2.09zm5.328.076h-1.72v3.862h1.72V12.62zm-5.328.9c.674 0 1.176.525 1.176 1.19 0 .664-.502 1.19-1.176 1.19-.668 0-1.177-.526-1.177-1.19 0-.665.51-1.19 1.177-1.19zM11.247 7.5c-1.246 0-2.168.93-2.168 2.08 0 1.152.922 2.083 2.168 2.083 1.24 0 2.168-.931 2.168-2.082S12.488 7.5 11.247 7.5zm5.328.11h-1.72v3.861h1.72V7.61zm-5.328.896c.674 0 1.176.525 1.176 1.19 0 .663-.502 1.188-1.176 1.188-.668 0-1.177-.525-1.177-1.189 0-.664.51-1.189 1.177-1.189z"/></svg>
+						はてブ
+					</a>
+				</div>
+			</div>
+		</div>
+
 		<!-- コメント欄 -->
 		<div class="comment-section">
 			<div class="comment-inner">
@@ -113,6 +137,8 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], category
 				placeholder: 'コメントを書く...',
 				requiredMeta: ['nick'],
 				login: 'disable',
+				pageview: true,
+				reaction: true,
 			});
 		</script>
 
@@ -159,6 +185,55 @@ document.addEventListener('keydown', (e) => {
 
 <style>
 .article-wrap { min-height: 60vh; }
+
+/* ── シェアボタン ───────────────────────────────── */
+.share-section {
+	border-top: 1px solid var(--color-border);
+	padding: 2.5rem 0;
+	background: var(--color-bg);
+}
+.share-inner {
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+.share-label {
+	font-size: 0.72rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--color-text-light);
+	white-space: nowrap;
+	margin: 0;
+}
+.share-buttons {
+	display: flex;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+}
+.share-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45em;
+	font-size: 0.78rem;
+	letter-spacing: 0.04em;
+	padding: 0.45em 1em;
+	border-radius: var(--radius-sm);
+	text-decoration: none;
+	transition: opacity .2s, transform .15s;
+	color: #fff;
+}
+.share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.share-btn svg { width: 1em; height: 1em; flex-shrink: 0; }
+.share-btn--x       { background: #000; }
+.share-btn--line    { background: #06C755; }
+.share-btn--hatena  { background: #00A4DE; }
+@media (max-width: 600px) {
+	.share-inner { gap: 1rem; }
+}
 
 /* ── コメント欄 ─────────────────────────────────── */
 .comment-section {
