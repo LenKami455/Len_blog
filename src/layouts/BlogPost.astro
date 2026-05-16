@@ -1145,6 +1145,125 @@ document.addEventListener('keydown', (e) => {
 	.prose :global(.next-banner) { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
 }
 
+/* ── Travel: Day info (dark card) ───────────────── */
+.prose :global(.day-info) {
+	background: #1a3d52;
+	border-radius: var(--radius-md);
+	padding: 1.4rem 1.75rem;
+	margin: 2rem 0 0;
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+.prose :global(.di-time) {
+	text-align: center;
+	flex-shrink: 0;
+}
+.prose :global(.t-main) {
+	font-family: 'Georgia', serif;
+	font-style: italic;
+	font-size: 2.5rem;
+	color: rgba(255,255,255,0.92);
+	line-height: 1;
+}
+.prose :global(.t-label) {
+	font-size: 0.62rem;
+	letter-spacing: 0.25em;
+	color: rgba(255,255,255,0.4);
+	text-transform: uppercase;
+	margin-top: 0.4rem;
+}
+.prose :global(.di-divider) {
+	width: 1px;
+	height: 56px;
+	background: rgba(255,255,255,0.15);
+	flex-shrink: 0;
+}
+.prose :global(.di-note) {
+	font-size: 0.875rem;
+	color: rgba(255,255,255,0.7);
+	line-height: 2;
+}
+.prose :global(.di-note strong) {
+	color: rgba(255,255,255,0.92);
+	font-weight: 400;
+}
+
+/* ── Travel: Section title ───────────────────────── */
+.prose :global(.section-title) {
+	font-family: var(--font-serif);
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: var(--color-text);
+	margin: 3rem 0 1.25rem;
+	padding-left: 1rem;
+	position: relative;
+}
+.prose :global(.section-title::before) {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 4px;
+	height: 18px;
+	background: #2a6b8a;
+	border-radius: 2px;
+}
+
+/* ── Travel: Ocean box ───────────────────────────── */
+.prose :global(.ocean-box) {
+	background: #e8f4fa;
+	border: 1px solid rgba(42,107,138,0.2);
+	border-radius: var(--radius-md);
+	padding: 1.1rem 1.4rem;
+	margin: 1.5rem 0;
+	font-size: 0.875rem;
+	line-height: 2;
+	color: #2a6b8a;
+}
+
+/* ── Travel: Series nav (prev/next) ─────────────── */
+.prose :global(.series-nav) {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.75rem;
+	margin: 3rem 0 0;
+}
+.prose :global(.series-btn) {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	padding: 1.1rem 1.25rem;
+	text-decoration: none;
+	display: block;
+	transition: border-color .2s;
+}
+.prose :global(.series-btn:hover) {
+	border-color: var(--color-accent);
+}
+.prose :global(.series-btn.next) {
+	text-align: right;
+}
+.prose :global(.sb-label) {
+	font-size: 0.62rem;
+	letter-spacing: 0.25em;
+	color: var(--color-accent-h);
+	text-transform: uppercase;
+	margin-bottom: 0.3rem;
+}
+.prose :global(.sb-title) {
+	font-size: 0.875rem;
+	color: var(--color-text);
+	font-family: var(--font-serif);
+	line-height: 1.7;
+}
+@media (max-width: 600px) {
+	.prose :global(.day-info) { flex-direction: column; gap: 1rem; align-items: flex-start; }
+	.prose :global(.di-divider) { width: 100%; height: 1px; }
+	.prose :global(.series-nav) { grid-template-columns: 1fr; }
+}
+
 /* ── Travel: Trip card ───────────────────────────── */
 .prose :global(.trip-card) {
 	background: #e8f4fa;

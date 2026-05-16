@@ -29,3 +29,9 @@ public/images/**/original/
 # 大容量動画（25MB超）
 public/day2-sup.mp4
 public/videos/day2-sup.mov
+
+# 動画原版（大容量）
+public/*.MP4
+public/*.MOV
+public/*.mov
+public/day2-sup.mp4
