@@ -1,9 +1,9 @@
 ---
 title: 'フォトログ vol.1'
-description: 'カメラを買ってから最初の数ヶ月。2024年秋〜冬の記録。'
+description: 'カメラを買ってから最初の数ヶ月。2025年夏〜秋の記録。'
 pubDate: '2026-05-16T00:08:00'
-heroImage: '/images/005-cebu/day2-pool.jpg'
-tags: ['フォトログ', '写真', '2024']
+heroImage: '/images/photolog/vol1/a7c00157.jpg'
+tags: ['フォトログ', '写真', '2025']
 category: 'フォトログ'
 ---
 
@@ -14,53 +14,65 @@ category: 'フォトログ'
 · · ·
 
 > α7C IIを手に入れてから、なんでもないものを撮るのが楽しくなった。  
-> 2024年秋冬、最初の数ヶ月の記録。
+> 2025年夏〜秋、最初の数ヶ月の記録。
 
-<!-- ===================== Sep 2024 ===================== -->
+<!-- ===================== Aug 2025 ===================== -->
 <div class="pl-header">
-  <span class="pl-month">Sep. 2024</span>
+  <span class="pl-month">Aug. 2025</span>
 </div>
 
 <div class="pl-grid">
   <div class="pl-item pl-item--wide">
-    <img src="/images/005-cebu/day2-pool.jpg" alt="" />
-    <span class="pl-cap">Plantation Bay · Cebu</span>
-  </div>
-  <div class="pl-item">
-    <img src="/images/005-cebu/day1-night-market.jpg" alt="" />
-    <span class="pl-cap">夜市 · Cebu</span>
-  </div>
-  <div class="pl-item">
-    <img src="/images/005-cebu/cafe.jpg" alt="" />
-    <span class="pl-cap">カフェ · Cebu City</span>
-  </div>
-  <div class="pl-item">
-    <img src="/images/005-cebu/kyoukai2.jpg" alt="" />
-    <span class="pl-cap">マゼランクロス · Cebu</span>
-  </div>
-  <div class="pl-item">
-    <img src="/images/005-cebu/mango.jpg" alt="" />
-    <span class="pl-cap">マンゴージュース · 夜市</span>
+    <img src="/images/photolog/vol1/a7c00011.jpg" alt="" />
+    <span class="pl-cap"></span>
   </div>
 </div>
 
-<!-- ===================== Oct 2024 ===================== -->
+<!-- ===================== Sep 2025 ===================== -->
 <div class="pl-header">
-  <span class="pl-month">Oct. 2024</span>
+  <span class="pl-month">Sep. 2025</span>
 </div>
 
 <div class="pl-grid">
   <div class="pl-item">
-    <img src="/images/005-cebu/cebucity.jpg" alt="" />
-    <span class="pl-cap">Cebu City</span>
-  </div>
-  <div class="pl-item">
-    <img src="/images/005-cebu/rechon.jpg" alt="" />
-    <span class="pl-cap">レチョン · 夜市</span>
+    <img src="/images/photolog/vol1/a7c00135.jpg" alt="" />
+    <span class="pl-cap">初めて撮った写真</span>
   </div>
   <div class="pl-item pl-item--wide">
-    <img src="/images/005-cebu/plantationbay.jpg" alt="" />
-    <span class="pl-cap">Plantation Bay</span>
+    <img src="/images/photolog/vol1/a7c00157.jpg" alt="" />
+    <span class="pl-cap">友達とナガスパ・白鯨</span>
+  </div>
+  <div class="pl-item">
+    <img src="/images/photolog/vol1/a7c00163.jpg" alt="" />
+    <span class="pl-cap">くじらかわいいね</span>
+  </div>
+  <div class="pl-item">
+    <img src="/images/photolog/vol1/a7c00193.jpg" alt="" />
+    <span class="pl-cap">目が回る</span>
+  </div>
+  <div class="pl-item">
+    <img src="/images/photolog/vol1/a7c00217.jpg" alt="" />
+    <span class="pl-cap">夜のライトアップ白鯨</span>
+  </div>
+  <div class="pl-item">
+    <img src="/images/photolog/vol1/a7c00231.jpg" alt="" />
+    <span class="pl-cap">花火難しいね</span>
+  </div>
+  <div class="pl-item">
+    <img src="/images/photolog/vol1/a7c00236.jpg" alt="" />
+    <span class="pl-cap">ぱぁ</span>
+  </div>
+  <div class="pl-item pl-item--wide">
+    <img src="/images/photolog/vol1/a7c00265.jpg" alt="" />
+    <span class="pl-cap">宿 水辺</span>
+  </div>
+  <div class="pl-item">
+    <img src="/images/photolog/vol1/a7c00279.jpg" alt="" />
+    <span class="pl-cap">おはなかわいいね</span>
+  </div>
+  <div class="pl-item">
+    <img src="/images/photolog/vol1/a7c00305.jpg" alt="" />
+    <span class="pl-cap">パンとエスプレッソ</span>
   </div>
 </div>
 
