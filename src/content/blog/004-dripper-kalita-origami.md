@@ -200,13 +200,13 @@ category: 'コーヒー'
 
 こうして並べてみると、全部ちゃんと役割が違っていて、無駄じゃなかったなと思えてほっとします。ドリッパー沼にはまだ底がある気がするんですが、ひとまず今のところはこの8個で十分満足してます。次に気になってるのはあるけど、それはまたいつか。
 
-<div class="next-banner">
+<a href="/blog/003-dripper-hario/" class="next-banner">
   <div>
     <p class="nb-label">Prev Post · vol.1</p>
-    <p class="nb-text"><a href="/blog/003-dripper-hario/" style="color:inherit;text-decoration:none;">使ってるドリッパーを全部紹介してみる。<br/>HARIO編</a></p>
+    <p class="nb-text">使ってるドリッパーを全部紹介してみる。<br/>HARIO編</p>
   </div>
   <span class="next-arrow">←</span>
-</div>
+</a>
 
 <div class="sign-off">
   <p class="s-name">— Len</p>

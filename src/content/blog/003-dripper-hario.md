@@ -178,13 +178,13 @@ category: 'コーヒー'
   </div>
 </div>
 
-<div class="next-banner">
+<a href="/blog/004-dripper-kalita-origami/" class="next-banner">
   <div>
     <p class="nb-label">Next Post · vol.2</p>
-    <p class="nb-text"><a href="/blog/004-dripper-kalita-origami/" style="color:inherit;text-decoration:none;">使ってるドリッパーを全部紹介してみる。<br/>Kalita &amp; ORIGAMI編</a></p>
+    <p class="nb-text">使ってるドリッパーを全部紹介してみる。<br/>Kalita &amp; ORIGAMI編</p>
   </div>
   <span class="next-arrow">→</span>
-</div>
+</a>
 
 <div class="sign-off">
   <p class="s-name">— Len</p>
