@@ -323,6 +323,11 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], category
 	padding: 1.4rem 1.25rem;
 	position: relative;
 	box-shadow: var(--shadow-sm);
+	display: flex;
+	flex-direction: column;
+}
+.prose :global(.lens-link) {
+	margin-top: auto !important;
 }
 .prose :global(.lens-number) {
 	font-family: 'Georgia', serif;
