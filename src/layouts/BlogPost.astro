@@ -1387,6 +1387,79 @@ document.addEventListener('keydown', (e) => {
 	.prose :global(.pg-3) { grid-template-columns: 1fr 1fr; }
 }
 
+/* ── Mango box ───────────────────────────────────── */
+.prose :global(.mango-box) {
+	background: #fef5e4;
+	border: 1px solid rgba(232,147,10,0.3);
+	border-radius: var(--radius-md);
+	padding: 1.75rem 2rem;
+	margin: 2rem 0;
+	text-align: center;
+}
+.prose :global(.mb-icon) {
+	font-size: 2.2rem;
+	display: block;
+	margin-bottom: 0.75rem;
+}
+.prose :global(.mb-title) {
+	font-family: var(--font-serif);
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #c87800;
+	margin-bottom: 0.75rem;
+	letter-spacing: 0.04em;
+}
+.prose :global(.mb-text) {
+	font-size: 0.9rem;
+	line-height: 2;
+	color: #7a4a10;
+	margin: 0;
+}
+
+/* ── Trip summary ────────────────────────────────── */
+.prose :global(.trip-summary) {
+	background: var(--color-text);
+	border-radius: var(--radius-md);
+	padding: 2rem 2.25rem;
+	margin: 3rem 0 0;
+}
+.prose :global(.ts-label) {
+	font-size: 0.65rem;
+	letter-spacing: 0.35em;
+	color: var(--color-accent-h);
+	text-transform: uppercase;
+	margin-bottom: 1.25rem;
+}
+.prose :global(.ts-list) {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.prose :global(.ts-list li) {
+	font-size: 0.875rem;
+	color: rgba(255,255,255,0.72);
+	line-height: 2;
+	padding: 0.75rem 0;
+	border-bottom: 1px solid rgba(255,255,255,0.08);
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 0 !important;
+}
+.prose :global(.ts-list li:last-child) { border-bottom: none; }
+.prose :global(.ts-day) {
+	color: var(--color-accent-h);
+	font-size: 0.65rem;
+	letter-spacing: 0.2em;
+	flex-shrink: 0;
+	margin-top: 0.45rem;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+@media (max-width: 600px) {
+	.prose :global(.trip-summary) { padding: 1.5rem 1.25rem; }
+	.prose :global(.ts-list li) { flex-direction: column; gap: 0.25rem; }
+}
+
 /* ── Sign-off ─────────────────────────────────────── */
 .prose :global(.sign-off) {
 	text-align: center;
