@@ -181,7 +181,7 @@ category: 'コーヒー'
 <div class="next-banner">
   <div>
     <p class="nb-label">Next Post · vol.2</p>
-    <p class="nb-text">次回は残り4個のドリッパーを紹介します。<br/>Origami、Fellow、Pulsar、あともう1個。</p>
+    <p class="nb-text"><a href="/blog/004-dripper-kalita-origami/" style="color:inherit;text-decoration:none;">使ってるドリッパーを全部紹介してみる。<br/>Kalita &amp; ORIGAMI編</a></p>
   </div>
   <span class="next-arrow">→</span>
 </div>
