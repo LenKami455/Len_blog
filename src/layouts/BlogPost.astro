@@ -583,6 +583,117 @@ document.addEventListener('keydown', (e) => {
 	text-align: center;
 }
 
+/* ── Lens Block (large card style) ──────────────── */
+.prose :global(.lens-block) {
+	margin-bottom: 4rem;
+}
+.prose :global(.lb-header) {
+	display: flex;
+	align-items: flex-end;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--color-border);
+	flex-wrap: wrap;
+}
+.prose :global(.lb-num) {
+	font-family: 'Georgia', serif;
+	font-style: italic;
+	font-size: 3rem;
+	color: var(--color-border);
+	line-height: 1;
+	flex-shrink: 0;
+}
+.prose :global(.lb-category) {
+	font-size: 0.65rem;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--color-accent-h);
+	margin-bottom: 0.25rem;
+}
+.prose :global(.lb-name) {
+	font-family: var(--font-serif);
+	font-size: 1.35rem;
+	font-weight: 500;
+	color: var(--color-text);
+	letter-spacing: 0.05em;
+	line-height: 1.3;
+}
+.prose :global(.lb-aperture) {
+	display: block;
+	font-size: 0.72rem;
+	color: var(--color-text-light);
+	letter-spacing: 0.12em;
+	margin-top: 0.2rem;
+}
+.prose :global(.lb-badge) {
+	margin-left: auto;
+	flex-shrink: 0;
+	align-self: center;
+	background: var(--color-text);
+	color: rgba(255,255,255,0.82);
+	font-size: 0.65rem;
+	letter-spacing: 0.12em;
+	padding: 0.35em 0.85em;
+	border-radius: var(--radius-sm);
+	white-space: nowrap;
+}
+.prose :global(.lb-body) {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	padding: 1.75rem 2rem;
+	box-shadow: var(--shadow-sm);
+}
+.prose :global(.lb-main) {
+	display: flex;
+	gap: 2rem;
+	align-items: flex-start;
+	margin-bottom: 1.75rem;
+}
+.prose :global(.lb-gear-img) {
+	width: 220px;
+	height: 260px;
+	flex-shrink: 0;
+	object-fit: contain;
+	background: var(--color-bg);
+	border-radius: var(--radius-sm);
+}
+.prose :global(.lb-desc) {
+	flex: 1;
+}
+.prose :global(.lb-desc p) {
+	font-size: 0.9rem;
+	line-height: 2.1;
+	color: var(--color-text-muted);
+	margin-bottom: 1.1rem;
+}
+.prose :global(.lb-desc p:last-child) { margin-bottom: 0; }
+.prose :global(.lb-sample) {
+	margin-bottom: 1.5rem;
+}
+.prose :global(.lb-sample img) {
+	width: 100%;
+	max-height: 460px;
+	object-fit: cover;
+	border-radius: var(--radius-sm);
+	display: block;
+	box-shadow: none !important;
+	margin: 0 !important;
+}
+.prose :global(.lb-caption) {
+	font-size: 0.72rem;
+	color: var(--color-text-light);
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin-top: 0.5rem;
+}
+@media (max-width: 700px) {
+	.prose :global(.lb-main) { flex-direction: column; }
+	.prose :global(.lb-gear-img) { width: 100%; height: 220px; }
+	.prose :global(.lb-body) { padding: 1.4rem 1.25rem; }
+}
+
 /* ── Dripper block ───────────────────────────────── */
 .prose :global(.dripper-block) {
 	margin-bottom: 4rem;

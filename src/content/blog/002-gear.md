@@ -49,49 +49,91 @@ category: 'カメラ・機材'
 
 レンズは3本持ってます。全部を毎回持ち出すわけじゃなくて、その日どこに行くか・何を撮りたいかで1〜2本を選ぶ感じ。旅行のときは荷物を減らしたいので、だいたい20-40mmと35-100mmの2本か、55mmの単焦点1本、みたいな組み合わせが多いです。
 
-<div class="lens-grid">
-  <div class="lens-card">
-    <span class="lens-number">01</span>
-    <img src="/images/002-gear/20-40.jpg" alt="Tamron 20-40mm F2.8" class="lens-photo" />
-    <p class="lens-use">Wide · Standard</p>
-    <p class="lens-name">Tamron<br>20-40mm</p>
-    <p class="lens-aperture">F/2.8 Di III VXD</p>
-    <p class="lens-comment">カメラを買ってしばらく後、誕生日に彼女に買ってもらったレンズ。旅行の相棒で、広角から標準域をカバーしてて、これ1本でだいたいなんでも撮れる。コンパクトなのに写りがしっかりしてて気に入ってます。</p>
-    <a href="https://amzn.to/3RGZMRM" target="_blank" rel="noopener noreferrer sponsored" class="lens-link">Amazonで見る →</a>
+<!-- Lens 01: 20-40mm -->
+<div class="lens-block">
+  <div class="lb-header">
+    <span class="lb-num">01</span>
+    <div>
+      <p class="lb-category">Wide · Standard</p>
+      <p class="lb-name">Tamron 20-40mm</p>
+      <span class="lb-aperture">F/2.8 Di III VXD</span>
+    </div>
+    <span class="lb-badge">旅行の定番</span>
   </div>
-  <div class="lens-card">
-    <span class="lens-number">02</span>
-    <img src="/images/002-gear/35-100.jpg" alt="Tamron 35-100mm F2.8" class="lens-photo" />
-    <p class="lens-use">Standard · Tele</p>
-    <p class="lens-name">Tamron<br>35-100mm</p>
-    <p class="lens-aperture">F/2.8 Di III VXD</p>
-    <p class="lens-comment">標準から中望遠域。ポートレートや食べ物を撮るときに出番が多い。35mmと100mmの差って結構大きくて、1本でかなり使い分けできます。</p>
-    <a href="https://amzn.to/4uRmoxq" target="_blank" rel="noopener noreferrer sponsored" class="lens-link">Amazonで見る →</a>
-  </div>
-  <div class="lens-card">
-    <span class="lens-number">03</span>
-    <img src="/images/002-gear/55.jpg" alt="Sony FE 55mm F1.8 ZA" class="lens-photo" />
-    <p class="lens-use">Single Focus</p>
-    <p class="lens-name">Sony FE<br>55mm</p>
-    <p class="lens-aperture">F1.8 ZA (Zeiss)</p>
-    <p class="lens-comment">単焦点の一本。ボケが綺麗で、夜や室内でも頼れる。ズームできない分、自分が動くので撮り方が変わって面白い。</p>
-    <a href="https://amzn.to/4ucWdkF" target="_blank" rel="noopener noreferrer sponsored" class="lens-link">Amazonで見る →</a>
+  <div class="lb-body">
+    <div class="lb-main">
+      <img src="/images/002-gear/20-40.jpg" alt="Tamron 20-40mm" class="lb-gear-img" />
+      <div class="lb-desc">
+        <p>カメラを買ってしばらく後、誕生日に彼女に買ってもらったレンズ。旅行の相棒で、広角から標準域をカバーしてて、これ1本でだいたいなんでも撮れる。コンパクトなのに写りがしっかりしてて気に入ってます。</p>
+        <p>旅行に持ち出すとき「1本だけ選べ」と言われたら確実にこれ。軽いし、広角側でも標準側でも使えるし、F2.8通しなので夜もある程度いける。コストパフォーマンスも高くて、Tamronの中でも特におすすめしたい1本です。</p>
+      </div>
+    </div>
+    <div class="lb-sample">
+      <img src="/images/002-gear/A7C03895.jpg" alt="Tamron 20-40mm 作例" />
+      <p class="lb-caption">作例 — Tamron 20-40mm</p>
+    </div>
+    <div class="dripper-links">
+      <a href="https://amzn.to/3RGZMRM" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--amazon">Amazonで見る →</a>
+    </div>
   </div>
 </div>
 
-<div class="photo-trio">
-  <figure>
-    <img src="/images/002-gear/A7C03895.jpg" alt="Tamron 20-40mm で撮影" />
-    <figcaption>Tamron 20-40mm</figcaption>
-  </figure>
-  <figure>
-    <img src="/images/002-gear/A7C04038.jpg" alt="Tamron 35-100mm で撮影" />
-    <figcaption>Tamron 35-100mm</figcaption>
-  </figure>
-  <figure>
-    <img src="/images/002-gear/A7C02146.jpg" alt="Sony 55mm F1.8 ZA で撮影" />
-    <figcaption>Sony 55mm F1.8 ZA</figcaption>
-  </figure>
+<!-- Lens 02: 35-100mm -->
+<div class="lens-block">
+  <div class="lb-header">
+    <span class="lb-num">02</span>
+    <div>
+      <p class="lb-category">Standard · Tele</p>
+      <p class="lb-name">Tamron 35-100mm</p>
+      <span class="lb-aperture">F/2.8 Di III VXD</span>
+    </div>
+    <span class="lb-badge">ポートレート・食べ物</span>
+  </div>
+  <div class="lb-body">
+    <div class="lb-main">
+      <img src="/images/002-gear/35-100.jpg" alt="Tamron 35-100mm" class="lb-gear-img" />
+      <div class="lb-desc">
+        <p>標準から中望遠域をカバーするズームレンズ。ポートレートや食べ物を撮るときに出番が多い。35mmと100mmの差って結構大きくて、1本でかなり使い分けできます。</p>
+        <p>20-40mmと一緒に持ち出すと、20mmから100mmまでをF2.8通しでカバーできる。旅行先でカフェに入ったり、街の雑踏をちょっと離れて撮ったりするときは、こっちに切り替えます。</p>
+      </div>
+    </div>
+    <div class="lb-sample">
+      <img src="/images/002-gear/A7C04038.jpg" alt="Tamron 35-100mm 作例" />
+      <p class="lb-caption">作例 — Tamron 35-100mm</p>
+    </div>
+    <div class="dripper-links">
+      <a href="https://amzn.to/4uRmoxq" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--amazon">Amazonで見る →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Lens 03: 55mm -->
+<div class="lens-block">
+  <div class="lb-header">
+    <span class="lb-num">03</span>
+    <div>
+      <p class="lb-category">Single Focus</p>
+      <p class="lb-name">Sony FE 55mm</p>
+      <span class="lb-aperture">F1.8 ZA (Zeiss)</span>
+    </div>
+    <span class="lb-badge">単焦点縛りの日</span>
+  </div>
+  <div class="lb-body">
+    <div class="lb-main">
+      <img src="/images/002-gear/55.jpg" alt="Sony FE 55mm F1.8 ZA" class="lb-gear-img" />
+      <div class="lb-desc">
+        <p>単焦点の一本。ボケが綺麗で、夜や室内でも頼れる。ズームできない分、自分が動くので撮り方が変わって面白い。</p>
+        <p>「今日はこれだけ持って出かける」みたいな日専用。1本に縛ることで逆にいろいろ考えながら撮れるので、気分転換にもなる。Zeissの描写は正直一番好きで、写りという点では3本の中でダントツだと思ってます。</p>
+      </div>
+    </div>
+    <div class="lb-sample">
+      <img src="/images/002-gear/A7C02146.jpg" alt="Sony 55mm F1.8 ZA 作例" />
+      <p class="lb-caption">作例 — Sony FE 55mm F1.8 ZA</p>
+    </div>
+    <div class="dripper-links">
+      <a href="https://amzn.to/4ucWdkF" target="_blank" rel="noopener noreferrer sponsored" class="dripper-link dripper-link--amazon">Amazonで見る →</a>
+    </div>
+  </div>
 </div>
 
 ## どのレンズをいつ使うか
