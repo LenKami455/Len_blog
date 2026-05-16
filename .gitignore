@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# 元データ画像（25MB超のためデプロイ対象外・ローカル保管のみ）
+public/images/**/original/
