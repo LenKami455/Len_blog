@@ -224,6 +224,8 @@ function formatDate(date: Date) {
 @media (max-width: 560px) {
   .pl-page-header { padding: 3rem 1.25rem 2.5rem; }
   .pl-entry { margin-bottom: 3rem; }
+  /* タブレット用グラデーションオーバーレイを消す */
+  .pl-entry::after { display: none; }
   .pl-entry-text {
     position: static;
     width: 100%;
