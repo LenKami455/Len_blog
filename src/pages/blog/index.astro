@@ -102,30 +102,77 @@ const posts = (await getCollection('blog'))
 	gap: 1.5rem;
 }
 
-/* hero (first) card */
+/* hero (first) card — full-bleed photo with text overlay */
 .post-card--hero {
 	grid-column: 1 / -1;
-	display: grid;
-	grid-template-columns: 3fr 2fr;
+	position: relative;
+	height: 360px;
+	overflow: hidden;
 }
 .post-card--hero > a {
-	display: contents;
+	display: block;
+	position: relative;
+	height: 100%;
+	text-decoration: none;
+	color: inherit;
+}
+/* 画像：カード全体を覆う */
+.post-card--hero .card-img {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
 }
 .post-card--hero .card-img img {
-	height: 300px !important;
-	border-radius: var(--radius-lg) 0 0 var(--radius-lg) !important;
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	border-radius: 0 !important;
+	transition: transform .5s ease !important;
 }
+.post-card--hero:hover .card-img img {
+	transform: scale(1.03);
+}
+/* グラデーションオーバーレイ */
+.post-card--hero::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.22) 55%, transparent 100%);
+	pointer-events: none;
+	z-index: 1;
+	border-radius: var(--radius-lg);
+}
+/* テキスト：画像下部に重ねる */
 .post-card--hero .card-body {
+	position: absolute !important;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
 	padding: 2rem 2.5rem !important;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+	background: none !important;
+}
+.post-card--hero .card-date {
+	color: rgba(255,255,255,0.6) !important;
 }
 .post-card--hero .card-title {
-	font-size: 1.5rem !important;
-	margin-bottom: 0.8rem !important;
+	font-size: 1.6rem !important;
+	margin-bottom: 0.6rem !important;
+	color: #fff !important;
+	line-height: 1.4 !important;
 }
-.post-card--hero .card-desc { display: block !important; }
+.post-card--hero:hover .card-title {
+	color: #fff !important;
+}
+.post-card--hero .card-desc {
+	display: block !important;
+	color: rgba(255,255,255,0.78) !important;
+	margin-bottom: 0.75rem !important;
+}
+.post-card--hero .card-tags .tag-pill {
+	background: rgba(255,255,255,0.15) !important;
+	color: rgba(255,255,255,0.82) !important;
+}
 
 /* normal card */
 .post-card {
@@ -155,10 +202,9 @@ const posts = (await getCollection('blog'))
 
 @media (max-width: 900px) {
 	.post-list { grid-template-columns: repeat(2, 1fr); }
-	.post-card--hero { grid-column: 1 / -1; grid-template-columns: 1fr; }
-	.post-card--hero > a { display: block; }
-	.post-card--hero .card-img img { height: 220px !important; border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important; }
-	.post-card--hero .card-body { padding: 1.4rem !important; }
+	.post-card--hero { height: 280px; }
+	.post-card--hero .card-body { padding: 1.5rem 1.75rem !important; }
+	.post-card--hero .card-title { font-size: 1.35rem !important; }
 }
 @media (max-width: 600px) {
 	.blog-main { padding: 2rem 1rem 3rem; }
