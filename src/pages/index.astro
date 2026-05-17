@@ -99,6 +99,7 @@ const categories = [
 
 		<!-- ── Photolog Banner ──────────────────────────────── -->
 		<section class="photolog-section">
+			<div class="section-inner">
 			<a href="/photolog" class="photolog-banner">
 				{latestPhotolog?.data.heroImage && (
 					<div class="photolog-bg" style={`background-image: url('${latestPhotolog.data.heroImage}')`}></div>
@@ -112,6 +113,7 @@ const categories = [
 					<span class="photolog-cta">見る →</span>
 				</div>
 			</a>
+			</div>
 		</section>
 
 		<!-- ── Latest Posts ──────────────────────────────── -->
@@ -432,9 +434,6 @@ const categories = [
 .photolog-banner {
 	display: block;
 	position: relative;
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 0 2rem;
 	text-decoration: none;
 	overflow: hidden;
 	height: 260px;
@@ -510,11 +509,7 @@ const categories = [
 	border-color: rgba(255,255,255,0.8);
 }
 
-@media (max-width: 900px) {
-	.photolog-section { padding-left: 1.5rem; padding-right: 1.5rem; }
-}
 @media (max-width: 640px) {
-	.photolog-section { padding-left: 1rem; padding-right: 1rem; }
 	.photolog-banner { height: 200px; }
 	.photolog-inner { padding: 0 1.5rem; }
 }
