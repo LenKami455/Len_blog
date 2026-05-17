@@ -1,18 +1,36 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & { postId: string };
 
-const { title, description, pubDate, heroImage } = Astro.props;
+const { title, description, pubDate, heroImage, postId } = Astro.props;
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('ja-JP', {
     year: 'numeric', month: 'long', day: 'numeric'
   });
+}
+
+// 同シリーズ内の前後ナビ
+const allPosts = await getCollection('blog');
+const isCebu = postId.includes('cebu');
+const seriesPosts = allPosts
+  .filter(p => p.data.category === 'フォトログ')
+  .filter(p => p.id.includes('cebu') === isCebu)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+const currentIndex = seriesPosts.findIndex(p => p.id === postId);
+const prevPost = currentIndex > 0 ? seriesPosts[currentIndex - 1] : null;
+const nextPost = currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null;
+
+function getVolLabel(id: string): string {
+  const m = id.match(/vol(\d+)/i);
+  const num = m ? m[1] : '';
+  return id.includes('cebu') ? `Cebu vol.${num}` : `vol.${num}`;
 }
 ---
 
@@ -42,6 +60,34 @@ function formatDate(date: Date) {
       <div class="plp-prose">
         <slot />
       </div>
+
+      <!-- ── Series nav（前後vol）─────────── -->
+      {(prevPost || nextPost) && (
+        <nav class="plp-series-nav" aria-label="シリーズナビゲーション">
+          <div class="plp-sn-slot">
+            {prevPost && (
+              <a href={`/blog/${prevPost.id}/`} class="plp-sn-link plp-sn-prev">
+                <span class="plp-sn-arrow">←</span>
+                <span class="plp-sn-text">
+                  <span class="plp-sn-label">Prev</span>
+                  <span class="plp-sn-vol">{getVolLabel(prevPost.id)}</span>
+                </span>
+              </a>
+            )}
+          </div>
+          <div class="plp-sn-slot plp-sn-slot--right">
+            {nextPost && (
+              <a href={`/blog/${nextPost.id}/`} class="plp-sn-link plp-sn-next">
+                <span class="plp-sn-text">
+                  <span class="plp-sn-label">Next</span>
+                  <span class="plp-sn-vol">{getVolLabel(nextPost.id)}</span>
+                </span>
+                <span class="plp-sn-arrow">→</span>
+              </a>
+            )}
+          </div>
+        </nav>
+      )}
 
     </article>
 
@@ -238,6 +284,99 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   background: #ebebeb;
 }
 
+/* ── Series nav（前後volボタン）─ */
+.plp-series-nav {
+  max-width: 1200px;
+  margin: 6rem auto 4rem;
+  padding: 2rem 4rem 0;
+  border-top: 1px solid #eee;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.plp-sn-slot {
+  display: flex;
+}
+.plp-sn-slot--right {
+  justify-content: flex-end;
+}
+.plp-sn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.5rem;
+  text-decoration: none;
+  color: #999;
+  transition: color .2s, gap .2s;
+}
+.plp-sn-link:hover {
+  color: #333;
+}
+.plp-sn-prev:hover { gap: 1rem; }
+.plp-sn-next:hover { gap: 1rem; }
+.plp-sn-arrow {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+.plp-sn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1;
+}
+.plp-sn-next .plp-sn-text { text-align: right; }
+.plp-sn-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: #bbb;
+  text-transform: uppercase;
+}
+.plp-sn-vol {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* ── Trip link card（旅行記事への誘導）─ */
+.plp-prose :global(.trip-link-card) {
+  max-width: 720px;
+  margin: 2rem auto 3.5rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.plp-prose :global(.trip-link-card .tlc-label) {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: #999;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+.plp-prose :global(.trip-link-card .tlc-link) {
+  font-family: 'Noto Serif JP', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.plp-prose :global(.trip-link-card .tlc-link:hover) {
+  color: #888;
+  border-color: #888;
+}
+
 /* ── Photo grid → full-width vertical stack ─ */
 .plp-prose :global(.pl-grid) {
   display: flex;
@@ -411,6 +550,17 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   .plp-prose :global(.pl-header) { padding: 0 1.25rem; margin-top: 3rem; }
   .plp-prose :global(.post-no) { padding: 1.25rem 1.25rem 0; }
   .plp-prose :global(blockquote) { padding: 0.75rem 1.25rem 0; }
+  .plp-prose :global(.trip-link-card) {
+    margin: 1.5rem 1.25rem 2.5rem;
+    padding: 1.25rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .plp-series-nav {
+    margin: 4rem 1.25rem 3rem;
+    padding: 1.5rem 0 0;
+  }
   .plp-fab { bottom: 1.25rem; right: 1.25rem; }
 }
 </style>

@@ -6,12 +6,23 @@ import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
 
 const allPosts = await getCollection('blog');
-const posts = allPosts
+const photologs = allPosts
   .filter(p => p.data.category === 'フォトログ')
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
+// 通常フォトログとセブ島旅行フォトログを分離
+const posts = photologs.filter(p => !p.id.includes('cebu'));
+const cebuPosts = photologs.filter(p => p.id.includes('cebu'));
+
 function formatDate(date: Date) {
   return date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long' });
+}
+
+// インデックスページ表示用タイトル（英語化）
+function displayTitle(title: string): string {
+  return title
+    .replace('セブ島旅行フォトログ', 'cebu trip')
+    .replace('フォトログ', 'photolog');
 }
 ---
 
@@ -45,6 +56,21 @@ function formatDate(date: Date) {
               </a>
             );
           })}
+          {cebuPosts.length > 0 && (
+            <>
+              <span class="pl-index-sep" aria-hidden="true">·</span>
+              {cebuPosts.map((post) => {
+                const volMatch = post.id.match(/vol(\d+)/i);
+                const volNum = volMatch ? volMatch[1] : post.id;
+                const anchor = `cebu-vol-${volNum}`;
+                return (
+                  <a href={`#${anchor}`} class="pl-index-link pl-index-link--trip">
+                    Cebu vol.{volNum}
+                  </a>
+                );
+              })}
+            </>
+          )}
         </nav>
       </header>
 
@@ -68,7 +94,7 @@ function formatDate(date: Date) {
 
             <!-- テキスト：写真の右側に重ねる -->
             <div class="pl-entry-text">
-              <p class="pl-entry-title">{post.data.title}</p>
+              <p class="pl-entry-title">{displayTitle(post.data.title)}</p>
               <p class="pl-entry-desc">{post.data.description}</p>
               <span class="pl-entry-date">{formatDate(post.data.pubDate)}</span>
             </div>
@@ -77,6 +103,41 @@ function formatDate(date: Date) {
           );
         })}
       </div>
+
+      {cebuPosts.length > 0 && (
+        <>
+          <!-- ── Cebu trip photolog section ────── -->
+          <header class="pl-trip-header">
+            <p class="pl-eyebrow">trip photolog</p>
+            <h2 class="pl-trip-title">cebu trip<span class="pl-trip-title-em">.</span></h2>
+            <p class="pl-trip-desc">Sep. 2025 — 3泊4日</p>
+          </header>
+
+          <div class="pl-entries">
+            {cebuPosts.map((post, i) => {
+              const volMatch = post.id.match(/vol(\d+)/i);
+              const volNum = volMatch ? volMatch[1] : String(i + 1);
+              return (
+              <a href={`/blog/${post.id}/`} class="pl-entry" id={`cebu-vol-${volNum}`}>
+                {post.data.heroImage && (
+                  <img
+                    class="pl-entry-img"
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    loading="lazy"
+                  />
+                )}
+                <div class="pl-entry-text">
+                  <p class="pl-entry-title">{displayTitle(post.data.title)}</p>
+                  <p class="pl-entry-desc">{post.data.description}</p>
+                  <span class="pl-entry-date">{formatDate(post.data.pubDate)}</span>
+                </div>
+              </a>
+              );
+            })}
+          </div>
+        </>
+      )}
 
     </main>
 
@@ -194,6 +255,50 @@ function formatDate(date: Date) {
   color: #555;
   border-color: #bbb;
 }
+.pl-index-link--trip {
+  border-color: #d4c5b0;
+  color: #a08c6e;
+}
+.pl-index-link--trip:hover {
+  color: #6d5a3d;
+  border-color: #a08c6e;
+}
+.pl-index-sep {
+  display: inline-flex;
+  align-items: center;
+  color: #ddd;
+  padding: 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* ── Trip section header ─────────────────── */
+.pl-trip-header {
+  padding: 5rem 4rem 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+}
+.pl-trip-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  color: #111;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin: 0;
+}
+.pl-trip-title-em {
+  color: #c9b896;
+  font-style: normal;
+}
+.pl-trip-desc {
+  font-family: 'Noto Serif JP', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: #888;
+  margin: 1rem 0 0;
+}
 
 /* ── Entries ────────────────────────────────── */
 .pl-entries {
@@ -306,6 +411,7 @@ function formatDate(date: Date) {
 /* スマホ：テキストを写真の下に出す */
 @media (max-width: 560px) {
   .pl-page-header { padding: 3rem 1.25rem 2rem; }
+  .pl-trip-header { padding: 3.5rem 1.25rem 1.5rem; }
   .pl-index { margin-top: 1.25rem; }
   .pl-entry { margin-bottom: 3rem; }
   /* タブレット用グラデーションオーバーレイを消す */

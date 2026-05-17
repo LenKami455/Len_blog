@@ -77,6 +77,25 @@ SUPやったり、プールで泳いだり、チェアに寝転んでぼーっ�
   <span>Plantation Bay Resort &amp; Spa のデイユースは予約していくのがおすすめ。プール・ビーチ込みで当時1人6千円くらい。コスパ的にかなりいい。</span>
 </div>
 
+<div class="photolog-cta">
+  <p class="plc-label">この旅のフォトログ</p>
+  <p class="plc-title">セブ島旅行フォトログ</p>
+  <div class="plc-links">
+    <a href="/blog/012-cebu-photolog-vol1/" class="plc-link">
+      <span class="plc-vol">vol.1</span>
+      <span class="plc-desc">到着・リゾート</span>
+    </a>
+    <a href="/blog/013-cebu-photolog-vol2/" class="plc-link">
+      <span class="plc-vol">vol.2</span>
+      <span class="plc-desc">セブシティ観光</span>
+    </a>
+    <a href="/blog/014-cebu-photolog-vol3/" class="plc-link">
+      <span class="plc-vol">vol.3</span>
+      <span class="plc-desc">最終夜と空港</span>
+    </a>
+  </div>
+</div>
+
 <div class="series-nav">
   <div></div>
   <a href="/blog/006-cebu-vol2/" class="series-btn next">
