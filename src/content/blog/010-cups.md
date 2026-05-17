@@ -36,7 +36,6 @@ category: 'コーヒー'
       <img src="/images/cups/wasabi-3.webp" alt="ワサビ アイスコーヒー" />
     </div>
     <p class="img-caption">木村硝子 ワサビ 10oz。そば猪口みたいなシルエット。</p>
-
     <p>
       1910年創業の老舗グラスメーカー、木村硝子店のシリーズ。「ワサビ」というネーミングがちょっと面白いんですが、中身はシンプル極まりない薄口のタンブラーです。そば猪口みたいなシルエットで、カジュアルでそっけない、「フツーで気楽なコップ」という公式の説明がまさにそのとおり。
     </p>
@@ -46,7 +45,6 @@ category: 'コーヒー'
     <p>
       一個1,000円以下で買えるコスパのよさも魅力。プロユースの業務用グラスとして作られてるので丈夫で、雑に扱っても全然平気なのがいい。シンプルなものが好きなら絶対ハマるグラスだと思います。
     </p>
-
     <div class="gear-specs">
       <span class="spec highlight">木村硝子店 / 1910年創業</span>
       <span class="spec">容量 300cc</span>
@@ -54,12 +52,11 @@ category: 'コーヒー'
       <span class="spec">マシンメイド</span>
       <span class="spec">業務用グラス</span>
     </div>
-
     <div class="dripper-links">
       <a href="https://amzn.to/499zvBM" class="dripper-link dripper-link--amazon" target="_blank" rel="noopener noreferrer nofollow">Amazon（10oz）</a>
-      <a href="https://amzn.to/3RhnNyK" class="dripper-link dripper-link--amazon" target="_blank" rel="noopener noreferrer nofollow">Amazon（6oz）</a>
+      <a href="https://amzn.to/3RhnNyK" class="dripper-link dripper-link--amazon" target="_blank" rel="noopener noreferrer nofollow">Amazon（10oz 6脚セット）</a>
       <a href="https://a.r10.to/hkaEZs" class="dripper-link dripper-link--rakuten" target="_blank" rel="noopener noreferrer nofollow">楽天（10oz）</a>
-      <a href="https://a.r10.to/hY6UFE" class="dripper-link dripper-link--rakuten" target="_blank" rel="noopener noreferrer nofollow">楽天（6oz）</a>
+      <a href="https://a.r10.to/hY6UFE" class="dripper-link dripper-link--rakuten" target="_blank" rel="noopener noreferrer nofollow">楽天（10oz 6脚セット）</a>
     </div>
   </div>
 
@@ -75,32 +72,29 @@ category: 'コーヒー'
     <span class="dripper-num">02</span>
     <div>
       <p class="dripper-brand">ORIGAMI / 美濃焼</p>
-      <p class="dripper-name">マグカップ（水色）<span class="dripper-name-en">ORIGAMI Flare Coffee Cup</span></p>
+      <p class="dripper-name">マグカップ<span class="dripper-name-en">ORIGAMI Flare Coffee Cup</span></p>
     </div>
     <span class="use-badge">ホットコーヒー・何でも</span>
   </div>
 
   <div class="dripper-body">
-    <img src="/images/cups/origami-mug-1.webp" alt="ORIGAMI マグカップ 水色" />
+    <img src="/images/cups/origami-mug-1.webp" alt="ORIGAMI マグカップ" />
     <div class="pg-2">
-      <img src="/images/cups/origami-mug-2.webp" alt="ORIGAMIマグ ドリッパーと並べて" />
+      <img src="/images/cups/origami-mug-2.webp" alt="ORIGAMIマグ 2色並べて" />
       <img src="/images/cups/origami-mug-3.webp" alt="ORIGAMIマグ コーヒー注いだ" />
     </div>
-    <p class="img-caption">ドリッパーと色を揃えてる。朝のセットとして並べたときの絵が好き。</p>
-
+    <p class="img-caption">Vintage GreenとVintage White Ash。形と色が気に入って。</p>
     <p>
-      ドリッパーでも使ってるORIGAMIのマグカップ。ドリッパーと同じシリーズで揃えてて、水色のカラーが爽やかで気に入ってます。ORIGAMIは美濃焼なので、手に持ったときの質感がしっかりしてて、軽すぎず重すぎずちょうどいい。
+      ORIGAMIのFlareCoffee Cup。2色持ってて、Vintage GreenとVintage White Ashです。同ブランドのドリッパーも使っていますが、カップはドリッパーと色を揃えているわけじゃなく、単純に形と色が気に入って買いました。ORIGAMIは美濃焼なので、手に持ったときの質感がしっかりしてて、軽すぎず重すぎずちょうどいい。
     </p>
     <p>
-      朝のハンドドリップで一番出番が多いのがこれです。容量もちょうどよくて、ドリップしたコーヒーをそのままサーバーを介さず直接受けることもある。ドリッパーとカップの色が揃ってる景色が好きなんですよね。なんかちゃんとした感じがして、朝からテンションが上がります。
+      朝のハンドドリップで一番出番が多いのがこれです。容量もちょうどよくて、ドリップしたコーヒーをそのままサーバーを介さず直接受けることもある。口が広めに広がっているフレア形状が特徴で、コーヒーの香りが立ちやすい気がしています。
     </p>
-
     <div class="gear-specs">
       <span class="spec highlight">ORIGAMI / 美濃焼</span>
-      <span class="spec">水色</span>
+      <span class="spec">Vintage Green / Vintage White Ash</span>
       <span class="spec">岐阜県産</span>
     </div>
-
     <div class="dripper-links">
       <a href="https://origami-kai.com/products/flare-coffee-cup?variant=45630109843698" class="dripper-link dripper-link--shop" target="_blank" rel="noopener noreferrer nofollow">ORIGAMI 公式</a>
       <a href="https://a.r10.to/h5cvI5" class="dripper-link dripper-link--rakuten" target="_blank" rel="noopener noreferrer nofollow">楽天（カップ）</a>
@@ -110,7 +104,7 @@ category: 'コーヒー'
 
   <div class="personal-note">
     <span class="note-icon">💬</span>
-    <span>ドリッパーと色を揃えてる。朝のドリップセットとして並べたときの絵が好き。</span>
+    <span>形と色で選んだ。Vintage GreenとVintage White Ash、2色あるので気分で使い分けてます。</span>
   </div>
 </div>
 
@@ -127,25 +121,19 @@ category: 'コーヒー'
 
   <div class="dripper-body">
     <img src="/images/cups/origami-latte-1.webp" alt="ORIGAMI ラテボウル 水色" />
-    <div class="pg-2">
-      <img src="/images/cups/origami-latte-2.webp" alt="ラテボウル ラテを入れたところ" />
-      <img src="/images/cups/origami-latte-3.webp" alt="ラテボウル 口の広さ" />
-    </div>
-    <p class="img-caption">マグより口が広くて浅め。ラテを入れると様になる。</p>
-
+    <img src="/images/cups/origami-latte-2.webp" alt="ラテボウル ラテを入れたところ" />
+    <p class="img-caption">マグより口が広くて浅め。ラテアートの練習用に。</p>
     <p>
-      同じくORIGAMIのラテボウル。マグカップより口が広くて浅めで、その名のとおりラテやカプチーノを飲むためのボウル型カップです。この形、エスプレッソマシンでラテを作るときに使うと、スチームミルクをそのままボウルに入れるだけで様になる。
+      同じくORIGAMIのラテボウル。マグカップより口が広くて浅めで、その名のとおりラテやカプチーノを飲むためのボウル型カップです。口が広い分、マグよりラテアートがやりやすいらしく、練習するならこの形がいいとよく言われます。
     </p>
     <p>
-      ラテを飲むときに口が広いと、ミルクのまろやかさをダイレクトに感じやすい気がします。これはちゃんと違いがあると思ってて、マグで飲むラテとラテボウルで飲むラテは同じ内容でも少し体験が違う。気分の問題かもしれないけど、それはそれで大事なこと。
+      「らしい」というのは、自分がまだ全然うまくできないからです。エスプレッソマシンでラテを作るたびに練習してるんですが、絵になるどころか毎回なんか違う模様が出てきます。それはそれで楽しいんですが。うまくなったらちゃんと報告したい。
     </p>
-
     <div class="gear-specs">
       <span class="spec highlight">ORIGAMI / 美濃焼</span>
       <span class="spec">水色</span>
       <span class="spec">ラテ・カプチーノ向け</span>
     </div>
-
     <div class="dripper-links">
       <a href="https://amzn.to/3Py06l8" class="dripper-link dripper-link--amazon" target="_blank" rel="noopener noreferrer nofollow">Amazon</a>
       <a href="https://a.r10.to/hPsSEK" class="dripper-link dripper-link--rakuten" target="_blank" rel="noopener noreferrer nofollow">楽天</a>
@@ -154,7 +142,7 @@ category: 'コーヒー'
 
   <div class="personal-note">
     <span class="note-icon">💬</span>
-    <span>エスプレッソマシンでラテを作るときのお供。口が広いとラテの飲み方が変わる気がする。</span>
+    <span>ラテアート練習中。全然うまくならないけど、それはそれで楽しい。</span>
   </div>
 </div>
 
@@ -171,13 +159,11 @@ category: 'コーヒー'
 
   <div class="dripper-body">
     <img src="/images/cups/varia-1.webp" alt="Varia デュアルウォールグラス" />
-    <div class="pg-3">
+    <div class="pg-2">
       <img src="/images/cups/varia-2.webp" alt="Varia 二重構造 横から" />
       <img src="/images/cups/varia-3.webp" alt="Varia 浅煎りコーヒー注いだ" />
-      <img src="/images/cups/varia-4.webp" alt="Varia 宙に浮いて見える内側" />
     </div>
     <p class="img-caption">二重構造で内側が宙に浮いて見える。浅煎りの琥珀色が映える。</p>
-
     <p>
       コーヒーブランドのVariaが出しているデュアルウォール（二重壁構造）のグラス。二重になってるので断熱性があって、熱いコーヒーを入れても外側が熱くならないし、テーブルに水滴もつかない。飲み物の温度が長持ちする。
     </p>
@@ -187,14 +173,12 @@ category: 'コーヒー'
     <p>
       二重構造なので空気の層があって、内側のコーヒーが宙に浮いてるみたいに見えるのもおもしろい。浅煎りの澄んだ色がよく映えます。
     </p>
-
     <div class="gear-specs">
       <span class="spec highlight">Varia</span>
       <span class="spec">デュアルウォール構造</span>
       <span class="spec">断熱・結露なし</span>
       <span class="spec">浅煎りホットコーヒー向け</span>
     </div>
-
     <div class="dripper-links">
       <a href="https://amzn.to/3RLBAO8" class="dripper-link dripper-link--amazon" target="_blank" rel="noopener noreferrer nofollow">Amazon</a>
       <a href="https://a.r10.to/h8qsD1" class="dripper-link dripper-link--rakuten" target="_blank" rel="noopener noreferrer nofollow">楽天</a>
@@ -225,7 +209,6 @@ category: 'コーヒー'
       <img src="/images/cups/hasami-3.webp" alt="波佐見焼 コーヒー入れたところ" />
     </div>
     <p class="img-caption">マットな質感。落ち着いた雰囲気で、ゆっくりしたい日に引っ張り出す。</p>
-
     <p>
       長崎県・波佐見焼のKOUSHUNブランドのマグカップ。Naturalシリーズで、マットでシンプルな見た目です。釉薬の色味に土っぽさがあって、ほかのカップと並べたときに一番「和」の雰囲気がある。
     </p>
@@ -235,14 +218,12 @@ category: 'コーヒー'
     <p>
       波佐見焼は江戸時代から続く長崎県の焼き物で、日用食器として親しまれてきた産地。KOUSHUNのNaturalシリーズはその伝統的な素地感をシンプルなデザインに落とし込んでて、主張しすぎないのがいい。
     </p>
-
     <div class="gear-specs">
       <span class="spec highlight">波佐見焼 / KOUSHUN</span>
       <span class="spec">Naturalシリーズ</span>
       <span class="spec">マット仕上げ</span>
       <span class="spec">長崎県産</span>
     </div>
-
     <div class="dripper-links">
       <a href="https://amzn.to/4wv8vGZ" class="dripper-link dripper-link--amazon" target="_blank" rel="noopener noreferrer nofollow">Amazon</a>
       <a href="https://a.r10.to/hPHL7J" class="dripper-link dripper-link--rakuten" target="_blank" rel="noopener noreferrer nofollow">楽天</a>
