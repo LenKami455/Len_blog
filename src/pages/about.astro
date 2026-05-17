@@ -57,22 +57,22 @@ import { SITE_TITLE, SNS_LINKS } from '../consts';
 					<p class="section-label">好きなこと</p>
 					<div class="likes-grid">
 						<div class="like-card">
-							<span class="like-icon" aria-hidden="true">✈️</span>
+							<span class="like-icon" aria-hidden="true"><img src="/Plane_logo.png" alt="" class="like-logo" /></span>
 							<p class="like-title">旅行</p>
 							<p class="like-desc">国内も海外も。計画しすぎず、気になった路地に入っていくスタイル。旅先のローカルな食堂や市場が好き。おいしい食べ物とコーヒーと。</p>
 						</div>
 						<div class="like-card">
-							<span class="like-icon" aria-hidden="true">📷</span>
+							<span class="like-icon" aria-hidden="true"><img src="/Camera_logo.png" alt="" class="like-logo" /></span>
 							<p class="like-title">写真</p>
 							<p class="like-desc">日常の何気ない光と影を撮るのが好き。うまい写真より「あのとき確かにいた」と思える一枚が撮れると嬉しい。スナップおおめ。</p>
 						</div>
 						<div class="like-card">
-							<span class="like-icon" aria-hidden="true">☕</span>
+							<span class="like-icon" aria-hidden="true"><img src="/CoffeeCup_logo.png" alt="" class="like-logo" /></span>
 							<p class="like-title">コーヒー</p>
 							<p class="like-desc">朝のハンドドリップが日課。豆の産地や焙煎度にハマりだしてから沼が深くなっています。浅煎りが好き。</p>
 						</div>
 						<div class="like-card">
-							<span class="like-icon" aria-hidden="true">🫙</span>
+							<span class="like-icon" aria-hidden="true"><img src="/Gaget_logo.png" alt="" class="like-logo" /></span>
 							<p class="like-title">モノ選び</p>
 							<p class="like-desc">食器、インテリア、ガジェットなど。ちょっとこだわりが強め。気に入ったものをずっと使い続けたいタイプ。</p>
 						</div>
@@ -312,6 +312,12 @@ import { SITE_TITLE, SNS_LINKS } from '../consts';
 	font-size: 1.4rem;
 	margin-bottom: 0.6rem;
 	display: block;
+}
+.like-logo {
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+	opacity: 0.6;
 }
 .like-title {
 	font-family: var(--font-serif);

@@ -1,4 +1,4 @@
----
+﻿---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
@@ -24,18 +24,21 @@ const categories = [
 		name: '旅行',
 		slug: '旅行',
 		icon: '✈',
+		logo: '/Plane_logo.png',
 		desc: '国内外の旅の記録。出会った景色、食べたもの、感じたこと。',
 	},
 	{
 		name: 'コーヒー',
 		slug: 'コーヒー',
 		icon: '☕',
+		logo: '/CoffeeCup_logo.png',
 		desc: 'スペシャルティコーヒーの魅力、豆選び、淹れ方のあれこれ。',
 	},
 	{
 		name: 'ガジェット',
 		slug: 'ガジェット',
 		icon: '📦',
+		logo: '/Gaget_logo.png',
 		desc: '買ってよかったもの、気になるガジェット、暮らしを彩るアイテム。',
 	},
 ];
@@ -83,7 +86,7 @@ const categories = [
 					{categories.map((cat) => (
 						<li>
 							<a href={`/tags/${cat.slug}/`} class="cat-card">
-								<span class="cat-icon">{cat.icon}</span>
+								<span class="cat-icon"><img src={cat.logo} alt={cat.name} class="cat-logo" /></span>
 								<span class="cat-name">{cat.name}</span>
 								<span class="cat-desc">{cat.desc}</span>
 								<span class="cat-arrow">→</span>
@@ -102,6 +105,7 @@ const categories = [
 				)}
 				<div class="photolog-overlay"></div>
 				<div class="photolog-inner">
+					<img src="/Camera_logo.png" alt="" class="photolog-camera-icon" />
 					<p class="photolog-eyebrow">photo log</p>
 					<p class="photolog-title">photolog.</p>
 					<p class="photolog-desc">カメラを持って歩いた記録。</p>
@@ -384,6 +388,16 @@ const categories = [
 	font-size: 1.6rem;
 	line-height: 1;
 }
+.cat-logo {
+	width: 36px;
+	height: 36px;
+	object-fit: contain;
+	opacity: 0.72;
+	transition: opacity .2s;
+}
+.cat-card:hover .cat-logo {
+	opacity: 1;
+}
 .cat-name {
 	grid-row: 1;
 	grid-column: 2;
@@ -449,6 +463,14 @@ const categories = [
 	flex-direction: column;
 	justify-content: center;
 	padding: 0 2.5rem;
+}
+.photolog-camera-icon {
+	width: 44px;
+	height: 44px;
+	object-fit: contain;
+	opacity: 0.6;
+	margin-bottom: 1rem;
+	filter: brightness(0) invert(1);
 }
 .photolog-eyebrow {
 	font-family: 'Georgia', serif;
