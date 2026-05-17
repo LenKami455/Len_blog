@@ -133,6 +133,21 @@ category: '旅'
   <span>信玄、40分並んでも食べる価値あります。すすきのに行くなら絶対に寄ってほしい。並ぶのは覚悟の上で。</span>
 </div>
 
+<div class="photolog-cta">
+  <p class="plc-label">この旅のフォトログ</p>
+  <p class="plc-title">北海道旅行フォトログ</p>
+  <div class="plc-links">
+    <a href="/blog/017-hokkaido-photolog-vol1/" class="plc-link">
+      <span class="plc-vol">vol.1</span>
+      <span class="plc-desc">小樽 Day 1</span>
+    </a>
+    <a href="/blog/018-hokkaido-photolog-vol2/" class="plc-link">
+      <span class="plc-vol">vol.2</span>
+      <span class="plc-desc">札幌・空港 Day 2-3</span>
+    </a>
+  </div>
+</div>
+
 <div class="series-nav">
   <div></div>
   <a href="/blog/016-hokkaido-vol2/" class="series-btn next">

@@ -10,19 +10,49 @@ const photologs = allPosts
   .filter(p => p.data.category === 'フォトログ')
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
-// 通常フォトログとセブ島旅行フォトログを分離
-const posts = photologs.filter(p => !p.id.includes('cebu'));
-const cebuPosts = photologs.filter(p => p.id.includes('cebu'));
+// 通常フォトログ：NNN-photolog-volX
+// 旅行フォトログ：NNN-{trip}-photolog-volX
+const regularPosts = photologs.filter(p => /^\d+-photolog-vol/.test(p.id));
+const tripPosts = photologs.filter(p => !/^\d+-photolog-vol/.test(p.id));
+
+// 旅行フォトログを trip 名でグルーピング
+type TripGroup = { name: string; label: string; subtitle: string; posts: typeof tripPosts };
+const tripMeta: Record<string, { label: string; subtitle: string }> = {
+  cebu: { label: 'cebu trip', subtitle: 'Sep. 2025 — 3泊4日' },
+  hokkaido: { label: 'hokkaido trip', subtitle: 'Dec. 2025 — 2泊3日' },
+};
+
+const tripGroupsMap = new Map<string, typeof tripPosts>();
+for (const p of tripPosts) {
+  const m = p.id.match(/^\d+-(\w+)-photolog-vol/);
+  if (!m) continue;
+  const name = m[1];
+  if (!tripGroupsMap.has(name)) tripGroupsMap.set(name, []);
+  tripGroupsMap.get(name)!.push(p);
+}
+const tripGroups: TripGroup[] = [];
+for (const [name, groupPosts] of tripGroupsMap) {
+  const meta = tripMeta[name] ?? { label: `${name} trip`, subtitle: '' };
+  tripGroups.push({
+    name,
+    label: meta.label,
+    subtitle: meta.subtitle,
+    posts: groupPosts,
+  });
+}
+// 既存変数名を維持
+const posts = regularPosts;
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long' });
 }
 
 // インデックスページ表示用タイトル（英語化）
-function displayTitle(title: string): string {
-  return title
-    .replace('セブ島旅行フォトログ', 'cebu trip')
-    .replace('フォトログ', 'photolog');
+function displayTitle(title: string, tripName?: string): string {
+  if (tripName && tripMeta[tripName]) {
+    return title.replace(`${tripName === 'cebu' ? 'セブ島' : tripName === 'hokkaido' ? '北海道' : ''}旅行フォトログ`, tripMeta[tripName].label);
+  }
+  return title.replace('フォトログ', 'photolog');
 }
 ---
 
@@ -56,21 +86,22 @@ function displayTitle(title: string): string {
               </a>
             );
           })}
-          {cebuPosts.length > 0 && (
+          {tripGroups.map((trip) => (
             <>
               <span class="pl-index-sep" aria-hidden="true">·</span>
-              {cebuPosts.map((post) => {
+              {trip.posts.map((post) => {
                 const volMatch = post.id.match(/vol(\d+)/i);
                 const volNum = volMatch ? volMatch[1] : post.id;
-                const anchor = `cebu-vol-${volNum}`;
+                const anchor = `${trip.name}-vol-${volNum}`;
+                const tripLabel = trip.name.charAt(0).toUpperCase() + trip.name.slice(1);
                 return (
                   <a href={`#${anchor}`} class="pl-index-link pl-index-link--trip">
-                    Cebu vol.{volNum}
+                    {tripLabel} vol.{volNum}
                   </a>
                 );
               })}
             </>
-          )}
+          ))}
         </nav>
       </header>
 
@@ -104,21 +135,21 @@ function displayTitle(title: string): string {
         })}
       </div>
 
-      {cebuPosts.length > 0 && (
+      {tripGroups.map((trip) => (
         <>
-          <!-- ── Cebu trip photolog section ────── -->
+          <!-- ── Trip photolog section ────── -->
           <header class="pl-trip-header">
             <p class="pl-eyebrow">trip photolog</p>
-            <h2 class="pl-trip-title">cebu trip<span class="pl-trip-title-em">.</span></h2>
-            <p class="pl-trip-desc">Sep. 2025 — 3泊4日</p>
+            <h2 class="pl-trip-title">{trip.label}<span class="pl-trip-title-em">.</span></h2>
+            {trip.subtitle && <p class="pl-trip-desc">{trip.subtitle}</p>}
           </header>
 
           <div class="pl-entries">
-            {cebuPosts.map((post, i) => {
+            {trip.posts.map((post, i) => {
               const volMatch = post.id.match(/vol(\d+)/i);
               const volNum = volMatch ? volMatch[1] : String(i + 1);
               return (
-              <a href={`/blog/${post.id}/`} class="pl-entry" id={`cebu-vol-${volNum}`}>
+              <a href={`/blog/${post.id}/`} class="pl-entry" id={`${trip.name}-vol-${volNum}`}>
                 {post.data.heroImage && (
                   <img
                     class="pl-entry-img"
@@ -128,7 +159,7 @@ function displayTitle(title: string): string {
                   />
                 )}
                 <div class="pl-entry-text">
-                  <p class="pl-entry-title">{displayTitle(post.data.title)}</p>
+                  <p class="pl-entry-title">{displayTitle(post.data.title, trip.name)}</p>
                   <p class="pl-entry-desc">{post.data.description}</p>
                   <span class="pl-entry-date">{formatDate(post.data.pubDate)}</span>
                 </div>
@@ -137,7 +168,7 @@ function displayTitle(title: string): string {
             })}
           </div>
         </>
-      )}
+      ))}
 
     </main>
 
@@ -153,9 +184,14 @@ function displayTitle(title: string): string {
 }
 
 /* ── Header overrides（photolog専用） ─────────── */
-.pl-body :global(.site-header) {
+/* 上部ヘッダー（流れて消えるほう）：白背景に統一 */
+.pl-body :global(.header-top) {
+  background: #fff;
+}
+/* コンパクトヘッダー（追従するほう） */
+.pl-body :global(.header-compact) {
   background: rgba(255,255,255,0.96);
-  border-bottom: 1px solid #ebebeb;
+  border-bottom-color: #ebebeb;
 }
 /* ナビリンク：Cormorant Garamond・細め */
 .pl-body :global(.header-nav a) {

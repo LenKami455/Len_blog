@@ -169,6 +169,21 @@ category: '旅'
 
 出身が北海道でも、こうやって旅行として来るとまた違った楽しさがある。普段は素通りしてしまう場所をちゃんと歩いたり、「これ北海道の人はあんまり食べないよな」というものを食べたり。食べまくった旅だったけど、それが北海道の正解だと思う。また来年も行く予定です。
 
+<div class="photolog-cta">
+  <p class="plc-label">この旅のフォトログ</p>
+  <p class="plc-title">北海道旅行フォトログ</p>
+  <div class="plc-links">
+    <a href="/blog/017-hokkaido-photolog-vol1/" class="plc-link">
+      <span class="plc-vol">vol.1</span>
+      <span class="plc-desc">小樽 Day 1</span>
+    </a>
+    <a href="/blog/018-hokkaido-photolog-vol2/" class="plc-link">
+      <span class="plc-vol">vol.2</span>
+      <span class="plc-desc">札幌・空港 Day 2-3</span>
+    </a>
+  </div>
+</div>
+
 <div class="series-nav">
   <a href="/blog/015-hokkaido-vol1/" class="series-btn">
     <p class="sb-label">Prev · vol.1</p>

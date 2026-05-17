@@ -162,6 +162,14 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   background: #fff;
   border-top: 1px solid #e8e8e8;
 }
+/* ── Header overrides（photolog記事ページ） ─── */
+.plp-body :global(.header-top) {
+  background: #fff;
+}
+.plp-body :global(.header-compact) {
+  background: rgba(255,255,255,0.96);
+  border-bottom-color: #ebebeb;
+}
 
 /* ── Article ────────────────────────────────── */
 .plp-article {
