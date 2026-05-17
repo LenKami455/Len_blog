@@ -90,10 +90,51 @@ function formatDate(date: Date) {
   background: #fff;
   color: #1a1a1a;
 }
+
+/* ── Header overrides（photolog専用） ─────────── */
 .pl-body :global(.site-header) {
   background: rgba(255,255,255,0.96);
   border-bottom: 1px solid #ebebeb;
 }
+/* ナビリンク：Cormorant Garamond・細め */
+.pl-body :global(.header-nav a) {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.12em;
+  color: #bbb;
+}
+/* hover / active */
+.pl-body :global(.header-nav a:hover),
+.pl-body :global(.header-nav a.active) {
+  color: #333;
+  background: transparent;
+  font-weight: 400;
+}
+/* アイコン（検索・SNS） */
+.pl-body :global(.nav-icon-btn) {
+  color: #ccc !important;
+}
+.pl-body :global(.nav-icon-btn:hover) {
+  color: #555 !important;
+}
+/* 縦セパレータ */
+.pl-body :global(.nav-sep) {
+  background: #ebebeb;
+}
+/* ロゴを少し薄く */
+.pl-body :global(.k),
+.pl-body :global(.dot) {
+  color: #888;
+}
+.pl-body :global(.h) {
+  color: #888;
+}
+.pl-body :global(.site-logo:hover .k),
+.pl-body :global(.site-logo:hover .h) {
+  color: #444;
+}
+
 .pl-body :global(footer) {
   background: #fff;
   border-top: 1px solid #e8e8e8;
