@@ -19,6 +19,12 @@ const latestPhotolog = allPosts
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 1)[0];
 
+// ヒーロースライダー用：全カテゴリの最新6件（heroImageあり）
+const heroSlides = allPosts
+	.filter(p => p.data.heroImage)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 6);
+
 const categories = [
 	{
 		name: '旅行',
@@ -52,29 +58,41 @@ const categories = [
 	<body>
 		<Header />
 
-		<!-- ── Hero ─────────────────────────────────────── -->
-		<section class="hero">
-			<div class="hero-inner">
-				<p class="hero-eyebrow">welcome</p>
-				<!-- 撮影地ラベル -->
-				<p class="hero-location" aria-label="撮影地: Cebu City, Philippines">
-					<span class="hero-location-pin">
-						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 13-8 13S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-					</span>
-					<span>Cebu City, Philippines</span>
-				</p>
-				<h1 class="hero-title">
-					<span class="tk">旅</span><span class="th">と</span><span class="tk">写真</span><span class="th">と</span><span class="tk">コーヒー</span><span class="th">と</span><span class="tdot">。</span>
-				</h1>
-				<p class="hero-lead">
-					旅の途中で見つけた景色、一杯のコーヒーが運ぶ香り、<br class="br-md" />
-					気になるガジェットや買ってよかったもの。<br />
-					日々の「好き」をゆっくり綴ります。
-				</p>
-				<div class="hero-actions">
-					<a href="/blog" class="btn-primary">記事を読む</a>
-					<a href="/about" class="btn-secondary">About</a>
-				</div>
+		<!-- ── Hero Slider ──────────────────────────────── -->
+		<section class="hero-slider" aria-roledescription="carousel" aria-label="最新の記事">
+			<div class="slider-track" id="sliderTrack">
+				{heroSlides.map((post, i) => (
+					<div class="slide" data-index={i} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${heroSlides.length}`}>
+						{post.data.heroImage && (
+							<div class="slide-bg" style={`background-image: url('${post.data.heroImage}')`}></div>
+						)}
+						<div class="slide-overlay"></div>
+						<div class="slide-content">
+							<p class="slide-eyebrow">{post.data.category ?? 'article'}</p>
+							<h2 class="slide-title">{post.data.title}</h2>
+							<p class="slide-desc">{post.data.description}</p>
+							<a href={`/blog/${post.id}/`} class="slide-cta">Read More</a>
+						</div>
+					</div>
+				))}
+			</div>
+
+			<button class="slider-arrow slider-prev" id="sliderPrev" aria-label="前のスライド">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+			</button>
+			<button class="slider-arrow slider-next" id="sliderNext" aria-label="次のスライド">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+			</button>
+
+			<div class="slider-dots" id="sliderDots" role="tablist">
+				{heroSlides.map((_, i) => (
+					<button class={`slider-dot ${i === 0 ? 'is-active' : ''}`} data-index={i} aria-label={`スライド ${i + 1} へ`}></button>
+				))}
+			</div>
+
+			<div class="slider-scroll-hint" aria-hidden="true">
+				<span class="ssh-text">Scroll</span>
+				<span class="ssh-dot"></span>
 			</div>
 		</section>
 
@@ -163,157 +181,236 @@ const categories = [
 </html>
 
 <style>
-/* ── Hero（写真背景） ────────────────────────────── */
-.hero {
+/* ── Hero Slider ────────────────────────────── */
+.hero-slider {
 	position: relative;
-	overflow: hidden;   /* ← ここでクリップ */
-	min-height: clamp(480px, 70vh, 760px);
-	display: flex;
-	align-items: center;
+	overflow: hidden;
+	height: clamp(480px, 70vh, 760px);
+	background: #1a1a1a;
+	/* header-spacer (64px) を打ち消してスライダーをページ最上部まで広げる */
+	margin-top: -64px;
 }
 
-/*
-  ::before を上下にはみ出させ、overflow:hidden でカット。
-    top: -20/70 * 100% = -28.57%  → 画像上部20%を隠す
-    bottom: -10/70 * 100% = -14.29% → 画像下部10%を隠す
-*/
-.hero::before {
-	content: '';
+.slider-track {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: transform;
+}
+
+.slide {
+	position: relative;
+	flex: 0 0 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.slide-bg {
 	position: absolute;
-	top: -28.57%;
-	bottom: -14.29%;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	transform: scale(1.05);
+	transition: transform 7s ease-out;
+}
+.slide[data-active="true"] .slide-bg {
+	transform: scale(1);
+}
+.slide-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to right,
+		rgba(0,0,0,0.62) 0%,
+		rgba(0,0,0,0.38) 45%,
+		rgba(0,0,0,0.22) 100%),
+	linear-gradient(to bottom,
+		rgba(0,0,0,0.15) 0%,
+		rgba(0,0,0,0.1) 40%,
+		rgba(0,0,0,0.5) 100%);
+}
+.slide-content {
+	position: relative;
+	z-index: 2;
+	max-width: 1100px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+}
+.slide-eyebrow {
+	font-family: 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
+	font-size: 0.7rem;
+	letter-spacing: 0.45em;
+	color: rgba(255,255,255,0.75);
+	text-transform: uppercase;
+	margin: 0 0 1.25rem;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: opacity .8s ease .25s, transform .8s ease .25s;
+}
+.slide-title {
+	font-family: 'Hannari', 'Noto Serif JP', serif;
+	font-weight: 400;
+	font-size: clamp(1.7rem, 4vw, 2.8rem);
+	line-height: 1.5;
+	margin: 0 0 1.25rem;
+	max-width: 720px;
+	letter-spacing: 0.03em;
+	color: #fff;
+	text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4);
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity .9s ease .4s, transform .9s ease .4s;
+}
+.slide-desc {
+	font-family: 'Noto Serif JP', serif;
+	font-weight: 300;
+	font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+	color: rgba(255,255,255,0.85);
+	line-height: 2;
+	max-width: 540px;
+	margin: 0 0 2.25rem;
+	text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity .9s ease .55s, transform .9s ease .55s;
+}
+.slide-cta {
+	display: inline-block;
+	width: fit-content;
+	padding: 0.85em 2.4em;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 999px;
+	color: #fff;
+	text-decoration: none;
+	font-family: 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
+	font-size: 0.78rem;
+	letter-spacing: 0.25em;
+	backdrop-filter: blur(4px);
+	transition: background .25s, border-color .25s, letter-spacing .25s;
+	opacity: 0;
+	transform: translateY(12px);
+	transition-property: opacity, transform, background, border-color, letter-spacing;
+	transition-duration: .9s, .9s, .25s, .25s, .25s;
+	transition-delay: .7s, .7s, 0s, 0s, 0s;
+}
+.slide-cta:hover {
+	background: rgba(255,255,255,0.16);
+	border-color: #fff;
+	letter-spacing: 0.3em;
+}
+
+/* アクティブスライドの中身をフェードイン */
+.slide[data-active="true"] .slide-eyebrow,
+.slide[data-active="true"] .slide-title,
+.slide[data-active="true"] .slide-desc,
+.slide[data-active="true"] .slide-cta {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ── Arrows ─────────────────────── */
+.slider-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 3;
+	width: 48px;
+	height: 48px;
+	background: rgba(0,0,0,0.15);
+	border: 1px solid rgba(255,255,255,0.35);
+	border-radius: 50%;
+	color: rgba(255,255,255,0.85);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background .2s, color .2s, border-color .2s;
+	backdrop-filter: blur(4px);
+}
+.slider-arrow:hover {
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	border-color: rgba(255,255,255,0.7);
+}
+.slider-prev { left: 2rem; }
+.slider-next { right: 2rem; }
+
+/* ── Dots ─────────────────────── */
+.slider-dots {
+	position: absolute;
+	bottom: 2.5rem;
 	left: 0;
 	right: 0;
-	background:
-		linear-gradient(to bottom,
-			rgba(0,0,0,0.38) 0%,
-			rgba(0,0,0,0.22) 50%,
-			rgba(0,0,0,0.52) 100%),
-		url('/images/hero/A7C00530.webp') center / cover no-repeat;
-	z-index: 0;
+	display: flex;
+	justify-content: center;
+	gap: 0.55rem;
+	z-index: 3;
+}
+.slider-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.35);
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	transition: background .25s, width .35s, border-radius .35s;
+}
+.slider-dot:hover { background: rgba(255,255,255,0.6); }
+.slider-dot.is-active {
+	background: #fff;
+	width: 24px;
+	border-radius: 4px;
 }
 
-.hero-inner {
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 6rem 2rem 5rem;
-	position: relative;
-	z-index: 1;
-	width: 100%;
-}
-.hero-eyebrow {
-	font-size: 0.75rem;
-	letter-spacing: 0.3em;
-	text-transform: uppercase;
-	color: rgba(255,255,255,0.7);
-	margin: 0 0 1rem;
-}
-
-/* 撮影地ラベル（右下） */
-.hero-location {
+/* ── Scroll hint ─────────────────────── */
+.slider-scroll-hint {
 	position: absolute;
-	bottom: 1.4rem;
-	right: 1.8rem;
-	display: inline-flex;
+	bottom: 0.6rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
 	align-items: center;
-	gap: 0.35em;
-	font-family: 'Georgia', serif;
-	font-style: italic;
-	font-size: 0.72rem;
-	letter-spacing: 0.12em;
-	color: rgba(255,255,255,0.45);
-	margin: 0;
-	transition: color .3s;
-	z-index: 2;
+	gap: 0.4rem;
+	color: rgba(255,255,255,0.55);
+	z-index: 3;
 }
-.hero-location:hover {
-	color: rgba(255,255,255,0.75);
+.ssh-text {
+	font-family: 'BIZ UDPGothic', sans-serif;
+	font-size: 0.6rem;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
 }
-.hero-location-pin {
-	display: flex;
-	align-items: center;
-	opacity: 0.7;
+.ssh-dot {
+	display: block;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.6);
+	animation: sshBounce 2s ease-in-out infinite;
 }
-.hero-title {
-	display: flex;
-	align-items: baseline;
-	flex-wrap: wrap;
-	gap: 0;
-	font-size: clamp(2.2rem, 5.5vw, 4rem);
-	margin: 0 0 1.4rem;
-	line-height: 1.3;
-	/* テキストシャドウで写真に馴染ませる */
-	filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+@keyframes sshBounce {
+	0%, 100% { transform: translateY(0); opacity: 0.4; }
+	50%      { transform: translateY(4px); opacity: 1; }
 }
-/* 漢字・カタカナ：はんなり明朝（白） */
-.tk {
-	font-family: 'Hannari', 'Noto Serif JP', serif;
-	font-weight: 400;
-	color: #ffffff;
-	letter-spacing: 0.04em;
-}
-/* ひらがな：UD角ゴシック、小さめ（白） */
-.th {
-	font-family: 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
-	font-size: 0.62em;
-	font-weight: 400;
-	color: rgba(255,255,255,0.9);
-	letter-spacing: 0.02em;
-	position: relative;
-	top: -0.08em;
-}
-.tdot {
-	font-family: 'Hannari', 'Noto Serif JP', serif;
-	font-weight: 400;
-	color: #ffffff;
-	letter-spacing: 0;
-}
-.hero-lead {
-	font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-	color: rgba(255,255,255,0.82);
-	margin: 0 0 2.5rem;
-	line-height: 2.1;
-	max-width: 520px;
-	text-shadow: 0 1px 6px rgba(0,0,0,0.5);
-}
-.hero-actions {
-	display: flex;
-	gap: 1rem;
-	flex-wrap: wrap;
-}
-.btn-primary {
-	display: inline-block;
-	padding: 0.7em 1.8em;
-	background: rgba(255,255,255,0.18);
-	border: 1.5px solid rgba(255,255,255,0.6);
-	color: #fff;
-	border-radius: var(--radius-md);
-	font-size: 0.9rem;
-	font-weight: 700;
-	letter-spacing: 0.06em;
-	text-decoration: none;
-	backdrop-filter: blur(4px);
-	transition: background .2s, border-color .2s;
-}
-.btn-primary:hover {
-	background: rgba(255,255,255,0.3);
-	color: #fff;
-	border-color: #fff;
-}
-.btn-secondary {
-	display: inline-block;
-	padding: 0.7em 1.6em;
-	border: 1.5px solid rgba(255,255,255,0.35);
-	color: rgba(255,255,255,0.8);
-	border-radius: var(--radius-md);
-	font-size: 0.9rem;
-	letter-spacing: 0.04em;
-	text-decoration: none;
-	transition: border-color .2s, color .2s;
-}
-.btn-secondary:hover {
-	border-color: rgba(255,255,255,0.8);
-	color: #fff;
+
+/* ── Responsive ─────────────────────── */
+@media (max-width: 768px) {
+	.hero-slider { height: clamp(420px, 60vh, 600px); }
+	.slide-content { padding: 0 2rem; }
+	.slide-eyebrow { font-size: 0.62rem; letter-spacing: 0.35em; margin-bottom: 0.85rem; }
+	.slide-title { font-size: clamp(1.4rem, 5.5vw, 2rem); margin-bottom: 1rem; }
+	.slide-desc { font-size: 0.82rem; line-height: 1.8; margin-bottom: 1.75rem; }
+	.slide-cta { font-size: 0.72rem; padding: 0.75em 2em; }
+	.slider-arrow { width: 38px; height: 38px; }
+	.slider-prev { left: 0.75rem; }
+	.slider-next { right: 0.75rem; }
+	.slider-dots { bottom: 2rem; }
 }
 
 /* ── Section commons ───────────────────────────── */
@@ -570,9 +667,56 @@ const categories = [
 	.cat-card { grid-template-columns: auto 1fr auto; }
 }
 @media (max-width: 640px) {
-	.hero-inner { padding: 4rem 1rem 3.5rem; }
 	.section-inner { padding: 0 1rem; }
 	.posts-grid { grid-template-columns: 1fr; }
 	.br-md { display: none; }
 }
 </style>
+
+<script>
+// ── Hero Slider ──
+(() => {
+	const track = document.getElementById('sliderTrack');
+	const prev = document.getElementById('sliderPrev');
+	const next = document.getElementById('sliderNext');
+	const dotsWrap = document.getElementById('sliderDots');
+	if (!track || !prev || !next || !dotsWrap) return;
+
+	const slides = Array.from(track.querySelectorAll('.slide'));
+	const dots = Array.from(dotsWrap.querySelectorAll('.slider-dot'));
+	if (slides.length <= 1) return;
+
+	let current = 0;
+	let timer: ReturnType<typeof setInterval> | null = null;
+	const AUTO_MS = 6000;
+
+	function update(i: number) {
+		current = (i + slides.length) % slides.length;
+		track.style.transform = `translateX(-${current * 100}%)`;
+		slides.forEach((s, idx) => s.setAttribute('data-active', String(idx === current)));
+		dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
+	}
+
+	function play() {
+		stop();
+		timer = setInterval(() => update(current + 1), AUTO_MS);
+	}
+	function stop() { if (timer) { clearInterval(timer); timer = null; } }
+	function restart() { stop(); play(); }
+
+	prev.addEventListener('click', () => { update(current - 1); restart(); });
+	next.addEventListener('click', () => { update(current + 1); restart(); });
+	dots.forEach((d, i) => d.addEventListener('click', () => { update(i); restart(); }));
+
+	// ホバー中は止める
+	const slider = track.closest('.hero-slider');
+	if (slider) {
+		slider.addEventListener('mouseenter', stop);
+		slider.addEventListener('mouseleave', play);
+	}
+
+	// 初期化
+	update(0);
+	play();
+})();
+</script>
