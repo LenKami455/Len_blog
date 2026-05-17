@@ -16,7 +16,17 @@ const shareUrl = encodeURIComponent(pageUrl);
 
 <html lang="ja">
 	<head>
-		<BaseHead title={`${title} | ${SITE_TITLE}`} description={description} image={heroImage} />
+		<BaseHead
+			title={`${title} | ${SITE_TITLE}`}
+			description={description}
+			image={heroImage}
+			article={{
+				publishedTime: pubDate,
+				modifiedTime: updatedDate,
+				section: category,
+				tags,
+			}}
+		/>
 		<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 	</head>
 

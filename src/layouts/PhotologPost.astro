@@ -7,7 +7,7 @@ import { SITE_TITLE } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { postId: string };
 
-const { title, description, pubDate, heroImage, postId } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags = [], category, postId } = Astro.props;
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('ja-JP', {
@@ -36,7 +36,17 @@ function getVolLabel(id: string): string {
 
 <html lang="ja">
   <head>
-    <BaseHead title={`${title} | ${SITE_TITLE}`} description={description} image={heroImage} />
+    <BaseHead
+      title={`${title} | ${SITE_TITLE}`}
+      description={description}
+      image={heroImage}
+      article={{
+        publishedTime: pubDate,
+        modifiedTime: updatedDate,
+        section: category,
+        tags,
+      }}
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet" />
