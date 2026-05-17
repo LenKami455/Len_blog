@@ -1267,72 +1267,67 @@ document.addEventListener('keydown', (e) => {
 /* ── Photolog CTA（旅行記事内のフォトログ誘導）─ */
 .prose :global(.photolog-cta) {
 	margin: 3rem 0 2rem;
-	padding: 2rem 2rem 1.75rem;
-	border: 1px solid #e0e0e0;
-	border-radius: 6px;
-	background: linear-gradient(180deg, #fafaf7 0%, #f5f1e8 100%);
-	position: relative;
+	padding: 1.5rem 1.75rem 1.75rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
 }
 .prose :global(.photolog-cta .plc-label) {
-	font-family: 'Cormorant Garamond', Georgia, serif;
+	font-family: var(--font-serif);
 	font-size: 0.7rem;
-	letter-spacing: 0.4em;
-	color: #a08c6e;
-	text-transform: uppercase;
-	margin: 0 0 0.35rem;
+	letter-spacing: 0.18em;
+	color: var(--color-accent);
+	margin: 0 0 0.45rem;
+	font-weight: 700;
 }
 .prose :global(.photolog-cta .plc-title) {
 	font-family: var(--font-serif);
-	font-size: 1.15rem;
+	font-size: 1rem;
 	font-weight: 700;
-	color: #333;
-	margin: 0 0 1.25rem;
-	letter-spacing: 0.05em;
+	color: var(--color-text);
+	margin: 0 0 1.2rem;
+	letter-spacing: 0.04em;
 }
 .prose :global(.photolog-cta .plc-links) {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 0.75rem;
+	gap: 0.5rem;
 }
 .prose :global(.photolog-cta .plc-link) {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding: 0.85rem 0.5rem 0.95rem;
-	background: #fff;
-	border: 1px solid #e8e0cf;
-	border-radius: 4px;
+	align-items: flex-start;
+	gap: 0.25rem;
+	padding: 0.8rem 1rem 0.9rem;
+	background: var(--color-bg);
+	border: 1px solid transparent;
+	border-radius: var(--radius-sm);
 	text-decoration: none;
-	color: #555;
-	transition: border-color .2s, color .2s, transform .2s, box-shadow .2s;
+	transition: background .2s, border-color .2s;
 }
 .prose :global(.photolog-cta .plc-link:hover) {
-	color: #6d5a3d;
-	border-color: #c9b896;
-	transform: translateY(-1px);
-	box-shadow: 0 4px 12px rgba(160,140,110,0.12);
+	background: var(--color-accent-bg);
+	border-color: var(--color-border);
 }
 .prose :global(.photolog-cta .plc-vol) {
-	font-family: 'Cormorant Garamond', Georgia, serif;
-	font-style: italic;
-	font-size: 1.4rem;
-	font-weight: 400;
-	color: #a08c6e;
+	font-family: var(--font-serif);
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--color-accent);
 	line-height: 1;
-	margin-bottom: 0.35rem;
+	letter-spacing: 0.03em;
 }
 .prose :global(.photolog-cta .plc-desc) {
 	font-family: var(--font-serif);
-	font-size: 0.8rem;
+	font-size: 0.78rem;
 	font-weight: 400;
-	letter-spacing: 0.04em;
-	color: #777;
+	letter-spacing: 0.02em;
+	color: var(--color-text-muted);
 }
 @media (max-width: 600px) {
-	.prose :global(.photolog-cta) { padding: 1.5rem 1.25rem 1.25rem; }
-	.prose :global(.photolog-cta .plc-links) { grid-template-columns: 1fr; gap: 0.5rem; }
-	.prose :global(.photolog-cta .plc-link) { flex-direction: row; justify-content: flex-start; gap: 1rem; padding: 0.75rem 1rem; }
-	.prose :global(.photolog-cta .plc-vol) { margin-bottom: 0; font-size: 1.2rem; }
+	.prose :global(.photolog-cta) { padding: 1.25rem 1.25rem 1.25rem; }
+	.prose :global(.photolog-cta .plc-links) { grid-template-columns: 1fr; gap: 0.4rem; }
+	.prose :global(.photolog-cta .plc-link) { flex-direction: row; align-items: baseline; gap: 0.75rem; padding: 0.7rem 1rem; }
 }
 
 /* ── Travel: Trip card ───────────────────────────── */
