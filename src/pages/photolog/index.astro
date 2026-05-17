@@ -8,7 +8,7 @@ import { SITE_TITLE } from '../../consts';
 const allPosts = await getCollection('blog');
 const posts = allPosts
   .filter(p => p.data.category === 'フォトログ')
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long' });
@@ -32,12 +32,29 @@ function formatDate(date: Date) {
       <header class="pl-page-header">
         <p class="pl-eyebrow">photo log</p>
         <h1 class="pl-page-title">photolog.</h1>
+
+        <!-- ── Index nav ─────────────── -->
+        <nav class="pl-index" aria-label="フォトログ インデックス">
+          {posts.map((post) => {
+            const volMatch = post.id.match(/vol(\d+)/i);
+            const volNum = volMatch ? volMatch[1] : post.id;
+            const anchor = `vol-${volNum}`;
+            return (
+              <a href={`#${anchor}`} class="pl-index-link">
+                vol.{volNum}
+              </a>
+            );
+          })}
+        </nav>
       </header>
 
       <!-- ── Entry list ────────────────── -->
       <div class="pl-entries">
-        {posts.map((post, i) => (
-          <a href={`/blog/${post.id}/`} class="pl-entry">
+        {posts.map((post, i) => {
+          const volMatch = post.id.match(/vol(\d+)/i);
+          const volNum = volMatch ? volMatch[1] : String(i + 1);
+          return (
+          <a href={`/blog/${post.id}/`} class="pl-entry" id={`vol-${volNum}`}>
 
             <!-- 写真 -->
             {post.data.heroImage && (
@@ -57,7 +74,8 @@ function formatDate(date: Date) {
             </div>
 
           </a>
-        ))}
+          );
+        })}
       </div>
 
     </main>
@@ -110,6 +128,30 @@ function formatDate(date: Date) {
   letter-spacing: -0.01em;
   line-height: 1;
   margin: 0;
+}
+
+/* ── Index nav ──────────────────────────────── */
+.pl-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.pl-index-link {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  color: #bbb;
+  text-decoration: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
+  transition: color .2s, border-color .2s;
+}
+.pl-index-link:hover {
+  color: #555;
+  border-color: #bbb;
 }
 
 /* ── Entries ────────────────────────────────── */
@@ -222,7 +264,8 @@ function formatDate(date: Date) {
 
 /* スマホ：テキストを写真の下に出す */
 @media (max-width: 560px) {
-  .pl-page-header { padding: 3rem 1.25rem 2.5rem; }
+  .pl-page-header { padding: 3rem 1.25rem 2rem; }
+  .pl-index { margin-top: 1.25rem; }
   .pl-entry { margin-bottom: 3rem; }
   /* タブレット用グラデーションオーバーレイを消す */
   .pl-entry::after { display: none; }
