@@ -1,0 +1,21 @@
+{
+  "name": "旅と写真とコーヒーと。",
+  "short_name": "旅と写真と。",
+  "description": "旅・写真・コーヒー・気になるガジェットの記録。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F5F0",
+  "theme_color": "#8B5E3C",
+  "icons": [
+    {
+      "src": "/android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
