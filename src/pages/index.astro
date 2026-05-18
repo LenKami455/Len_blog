@@ -232,7 +232,8 @@ const categories = [
 	max-width: 1100px;
 	height: 100%;
 	margin: 0 auto;
-	padding: 0 4rem;
+	/* 矢印（48px）+ 配置(1rem) と干渉しないよう左右パディング広め */
+	padding: 0 5.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -334,8 +335,8 @@ const categories = [
 	color: #fff;
 	border-color: rgba(255,255,255,0.7);
 }
-.slider-prev { left: 2rem; }
-.slider-next { right: 2rem; }
+.slider-prev { left: 1rem; }
+.slider-next { right: 1rem; }
 
 /* ── Dots ─────────────────────── */
 .slider-dots {
