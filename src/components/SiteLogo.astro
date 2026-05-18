@@ -1,10 +1,19 @@
 ---
+// マーク（コーヒー豆＋円）+ 文字（旅と写真とコーヒーと。）
 // 漢字・カタカナ → Hannari（はんなり明朝）
 // ひらがな → BIZ UDPGothic（UD角ゴシック）、小さめ
 // 。→ #004184
 ---
 
 <a href="/" class="site-logo" aria-label="旅と写真とコーヒーと。 ホームへ">
+	<img
+		src="/logo-mark.svg"
+		alt=""
+		class="logo-mark"
+		width="32"
+		height="32"
+		aria-hidden="true"
+	/>
 	<span class="logo-text" aria-label="旅と写真とコーヒーと。">
 		<span class="k">旅</span><span class="h">と</span><span class="k">写真</span><span class="h">と</span><span class="k">コーヒー</span><span class="h">と</span><span class="dot">。</span>
 	</span>
@@ -14,8 +23,23 @@
 	.site-logo {
 		display: inline-flex;
 		align-items: center;
+		gap: 0.2em;
 		text-decoration: none;
 		flex-shrink: 0;
+		transition: opacity .2s;
+	}
+	.site-logo:hover {
+		opacity: 0.85;
+	}
+
+	.logo-mark {
+		width: 3.5em;
+		height: 3.5em;
+		flex-shrink: 0;
+		transition: transform .25s ease;
+	}
+	.site-logo:hover .logo-mark {
+		transform: rotate(-8deg);
 	}
 
 	.logo-text {
@@ -55,5 +79,11 @@
 	}
 	.site-logo:hover .dot {
 		color: #004184;
+	}
+
+	/* スマホでは余白を詰める */
+	@media (max-width: 480px) {
+		.site-logo { gap: 0.15em; }
+		.logo-mark { width: 2.6em; height: 2.6em; }
 	}
 </style>
