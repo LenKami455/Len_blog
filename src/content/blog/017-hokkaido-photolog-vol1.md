@@ -29,7 +29,7 @@ category: 'フォトログ'
     <img src="/images/photolog/hokkaido-vol1/a7c01312.webp" alt="" />
     <span class="pl-cap">小樽駅、到着。雪景色がいきなり北海道</span>
   </div>
-  <div class="pl-item">
+  <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/hokkaido-vol1/a7c01329.webp" alt="" />
     <span class="pl-cap">路地裏。太陽生命の看板と雪道</span>
   </div>
@@ -55,11 +55,11 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol1/a7c01359.webp" alt="" />
-    <span class="pl-cap">雪に置かれた誰かの落とし物のぬいぐるみ</span>
+    <span class="pl-cap">彼女のぬい活with雪</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol1/a7c01362.webp" alt="" />
-    <span class="pl-cap">JAPANESE WHISKYの看板と古い建物</span>
+    <span class="pl-cap">BARクロクマ</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol1/a7c01365.webp" alt="" />
@@ -143,7 +143,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol1/a7c01504.webp" alt="" />
-    <span class="pl-cap">白帆堂NAKASHI、ガラス工房</span>
+    <span class="pl-cap">白帆堂NAKASHI、洒落た雑貨屋</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol1/a7c01510.webp" alt="" />
@@ -211,7 +211,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol1/a7c01594.webp" alt="" />
-    <span class="pl-cap">すすきの仲通り、信玄行く前</span>
+    <span class="pl-cap">ホテルに向かう道</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol1/a7c01595.webp" alt="" />

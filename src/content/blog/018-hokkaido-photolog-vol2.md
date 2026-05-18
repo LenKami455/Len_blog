@@ -43,7 +43,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/hokkaido-vol2/a7c01627.webp" alt="" />
-    <span class="pl-cap">大通公園に小さな雪だるま。誰かの作品</span>
+    <span class="pl-cap">大通公園で小さな雪だるま作った</span>
   </div>
 </div>
 
@@ -67,7 +67,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/hokkaido-vol2/a7c01644.webp" alt="" />
-    <span class="pl-cap">市場で食べた昼食。あつあつ</span>
+    <span class="pl-cap">札幌といえばスープカレーですよ。ごぼうが最高</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol2/a7c01652.webp" alt="" />
@@ -99,7 +99,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/hokkaido-vol2/a7c01688.webp" alt="" />
-    <span class="pl-cap">ホテルの廊下。奥のオレンジが効いてる</span>
+    <span class="pl-cap">六花亭はトイレまでの道もおしゃれなんすわ</span>
   </div>
 </div>
 
@@ -131,15 +131,15 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol2/a7c01708.webp" alt="" />
-    <span class="pl-cap">カニ料理、レモン添え</span>
+    <span class="pl-cap">カニのステーキですって、奥さん。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol2/a7c01715.webp" alt="" />
-    <span class="pl-cap">かに亭ぬいぐるみ、紙の帽子付き</span>
+    <span class="pl-cap">カニと化したクジラ</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/hokkaido-vol2/a7c01716.webp" alt="" />
-    <span class="pl-cap">締めの雑炊。これが一番だった</span>
+    <span class="pl-cap">冷えた体に染みるぅ〜</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/hokkaido-vol2/a7c01718.webp" alt="" />

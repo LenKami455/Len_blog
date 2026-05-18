@@ -400,15 +400,28 @@ const categories = [
 /* ── Responsive ─────────────────────── */
 @media (max-width: 768px) {
 	.hero-slider { height: clamp(420px, 60vh, 600px); }
-	.slide-content { padding: 0 2rem; }
+	/* 矢印（38px）+ 配置(0.75rem) と被らないよう左右パディングを広く取る */
+	.slide-content { padding: 0 3.5rem; }
 	.slide-eyebrow { font-size: 0.62rem; letter-spacing: 0.35em; margin-bottom: 0.85rem; }
 	.slide-title { font-size: clamp(1.4rem, 5.5vw, 2rem); margin-bottom: 1rem; }
 	.slide-desc { font-size: 0.82rem; line-height: 1.8; margin-bottom: 1.75rem; }
 	.slide-cta { font-size: 0.72rem; padding: 0.75em 2em; }
 	.slider-arrow { width: 38px; height: 38px; }
-	.slider-prev { left: 0.75rem; }
-	.slider-next { right: 0.75rem; }
+	.slider-prev { left: 0.5rem; }
+	.slider-next { right: 0.5rem; }
 	.slider-dots { bottom: 2rem; }
+}
+@media (max-width: 480px) {
+	/* 小さいスマホでは矢印を半透明＆さらに左右パディング確保 */
+	.slide-content { padding: 0 3rem; }
+	.slider-arrow {
+		width: 32px;
+		height: 32px;
+		background: rgba(0,0,0,0.25);
+		border-color: rgba(255,255,255,0.3);
+	}
+	.slider-prev { left: 0.3rem; }
+	.slider-next { right: 0.3rem; }
 }
 
 /* ── Section commons ───────────────────────────── */
