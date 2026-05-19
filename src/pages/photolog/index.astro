@@ -17,9 +17,10 @@ const tripPosts = photologs.filter(p => !/^\d+-photolog-vol/.test(p.id));
 
 // 旅行フォトログを trip 名でグルーピング
 type TripGroup = { name: string; label: string; subtitle: string; posts: typeof tripPosts };
-const tripMeta: Record<string, { label: string; subtitle: string }> = {
-  cebu: { label: 'cebu trip', subtitle: 'Sep. 2025 — 3泊4日' },
-  hokkaido: { label: 'hokkaido trip', subtitle: 'Dec. 2025 — 2泊3日' },
+const tripMeta: Record<string, { label: string; subtitle: string; titleReplace?: [string, string] }> = {
+  cebu: { label: 'cebu trip', subtitle: 'Sep. 2025 — 3泊4日', titleReplace: ['セブ島旅行フォトログ', 'cebu trip'] },
+  hokkaido: { label: 'hokkaido trip', subtitle: 'Dec. 2025 — 2泊3日', titleReplace: ['北海道旅行フォトログ', 'hokkaido trip'] },
+  fukuoka: { label: 'fukuoka trip', subtitle: 'Feb. 2026 — 2泊3日', titleReplace: ['福岡', 'Fukuoka'] },
 };
 
 const tripGroupsMap = new Map<string, typeof tripPosts>();
@@ -50,7 +51,8 @@ function formatDate(date: Date) {
 // インデックスページ表示用タイトル（英語化）
 function displayTitle(title: string, tripName?: string): string {
   if (tripName && tripMeta[tripName]) {
-    return title.replace(`${tripName === 'cebu' ? 'セブ島' : tripName === 'hokkaido' ? '北海道' : ''}旅行フォトログ`, tripMeta[tripName].label);
+    const [from, to] = tripMeta[tripName].titleReplace ?? [];
+    if (from && to) return title.replace(from, to);
   }
   return title.replace('フォトログ', 'photolog');
 }
