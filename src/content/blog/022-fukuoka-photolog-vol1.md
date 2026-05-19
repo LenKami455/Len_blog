@@ -1,8 +1,8 @@
----
+﻿---
 title: '福岡 photo log vol.1'
 description: '帰省Day 1のフォトログ。天神・薬院・博多を歩いた一日。REC COFFEE、玄海丸、COFFEE COUNTY、B・B・B POTTERS、櫛田神社、WHITE GLASS COFFEE、NUMBER SHOT。'
 pubDate: '2026-05-19T00:22:00'
-heroImage: 'images\022-fukuoka-photolog-vol1\a7c01823.webp'
+heroImage: '/images/022-fukuoka-photolog-vol1/a7c01823.webp'
 tags: ['フォトログ', '福岡', '旅行']
 category: 'フォトログ'
 ---
