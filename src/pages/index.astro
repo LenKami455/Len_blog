@@ -19,11 +19,14 @@ const latestPhotolog = allPosts
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 1)[0];
 
-// ヒーロースライダー用：全カテゴリの最新6件（heroImageあり）
-const heroSlides = allPosts
-	.filter(p => p.data.heroImage)
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 6);
+// ヒーロースライダー用：featured記事を優先、足りなければ最新で補完（heroImageあり、最大6件）
+const featuredPosts = allPosts
+	.filter(p => p.data.heroImage && p.data.featured)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const fallbackPosts = allPosts
+	.filter(p => p.data.heroImage && !p.data.featured)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const heroSlides = [...featuredPosts, ...fallbackPosts].slice(0, 6);
 
 const categories = [
 	{

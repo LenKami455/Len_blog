@@ -3,6 +3,7 @@ title: '福岡に行ってきた。vol.1'
 description: '実家が神戸から福岡に変わってた話。初めての帰省、初日は天神・薬院・博多をぐるっと。REC COFFEE、玄海丸の寿司、COFFEE COUNTY、B・B・B POTTERS、櫛田神社、WHITE GLASS COFFEE、夜は NUMBER SHOT で鰻巻きに優勝。'
 pubDate: '2026-05-19T00:19:00'
 heroImage: '/images/019-fukuoka-vol1/a7c01871.webp'
+featured: true
 tags: ['旅行', '福岡', '帰省', 'グルメ', 'カフェ']
 category: '旅'
 ---

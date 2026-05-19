@@ -3,6 +3,7 @@ title: '使ってるカップを全部紹介する。'
 description: 'コーヒーを飲むのに使ってるカップ5選。木村硝子・ORIGAMI×2・Varia・波佐見焼。器で飲み物は変わる。'
 pubDate: '2026-05-18T00:10:00'
 heroImage: '/images/cups/hero.webp'
+featured: true
 tags: ['コーヒー', 'カップ', '食器', '買ったもの']
 category: 'コーヒー'
 ---

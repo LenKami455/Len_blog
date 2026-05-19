@@ -3,6 +3,7 @@ title: '福岡 photo log vol.4'
 description: '帰省Day 3後半のフォトログ。博多でバスクチーズケーキ、大濠公園で夕日、旅の〆は博多一幸舎の泡系豚骨ラーメン。'
 pubDate: '2026-05-19T00:25:00'
 heroImage: '/images/025-fukuoka-photolog-vol4/a7c02247.webp'
+featured: true
 tags: ['フォトログ', '福岡', '大濠公園', '旅行']
 category: 'フォトログ'
 ---
