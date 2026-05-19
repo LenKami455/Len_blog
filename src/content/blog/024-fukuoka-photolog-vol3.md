@@ -103,7 +103,7 @@ category: 'フォトログ'
     <img src="/images/024-fukuoka-photolog-vol3/a7c02126.webp" alt="" />
     <span class="pl-cap">ひょうたんの飾り。縁起物らしい。</span>
   </div>
-  <div class="pl-item pl-item--portrait">
+  <div class="pl-item pl-item--wide">
     <img src="/images/024-fukuoka-photolog-vol3/a7c02129.webp" alt="" />
     <span class="pl-cap">梅のつぼみ。咲き始めの2月。</span>
   </div>
