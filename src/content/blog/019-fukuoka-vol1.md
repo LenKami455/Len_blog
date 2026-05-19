@@ -117,6 +117,29 @@ La Marzocco のマシンに「CAFEC JAPAN BREWERS CUP 2024」のトロフィー�
 
 初日からカフェ3軒・寿司・神社・居酒屋とフル稼働。福岡、密度がやばい街。
 
+<div class="photolog-cta">
+  <p class="plc-label">この旅のフォトログ</p>
+  <p class="plc-title">福岡旅行フォトログ</p>
+  <div class="plc-links">
+    <a href="/blog/022-fukuoka-photolog-vol1/" class="plc-link">
+      <span class="plc-vol">vol.1</span>
+      <span class="plc-desc">Day 1 · 天神・博多</span>
+    </a>
+    <a href="/blog/023-fukuoka-photolog-vol2/" class="plc-link">
+      <span class="plc-vol">vol.2</span>
+      <span class="plc-desc">Day 2 · 糸島</span>
+    </a>
+    <a href="/blog/024-fukuoka-photolog-vol3/" class="plc-link">
+      <span class="plc-vol">vol.3</span>
+      <span class="plc-desc">Day 3 前半 · 太宰府</span>
+    </a>
+    <a href="/blog/025-fukuoka-photolog-vol4/" class="plc-link">
+      <span class="plc-vol">vol.4</span>
+      <span class="plc-desc">Day 3 後半 · 大濠公園・夜</span>
+    </a>
+  </div>
+</div>
+
 <div class="series-nav">
   <div></div>
   <a href="/blog/020-fukuoka-vol2/" class="series-btn next">

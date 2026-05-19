@@ -103,6 +103,29 @@ category: '旅'
 
 3日間、福岡を堪能した。**「初めての帰省」がこんなに観光になることある？** という気持ちもあるけど、初めて来る街を母と歩いた時間はそれ自体が思い出になった。食もカフェも街もいい街で、普通にまた行きたい。というか3ヶ月後に行ってました。
 
+<div class="photolog-cta">
+  <p class="plc-label">この旅のフォトログ</p>
+  <p class="plc-title">福岡旅行フォトログ</p>
+  <div class="plc-links">
+    <a href="/blog/022-fukuoka-photolog-vol1/" class="plc-link">
+      <span class="plc-vol">vol.1</span>
+      <span class="plc-desc">Day 1 · 天神・博多</span>
+    </a>
+    <a href="/blog/023-fukuoka-photolog-vol2/" class="plc-link">
+      <span class="plc-vol">vol.2</span>
+      <span class="plc-desc">Day 2 · 糸島</span>
+    </a>
+    <a href="/blog/024-fukuoka-photolog-vol3/" class="plc-link">
+      <span class="plc-vol">vol.3</span>
+      <span class="plc-desc">Day 3 前半 · 太宰府</span>
+    </a>
+    <a href="/blog/025-fukuoka-photolog-vol4/" class="plc-link">
+      <span class="plc-vol">vol.4</span>
+      <span class="plc-desc">Day 3 後半 · 大濠公園・夜</span>
+    </a>
+  </div>
+</div>
+
 <div class="series-nav">
   <a href="/blog/020-fukuoka-vol2/" class="series-btn">
     <p class="sb-label">Prev · vol.2</p>
