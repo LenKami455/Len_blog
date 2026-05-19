@@ -2,7 +2,7 @@
 title: '福岡 photo log vol.1'
 description: '帰省Day 1のフォトログ。天神・薬院・博多を歩いた一日。REC COFFEE、玄海丸、COFFEE COUNTY、B・B・B POTTERS、櫛田神社、WHITE GLASS COFFEE、NUMBER SHOT。'
 pubDate: '2026-05-19T00:22:00'
-heroImage: '/images/022-fukuoka-photolog-vol1/a7c01830.webp'
+heroImage: 'images\022-fukuoka-photolog-vol1\a7c01823.webp'
 tags: ['フォトログ', '福岡', '旅行']
 category: 'フォトログ'
 ---
@@ -113,7 +113,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/022-fukuoka-photolog-vol1/a7c01889.webp" alt="" />
-    <span class="pl-cap">ビルの窓。</span>
+    <span class="pl-cap">大量のブラウン管テレビ。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/022-fukuoka-photolog-vol1/a7c01893.webp" alt="" />
@@ -141,7 +141,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/022-fukuoka-photolog-vol1/a7c01912.webp" alt="" />
-    <span class="pl-cap">卵料理と馬刺し的なやつ。全部うまかった。</span>
+    <span class="pl-cap">明太だし巻きと馬刺し。全部うまかった。</span>
   </div>
   <div class="pl-item">
     <img src="/images/022-fukuoka-photolog-vol1/a7c01914.webp" alt="" />

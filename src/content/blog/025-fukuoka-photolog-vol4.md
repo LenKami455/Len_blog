@@ -38,15 +38,15 @@ category: 'フォトログ'
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02240.webp" alt="" />
-    <span class="pl-cap">ベンチで夕暮れを見ていた人がいた。</span>
+    <span class="pl-cap">エモいね。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02247.webp" alt="" />
-    <span class="pl-cap">3日間で一番好きな景色。</span>
+    <span class="pl-cap">雲が幻想的だね。</span>
   </div>
   <div class="pl-item">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02252.webp" alt="" />
-    <span class="pl-cap">東屋がシルエットになった。</span>
+    <span class="pl-cap">シルエット。</span>
   </div>
   <div class="pl-item">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02255.webp" alt="" />

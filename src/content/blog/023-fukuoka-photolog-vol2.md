@@ -2,7 +2,7 @@
 title: '福岡 photo log vol.2'
 description: '帰省Day 2のフォトログ。高宮のカフェでミートパイ、糸島でいちご狩り、海辺を散歩、夜は塩檸檬もつ鍋。'
 pubDate: '2026-05-19T00:23:00'
-heroImage: '/images/023-fukuoka-photolog-vol2/a7c02034.webp'
+heroImage: '/images/023-fukuoka-photolog-vol2/a7c02010.webp'
 tags: ['フォトログ', '福岡', '糸島', '旅行']
 category: 'フォトログ'
 ---
@@ -25,7 +25,7 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--portrait">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01919.webp" alt="" />
-    <span class="pl-cap">d&h vita のチリミートパイ。</span>
+    <span class="pl-cap">d&h vita の朝。こういう場所に住みたい。</span>
   </div>
   <div class="pl-item">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01920.webp" alt="" />
@@ -37,11 +37,11 @@ category: 'フォトログ'
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01926.webp" alt="" />
-    <span class="pl-cap">コーヒー豆のジャーが並んでる。</span>
+    <span class="pl-cap">綺麗なインテリア。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01929.webp" alt="" />
-    <span class="pl-cap">d&h vita の朝。こういう場所に住みたい。</span>
+    <span class="pl-cap">d&h vita のチリミートパイ。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01934.webp" alt="" />
@@ -53,15 +53,15 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01944.webp" alt="" />
-    <span class="pl-cap">いちごの花。かわいい。</span>
+    <span class="pl-cap">いちご！</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01947.webp" alt="" />
-    <span class="pl-cap">赤と緑のコントラスト。</span>
+    <span class="pl-cap">めっちゃなってる！。</span>
   </div>
   <div class="pl-item">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01957.webp" alt="" />
-    <span class="pl-cap">真剣に選んでる。</span>
+    <span class="pl-cap">うまうま。</span>
   </div>
   <div class="pl-item">
     <img src="/images/023-fukuoka-photolog-vol2/a7c01967.webp" alt="" />
@@ -97,7 +97,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/023-fukuoka-photolog-vol2/a7c02002.webp" alt="" />
-    <span class="pl-cap">糸島ピクニックビレッジ。</span>
+    <span class="pl-cap">ちょっと楽しそう。</span>
   </div>
   <div class="pl-item">
     <img src="/images/023-fukuoka-photolog-vol2/a7c02007.webp" alt="" />

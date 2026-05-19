@@ -73,7 +73,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item">
     <img src="/images/024-fukuoka-photolog-vol3/a7c02083.webp" alt="" />
-    <span class="pl-cap">「名物 梅」の幕の前で。</span>
+    <span class="pl-cap">うまかった。年を重ねるごとにあんこがうまくなる。</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/024-fukuoka-photolog-vol3/a7c02087.webp" alt="" />
