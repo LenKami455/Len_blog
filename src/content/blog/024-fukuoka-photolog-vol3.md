@@ -209,7 +209,7 @@ category: 'フォトログ'
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/024-fukuoka-photolog-vol3/a7c02223.webp" alt="" />
-    <span class="pl-cap">帰りの西鉄太宰府駅。</span>
+    <span class="pl-cap">西鉄二日市で乗り換え。</span>
   </div>
 </div>
 
