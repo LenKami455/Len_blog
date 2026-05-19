@@ -49,11 +49,11 @@ category: '旅'
 母と天神駅で待ち合わせて、まずは **REC COFFEE 天神南店** へ。福岡発のスペシャルティコーヒー店で、福岡では知らない人がいないくらい有名らしい。母と向き合って初めての福岡について話しながら飲んだ一杯。
 
 <img src="/images/019-fukuoka-vol1/a7c01805.webp" alt="REC COFFEE のカップ" />
-<p class="img-caption">REC COFFEE、福岡発のスペシャルティコーヒー。豆も買って帰った。</p>
+<p class="img-caption">REC COFFEE、福岡発のスペシャルティコーヒー。</p>
 
 <h2 class="section-title">お昼は福岡ローカルの回転寿司「玄海丸」。</h2>
 
-母おすすめで **玄海丸 天神店** へ。福岡・博多・天神に展開している地元の回転寿司チェーンで、九州の魚を中心に扱ってる。北海道出身として「正直地元の寿司には敵わない」と勝手にハードルを上げて行ったんですが、**普通に感動するレベルでうまかった**。九州の魚、ナメてました。すいません。
+**玄海丸 天神店** へ。福岡・博多・天神に展開している地元の回転寿司チェーンで、九州の魚を中心に扱ってる。北海道出身として「正直地元の寿司には敵わない」と勝手にハードルを上げて行ったんですが、**普通に感動するレベルでうまかった**。九州の魚、ナメてました。すいません。
 
 <img src="/images/019-fukuoka-vol1/a7c01818.webp" alt="玄海丸 の寿司" />
 <p class="img-caption">玄海丸の寿司。回転寿司でこのクオリティはずるい。</p>
@@ -67,11 +67,11 @@ category: '旅'
   <img src="/images/019-fukuoka-vol1/a7c01823.webp" alt="COFFEE COUNTY の看板" />
   <img src="/images/019-fukuoka-vol1/a7c01828.webp" alt="COFFEE COUNTY のエスプレッソマシン" />
 </div>
-<p class="img-caption">COFFEE COUNTY、紫の看板が目印。La Marzocco の横に CAFEC JAPAN BREWERS CUP 2024 のトロフィー。</p>
+<p class="img-caption">COFFEE COUNTY、紫の看板が目印。マシンも紫で可愛い。</p>
 
 La Marzocco のマシンに「CAFEC JAPAN BREWERS CUP 2024」のトロフィーが並んでて、本格派っぷりがすごい。豆を直接買い付けてる店だけあって、味のクリーンさが別格でした。
 
-すぐ近くの **B・B・B POTTERS（スリービーポッターズ）** へ。1991年創業の雑貨・キッチンウェアの名店で、薬院に来たら絶対行きたかった場所。
+すぐ近くの **B・B・B POTTERS（スリービーポッターズ）** へ。1991年創業の雑貨・キッチンウェアの名店で、母おすすめの場所。生活雑貨好きは遺伝かな。
 <div class="pg-2">
   <img src="/images/019-fukuoka-vol1/a7c01839.webp" alt="B・B・B POTTERS の外観" />
   <img src="/images/019-fukuoka-vol1/a7c01849.webp" alt="B・B・B POTTERS の店内" />
@@ -98,7 +98,7 @@ La Marzocco のマシンに「CAFEC JAPAN BREWERS CUP 2024」のトロフィー�
 
 <h2 class="section-title">夜は天神 NUMBER SHOT。お通しの鰻巻きで優勝。</h2>
 
-夕飯は天神の **NUMBER SHOT** へ。九州の鮮魚と創作和食を出す居酒屋で、雰囲気は居酒屋というよりちょっとモダンめのバル寄り。
+夕飯は父も合流して天神の **NUMBER SHOT** へ。九州の鮮魚と創作和食を出す居酒屋で、雰囲気は居酒屋というよりちょっとモダンめのバル寄り。
 <div class="pg-2">
   <img src="/images/019-fukuoka-vol1/a7c01906.webp" alt="NUMBER SHOT 看板" />
   <img src="/images/019-fukuoka-vol1/a7c01908.webp" alt="NUMBER SHOT のお通し 鰻巻き" />
@@ -108,7 +108,7 @@ La Marzocco のマシンに「CAFEC JAPAN BREWERS CUP 2024」のトロフィー�
 全部おいしかったんですが、特に **お通しの鰻巻き** がやばかった。鰻の脂と酢飯のバランスが完璧で、これだけでお酒が進む。お通しの時点で当たりを引いた予感がして、その後の料理にも期待が膨らむやつ。実際全部当たりでした。
 
 <img src="/images/019-fukuoka-vol1/a7c01911.webp" alt="NUMBER SHOT のカルパッチョ" />
-<p class="img-caption">九州の鮮魚のカルパッチョ。皿の絵もきれい。</p>
+<p class="img-caption">福岡名物ごまさば。気に入ったぜ…</p>
 
 <div class="tip-box">
   <span class="tip-icon">🍶</span>
