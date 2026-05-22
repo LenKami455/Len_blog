@@ -143,12 +143,13 @@ const shareUrl = encodeURIComponent(pageUrl);
 			init({
 				el: '#waline',
 				serverURL: 'https://waline-rho-woad.vercel.app',
-				lang: 'ja',
+				lang: 'jp-JP',
 				placeholder: 'コメントを書く...',
 				requiredMeta: ['nick'],
 				login: 'disable',
 				pageview: true,
-				reaction: true,
+				reaction: ['/reaction-like.svg'],
+				locale: { reaction0: 'いいね', reactionTitle: 'この記事はいかがでしたか？' },
 			});
 		</script>
 
