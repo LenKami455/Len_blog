@@ -71,6 +71,17 @@ function getVolLabel(id: string): string {
         <slot />
       </div>
 
+      <!-- ── いいね ───────────────────────── -->
+      <div class="plp-like">
+        <button class="plp-like-btn" id="plp-like-btn" type="button" aria-label="いいね" aria-pressed="false">
+          <svg class="plp-like-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 10v12"/>
+            <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/>
+          </svg>
+          <span class="plp-like-count" id="plp-like-count"></span>
+        </button>
+      </div>
+
       <!-- ── Series nav（前後vol）─────────── -->
       {(prevPost || nextPost) && (
         <nav class="plp-series-nav" aria-label="シリーズナビゲーション">
@@ -160,6 +171,54 @@ function closeLightbox() {
 lbClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+// ── いいね ──
+(() => {
+  const btn = document.getElementById('plp-like-btn');
+  const countEl = document.getElementById('plp-like-count');
+  if (!btn || !countEl) return;
+
+  const serverURL = 'https://waline-rho-woad.vercel.app';
+  const path = window.location.pathname;
+  const storeKey = 'plp-liked:' + path;
+  let count = 0;
+  let liked = localStorage.getItem(storeKey) === '1';
+
+  function render() {
+    countEl.textContent = count > 0 ? String(count) : '';
+    btn.classList.toggle('is-liked', liked);
+    btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
+  }
+
+  async function loadCount() {
+    try {
+      const res = await fetch(
+        `${serverURL}/api/article?path=${encodeURIComponent(path)}&type=reaction0&lang=jp-JP`
+      );
+      const json = await res.json();
+      const data = json && json.data;
+      count = Array.isArray(data) ? (data[0] || 0) : (data || 0);
+      render();
+    } catch { /* サーバー未応答時は0表示のまま */ }
+  }
+
+  btn.addEventListener('click', async () => {
+    liked = !liked;
+    count = Math.max(0, count + (liked ? 1 : -1));
+    localStorage.setItem(storeKey, liked ? '1' : '0');
+    render();
+    try {
+      await fetch(`${serverURL}/api/article?lang=jp-JP`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path, type: 'reaction0', action: liked ? 'inc' : 'desc' }),
+      });
+    } catch { /* 送信失敗は無視（ローカル表示は維持）*/ }
+  });
+
+  render();
+  loadCount();
+})();
 </script>
 
 <style>
@@ -356,6 +415,35 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   font-style: italic;
   font-size: 1rem;
   font-weight: 300;
+}
+
+/* ── いいね（控えめ）──────────────── */
+.plp-like {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.plp-like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  color: #c4c4c4;
+  transition: color .2s;
+}
+.plp-like-btn:hover { color: #8a8a8a; }
+.plp-like-btn.is-liked { color: #8a8a8a; }
+.plp-like-btn.is-liked .plp-like-icon { fill: currentColor; }
+.plp-like-icon { display: block; }
+.plp-like-count {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  min-width: 0.5ch;
 }
 
 /* ── Trip link card（旅行記事への誘導）─ */
