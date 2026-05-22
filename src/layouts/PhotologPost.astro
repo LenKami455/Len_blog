@@ -190,14 +190,17 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
     btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
   }
 
+  function parseCount(json) {
+    const c = json && json.data && json.data[0] && json.data[0].reaction0;
+    return typeof c === 'number' ? c : 0;
+  }
+
   async function loadCount() {
     try {
       const res = await fetch(
         `${serverURL}/api/article?path=${encodeURIComponent(path)}&type=reaction0&lang=jp-JP`
       );
-      const json = await res.json();
-      const data = json && json.data;
-      count = Array.isArray(data) ? (data[0] || 0) : (data || 0);
+      count = parseCount(await res.json());
       render();
     } catch { /* サーバー未応答時は0表示のまま */ }
   }
@@ -208,11 +211,13 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
     localStorage.setItem(storeKey, liked ? '1' : '0');
     render();
     try {
-      await fetch(`${serverURL}/api/article?lang=jp-JP`, {
+      const res = await fetch(`${serverURL}/api/article?lang=jp-JP`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ path, type: 'reaction0', action: liked ? 'inc' : 'desc' }),
       });
+      count = parseCount(await res.json());
+      render();
     } catch { /* 送信失敗は無視（ローカル表示は維持）*/ }
   });
 
