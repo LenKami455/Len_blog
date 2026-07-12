@@ -6,9 +6,12 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {
+	postId?: string;
+	readingMinutes?: number;
+};
 
-const { title, description, pubDate, updatedDate, heroImage, tags = [], category } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags = [], category, postId, readingMinutes } = Astro.props;
 const pageUrl = Astro.url.href;
 const shareText = encodeURIComponent(title);
 const shareUrl = encodeURIComponent(pageUrl);
@@ -31,13 +34,18 @@ const shareUrl = encodeURIComponent(pageUrl);
 	</head>
 
 	<body>
+		<!-- 読了プログレスバー -->
+		<div class="reading-progress" aria-hidden="true">
+			<div class="rp-bar" id="rpBar"></div>
+		</div>
+
 		<Header />
 
 		<article class="article-wrap">
 			<!-- Hero image -->
 			{heroImage && (
 				<div class="article-hero">
-					<img src={heroImage} alt={title} loading="lazy" />
+					<img src={heroImage} alt={title} loading="lazy" transition:name={postId ? `hero-${postId}` : undefined} />
 				</div>
 			)}
 
@@ -55,6 +63,12 @@ const shareUrl = encodeURIComponent(pageUrl);
 								<FormattedDate date={updatedDate} />
 							</div>
 						)}
+						{readingMinutes && (
+							<div class="aside-date">
+								<span class="aside-label">読了目安</span>
+								<span class="reading-time">☕ 約{readingMinutes}分</span>
+							</div>
+						)}
 						{tags.length > 0 && (
 							<div class="aside-tags">
 								<span class="aside-label">タグ</span>
@@ -65,6 +79,10 @@ const shareUrl = encodeURIComponent(pageUrl);
 								</div>
 							</div>
 						)}
+						<nav class="toc" id="tocNav" aria-label="目次" hidden>
+							<span class="aside-label">目次</span>
+							<ol class="toc-list" id="tocList"></ol>
+						</nav>
 						<a href="/blog" class="back-link">← 記事一覧</a>
 					</div>
 				</aside>
@@ -137,20 +155,32 @@ const shareUrl = encodeURIComponent(pageUrl);
 
 		<Footer />
 
-		<!-- Waline コメント初期化 -->
+		<!-- Waline コメント初期化（View Transitions 対応） -->
 		<script type="module">
 			import { init } from 'https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.js';
-			init({
-				el: '#waline',
-				serverURL: 'https://waline-rho-woad.vercel.app',
-				lang: 'jp-JP',
-				placeholder: 'コメントを書く...',
-				requiredMeta: ['nick'],
-				login: 'disable',
-				pageview: true,
-				reaction: ['/reaction-like.svg'],
-				locale: { reaction0: 'いいね', reactionTitle: 'この記事はいかがでしたか？' },
-			});
+
+			function bootWaline() {
+				const el = document.getElementById('waline');
+				if (!el || el.dataset.booted) return;
+				el.dataset.booted = '1';
+				init({
+					el: '#waline',
+					serverURL: 'https://waline-rho-woad.vercel.app',
+					lang: 'jp-JP',
+					placeholder: 'コメントを書く...',
+					requiredMeta: ['nick'],
+					login: 'disable',
+					pageview: true,
+					reaction: ['/reaction-like.svg'],
+					locale: { reaction0: 'いいね', reactionTitle: 'この記事はいかがでしたか？' },
+				});
+			}
+
+			bootWaline();
+			if (!window.__walineListener) {
+				window.__walineListener = true;
+				document.addEventListener('astro:page-load', bootWaline);
+			}
 		</script>
 
 		<!-- Lightbox -->
@@ -162,33 +192,106 @@ const shareUrl = encodeURIComponent(pageUrl);
 </html>
 
 <script>
-const lightbox = document.getElementById('lightbox')!;
-const lbImg    = document.getElementById('lightbox-img') as HTMLImageElement;
-const lbClose  = document.getElementById('lightbox-close')!;
-
-// prose 内の全画像にクリックイベントを付与
-document.querySelectorAll<HTMLImageElement>('.prose img').forEach(img => {
-	img.style.cursor = 'zoom-in';
-	img.addEventListener('click', () => {
-		lbImg.src = img.src;
-		lbImg.alt = img.alt;
-		lightbox.classList.add('active');
-		lightbox.setAttribute('aria-hidden', 'false');
-		document.body.style.overflow = 'hidden';
-	});
-});
+// ── 記事ページの動的機能（View Transitions 対応：遷移ごとに再初期化）──
 
 function closeLightbox() {
+	const lightbox = document.getElementById('lightbox');
+	const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+	if (!lightbox || !lbImg) return;
 	lightbox.classList.remove('active');
 	lightbox.setAttribute('aria-hidden', 'true');
 	document.body.style.overflow = '';
 	lbImg.src = '';
 }
 
-lbClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => {
-	if (e.target === lightbox) closeLightbox();
-});
+function initLightbox() {
+	const lightbox = document.getElementById('lightbox');
+	const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+	const lbClose = document.getElementById('lightbox-close');
+	if (!lightbox || !lbImg || !lbClose) return;
+
+	document.querySelectorAll<HTMLImageElement>('.prose img').forEach(img => {
+		img.style.cursor = 'zoom-in';
+		img.addEventListener('click', () => {
+			lbImg.src = img.src;
+			lbImg.alt = img.alt;
+			lightbox.classList.add('active');
+			lightbox.setAttribute('aria-hidden', 'false');
+			document.body.style.overflow = 'hidden';
+		});
+	});
+
+	lbClose.addEventListener('click', closeLightbox);
+	lightbox.addEventListener('click', (e) => {
+		if (e.target === lightbox) closeLightbox();
+	});
+}
+
+// ── 読了プログレスバー ──
+let rpTicking = false;
+function updateProgress() {
+	const bar = document.getElementById('rpBar');
+	if (!bar) return;
+	const doc = document.documentElement;
+	const scrollTop = window.scrollY ?? doc.scrollTop;
+	const total = doc.scrollHeight - doc.clientHeight;
+	const ratio = total > 0 ? Math.min(1, Math.max(0, scrollTop / total)) : 0;
+	bar.style.transform = `scaleX(${ratio})`;
+	rpTicking = false;
+}
+function onScrollProgress() {
+	if (rpTicking) return;
+	rpTicking = true;
+	requestAnimationFrame(updateProgress);
+}
+
+// ── 目次（.prose の h2 から自動生成 + スクロールスパイ）──
+let tocIO: IntersectionObserver | null = null;
+function initToc() {
+	tocIO?.disconnect();
+	const nav = document.getElementById('tocNav');
+	const list = document.getElementById('tocList');
+	if (!nav || !list) return;
+
+	const headings = Array.from(document.querySelectorAll<HTMLHeadingElement>('.prose h2'));
+	if (headings.length < 2) { nav.hidden = true; return; }
+
+	list.innerHTML = '';
+	headings.forEach((h, i) => {
+		if (!h.id) h.id = `sec-${i + 1}`;
+		const li = document.createElement('li');
+		const a = document.createElement('a');
+		a.href = `#${h.id}`;
+		a.textContent = (h.textContent ?? '').replace(/。$/, '');
+		a.className = 'toc-link';
+		a.dataset.target = h.id;
+		li.appendChild(a);
+		list.appendChild(li);
+	});
+	nav.hidden = false;
+
+	// スクロールスパイ：見出しが上部を通過したら該当リンクをハイライト
+	tocIO = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (!entry.isIntersecting) return;
+			const id = (entry.target as HTMLElement).id;
+			list.querySelectorAll('.toc-link').forEach((a) => {
+				a.classList.toggle('is-active', (a as HTMLElement).dataset.target === id);
+			});
+		});
+	}, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+	headings.forEach((h) => tocIO!.observe(h));
+}
+
+function initArticlePage() {
+	initLightbox();
+	initToc();
+	updateProgress();
+}
+
+initArticlePage();
+document.addEventListener('astro:page-load', initArticlePage);
+window.addEventListener('scroll', onScrollProgress, { passive: true });
 document.addEventListener('keydown', (e) => {
 	if (e.key === 'Escape') closeLightbox();
 });
@@ -196,6 +299,66 @@ document.addEventListener('keydown', (e) => {
 
 <style>
 .article-wrap { min-height: 60vh; }
+
+/* ── 読了プログレスバー ─────────────────────────── */
+.reading-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	z-index: 200;
+	background: transparent;
+	pointer-events: none;
+}
+.rp-bar {
+	height: 100%;
+	background: linear-gradient(to right, var(--color-accent), var(--color-accent-h));
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform .08s linear;
+}
+
+/* ── 読了時間 ──────────────────────────────────── */
+.reading-time {
+	font-size: 0.85rem;
+	color: var(--color-text-muted);
+}
+
+/* ── 目次（TOC） ───────────────────────────────── */
+.toc {
+	margin-top: 0.4rem;
+}
+.toc-list {
+	list-style: none;
+	margin: 0.4rem 0 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	border-left: 2px solid var(--color-border);
+}
+/* TOC の中身はクライアントJSで動的生成されるため :global が必要 */
+.toc-list :global(li) { margin: 0; }
+.toc-list :global(.toc-link) {
+	display: block;
+	padding: 0.3em 0 0.3em 0.85em;
+	margin-left: -2px;
+	border-left: 2px solid transparent;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: var(--color-text-muted);
+	text-decoration: none;
+	transition: color .2s, border-color .2s;
+}
+.toc-list :global(.toc-link:hover) {
+	color: var(--color-accent);
+}
+.toc-list :global(.toc-link.is-active) {
+	color: var(--color-accent);
+	border-left-color: var(--color-accent);
+	font-weight: 700;
+}
 
 /* ── シェアボタン ───────────────────────────────── */
 .share-section {
@@ -442,7 +605,7 @@ document.addEventListener('keydown', (e) => {
 }
 #lightbox.active {
 	display: flex;
-	animation: lb-in .18s ease;
+	animation: lb-in .25s ease;
 }
 @keyframes lb-in {
 	from { opacity: 0; }
@@ -455,6 +618,13 @@ document.addEventListener('keydown', (e) => {
 	border-radius: var(--radius-md);
 	box-shadow: 0 8px 48px rgba(0,0,0,.6);
 	cursor: default;
+}
+#lightbox.active #lightbox-img {
+	animation: lb-img-in .32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@keyframes lb-img-in {
+	from { transform: scale(0.955); opacity: 0.4; }
+	to   { transform: scale(1); opacity: 1; }
 }
 #lightbox-close {
 	position: fixed;

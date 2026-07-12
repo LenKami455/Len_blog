@@ -15,6 +15,15 @@ type Props = CollectionEntry<'blog'>;
 const post = Astro.props;
 const { Content } = await render(post);
 const isPhotolog = post.data.category === 'フォトログ';
+
+// 読了時間（日本語ベース: 約550字/分。タグや記法を除いた本文文字数から概算）
+const plainText = (post.body ?? '')
+	.replace(/<[^>]*>/g, '')
+	.replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+	.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+	.replace(/[#>*`\-|]/g, '')
+	.replace(/\s+/g, '');
+const readingMinutes = Math.max(1, Math.round(plainText.length / 550));
 ---
 
 {isPhotolog ? (
@@ -22,7 +31,7 @@ const isPhotolog = post.data.category === 'フォトログ';
 		<Content />
 	</PhotologPost>
 ) : (
-	<BlogPost {...post.data}>
+	<BlogPost {...post.data} postId={post.id} readingMinutes={readingMinutes}>
 		<Content />
 	</BlogPost>
 )}

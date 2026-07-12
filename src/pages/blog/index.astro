@@ -29,7 +29,7 @@ const posts = (await getCollection('blog'))
 		<main class="blog-main">
 			<ul class="post-list">
 				{posts.map((post, i) => (
-					<li class={`post-card ${i === 0 ? 'post-card--hero' : ''}`}>
+					<li class={`post-card reveal ${i === 0 ? 'post-card--hero' : ''}`}>
 						<a href={`/blog/${post.id}/`}>
 							{post.data.heroImage && (
 								<div class="card-img">
@@ -37,6 +37,7 @@ const posts = (await getCollection('blog'))
 										src={post.data.heroImage}
 										alt={post.data.title}
 										loading="lazy"
+										transition:name={`hero-${post.id}`}
 									/>
 								</div>
 							)}

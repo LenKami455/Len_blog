@@ -172,6 +172,56 @@ th {
 	border: 0;
 }
 
+/* ── Scroll reveal ───────────────────────────────── */
+/* JS が動く環境（html.reveal-ready）でのみ初期非表示にする。
+   JS 無効・IntersectionObserver 不発火の環境ではそのまま見える。 */
+html.reveal-ready .reveal {
+	opacity: 0;
+	transform: translateY(26px);
+	transition:
+		opacity .7s cubic-bezier(0.22, 0.61, 0.36, 1),
+		transform .7s cubic-bezier(0.22, 0.61, 0.36, 1);
+	transition-delay: var(--reveal-delay, 0s);
+	will-change: opacity, transform;
+}
+html.reveal-ready .reveal.is-visible {
+	opacity: 1;
+	transform: none;
+	will-change: auto;
+}
+
+/* ── View Transitions（ページ遷移フェード） ─────────── */
+@view-transition { navigation: auto; }
+::view-transition-old(root) {
+	animation: vt-fade-out .22s ease both;
+}
+::view-transition-new(root) {
+	animation: vt-fade-in .3s ease both;
+}
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; } }
+
+/* ── Micro interactions ──────────────────────────── */
+button, .share-btn, .slide-cta {
+	transition: transform .15s ease;
+}
+button:active, .share-btn:active, .slide-cta:active {
+	transform: scale(0.96);
+}
+
+/* ── Reduced motion ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+	html.reveal-ready .reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none;
+	}
+}
+
 /* ── Shared tag pill ─────────────────────────────── */
 .tag-pill {
 	display: inline-block;

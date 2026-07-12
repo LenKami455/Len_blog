@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
+import { ClientRouter } from 'astro:transitions';
 import FallbackImage from '../assets/blog-placeholder-1.jpg';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
@@ -146,3 +147,67 @@ const jsonLD = isArticle
 
 <!-- JSON-LD 構造化データ -->
 <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
+
+<!-- View Transitions（SPA風ページ遷移） -->
+<ClientRouter />
+
+<!-- スクロールリビール（全ページ共通） -->
+<script>
+	function setupReveal() {
+		if (typeof IntersectionObserver === 'undefined') return;
+		document.documentElement.classList.add('reveal-ready');
+
+		const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		// data-auto-reveal コンテナ配下の指定要素に .reveal を自動付与
+		document.querySelectorAll<HTMLElement>('[data-auto-reveal]').forEach((wrap) => {
+			const selector = wrap.dataset.autoReveal || ':scope > *';
+			wrap.querySelectorAll<HTMLElement>(selector).forEach((el) => {
+				el.classList.add('reveal');
+			});
+		});
+
+		const targets = document.querySelectorAll<HTMLElement>('.reveal:not(.is-visible)');
+		if (targets.length === 0) return;
+
+		if (reduced) {
+			targets.forEach((el) => el.classList.add('is-visible'));
+			return;
+		}
+
+		let ioFired = false;
+		const io = new IntersectionObserver(
+			(entries) => {
+				ioFired = true;
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) return;
+					const el = entry.target as HTMLElement;
+					el.classList.add('is-visible');
+					io.unobserve(el);
+				});
+			},
+			{ threshold: 0.08, rootMargin: '0px 0px -6% 0px' }
+		);
+
+		// 兄弟同士で軽い時間差（stagger）をつける
+		const groups = new Map<HTMLElement | null, number>();
+		targets.forEach((el) => {
+			const parent = el.parentElement;
+			const idx = groups.get(parent) ?? 0;
+			groups.set(parent, idx + 1);
+			el.style.setProperty('--reveal-delay', `${Math.min(idx * 70, 420)}ms`);
+			io.observe(el);
+		});
+
+		// フェイルセーフ：Observer が一度も発火しない環境では全要素を表示する
+		setTimeout(() => {
+			if (!ioFired) {
+				io.disconnect();
+				targets.forEach((el) => el.classList.add('is-visible'));
+			}
+		}, 1200);
+	}
+
+	setupReveal();
+	document.addEventListener('astro:page-load', setupReveal);
+</script>

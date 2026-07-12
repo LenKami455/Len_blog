@@ -74,19 +74,25 @@ import SocialIcons from './SocialIcons.astro';
 
 <script>
 	// sentinel が viewport から消えた瞬間にコンパクトヘッダーをスライドイン
-	(() => {
+	let headerIO: IntersectionObserver | null = null;
+
+	function initCompactHeader() {
+		headerIO?.disconnect();
 		const compact = document.getElementById('siteHeaderCompact');
 		const sentinel = document.querySelector('.header-sentinel');
 		if (!compact || !sentinel) return;
-		const io = new IntersectionObserver(([entry]) => {
+		headerIO = new IntersectionObserver(([entry]) => {
 			if (entry.isIntersecting) {
 				compact.classList.remove('is-visible');
 			} else {
 				compact.classList.add('is-visible');
 			}
 		}, { threshold: 0 });
-		io.observe(sentinel);
-	})();
+		headerIO.observe(sentinel);
+	}
+
+	initCompactHeader();
+	document.addEventListener('astro:page-load', initCompactHeader);
 </script>
 
 <style>

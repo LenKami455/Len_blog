@@ -67,7 +67,7 @@ function getVolLabel(id: string): string {
       </header>
 
       <!-- ── Content ──────────────────────── -->
-      <div class="plp-prose">
+      <div class="plp-prose" data-auto-reveal=".pl-item">
         <slot />
       </div>
 
@@ -133,50 +133,76 @@ function getVolLabel(id: string): string {
 </html>
 
 <script>
-// ── Scroll to top ──
-document.getElementById('fab-top')?.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// ── photolog ページの動的機能（View Transitions 対応：遷移ごとに再初期化）──
 
-// ── FAB 表示制御（少しスクロールしたら出す）──
-const fab = document.querySelector('.plp-fab') as HTMLElement | null;
-window.addEventListener('scroll', () => {
-  if (!fab) return;
-  fab.style.opacity = window.scrollY > 200 ? '1' : '0';
-  fab.style.pointerEvents = window.scrollY > 200 ? 'auto' : 'none';
-}, { passive: true });
-
-// ── Lightbox ──
-const lightbox = document.getElementById('lightbox')!;
-const lbImg    = document.getElementById('lightbox-img') as HTMLImageElement;
-const lbClose  = document.getElementById('lightbox-close')!;
-
-document.querySelectorAll<HTMLImageElement>('.plp-prose img').forEach(img => {
-  img.style.cursor = 'zoom-in';
-  img.addEventListener('click', () => {
-    lbImg.src = img.src;
-    lbImg.alt = img.alt;
-    lightbox.classList.add('active');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeLightbox() {
+function plpCloseLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  if (!lightbox || !lbImg) return;
   lightbox.classList.remove('active');
   lightbox.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   lbImg.src = '';
 }
-lbClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-// ── いいね ──
-(() => {
+function initPlpLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lbClose = document.getElementById('lightbox-close');
+  if (!lightbox || !lbImg || !lbClose) return;
+
+  document.querySelectorAll<HTMLImageElement>('.plp-prose img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  lbClose.addEventListener('click', plpCloseLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) plpCloseLightbox(); });
+}
+
+function initPlpFab() {
+  document.getElementById('fab-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+function updateFabVisibility() {
+  const fab = document.querySelector('.plp-fab') as HTMLElement | null;
+  if (!fab) return;
+  fab.style.opacity = window.scrollY > 200 ? '1' : '0';
+  fab.style.pointerEvents = window.scrollY > 200 ? 'auto' : 'none';
+}
+
+// ── いいね（パーティクル付き）──
+function spawnLikeParticles(btn: HTMLElement) {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) return;
+  const COLORS = ['#8a8a8a', '#b8b8b8', '#d4c5b0', '#a08c6e'];
+  for (let i = 0; i < 8; i++) {
+    const p = document.createElement('span');
+    p.className = 'plp-like-particle';
+    const angle = (Math.PI * 2 * i) / 8 + (Math.random() - 0.5) * 0.6;
+    const dist = 22 + Math.random() * 14;
+    p.style.setProperty('--px', `${Math.cos(angle) * dist}px`);
+    p.style.setProperty('--py', `${Math.sin(angle) * dist}px`);
+    p.style.background = COLORS[i % COLORS.length];
+    btn.appendChild(p);
+    p.addEventListener('animationend', () => p.remove());
+    setTimeout(() => p.remove(), 800); /* animationend が来ない環境へのフォールバック */
+  }
+}
+
+function initPlpLike() {
   const btn = document.getElementById('plp-like-btn');
   const countEl = document.getElementById('plp-like-count');
-  if (!btn || !countEl) return;
+  if (!btn || !countEl || btn.dataset.booted) return;
+  btn.dataset.booted = '1';
 
   const serverURL = 'https://waline-rho-woad.vercel.app';
   const path = window.location.pathname;
@@ -190,7 +216,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
     btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
   }
 
-  function parseCount(json) {
+  function parseCount(json: any) {
     const c = json && json.data && json.data[0] && json.data[0].reaction0;
     return typeof c === 'number' ? c : 0;
   }
@@ -210,6 +236,12 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
     count = Math.max(0, count + (liked ? 1 : -1));
     localStorage.setItem(storeKey, liked ? '1' : '0');
     render();
+    if (liked) {
+      btn.classList.remove('is-pop');
+      void btn.offsetWidth; /* アニメ再発火のための reflow */
+      btn.classList.add('is-pop');
+      spawnLikeParticles(btn);
+    }
     try {
       const res = await fetch(`${serverURL}/api/article?lang=jp-JP`, {
         method: 'POST',
@@ -223,7 +255,20 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
 
   render();
   loadCount();
-})();
+}
+
+function initPhotologPage() {
+  if (!document.querySelector('.plp-body')) return;
+  initPlpLightbox();
+  initPlpFab();
+  initPlpLike();
+  updateFabVisibility();
+}
+
+initPhotologPage();
+document.addEventListener('astro:page-load', initPhotologPage);
+window.addEventListener('scroll', updateFabVisibility, { passive: true });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLightbox(); });
 </script>
 
 <style>
@@ -443,6 +488,31 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
 .plp-like-btn.is-liked { color: #8a8a8a; }
 .plp-like-btn.is-liked .plp-like-icon { fill: currentColor; }
 .plp-like-icon { display: block; }
+
+/* いいねのポップ + パーティクル */
+.plp-like-btn { position: relative; }
+.plp-like-btn.is-pop .plp-like-icon {
+  animation: plp-like-pop .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes plp-like-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35) rotate(-8deg); }
+  100% { transform: scale(1); }
+}
+:global(.plp-like-particle) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: plp-particle-fly .55s ease-out forwards;
+}
+@keyframes plp-particle-fly {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--px)), calc(-50% + var(--py))) scale(0.3); opacity: 0; }
+}
 .plp-like-count {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
@@ -592,13 +662,20 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   padding: 1.5rem;
   cursor: zoom-out;
 }
-#lightbox.active { display: flex; animation: lb-in .2s ease; }
+#lightbox.active { display: flex; animation: lb-in .25s ease; }
 @keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
 #lightbox-img {
   max-width: 100%;
   max-height: 92vh;
   object-fit: contain;
   cursor: default;
+}
+#lightbox.active #lightbox-img {
+  animation: lb-img-in .32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@keyframes lb-img-in {
+  from { transform: scale(0.955); opacity: 0.4; }
+  to   { transform: scale(1); opacity: 1; }
 }
 #lightbox-close {
   position: fixed;
