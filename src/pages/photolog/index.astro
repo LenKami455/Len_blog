@@ -356,10 +356,13 @@ function displayTitle(title: string, tripName?: string): string {
 .pl-entry:last-child { margin-bottom: 6rem; }
 
 /* 写真：右寄せで幅62% → 左38%がテキストエリア（白背景） */
+/* 縦写真の hero も 3:2 に統一クロップして一覧の高さを揃える */
 .pl-entry-img {
   display: block;
   width: 62%;
+  aspect-ratio: 3 / 2;
   height: auto;
+  object-fit: cover;
   margin-left: auto;
   transition: opacity .6s;
 }
@@ -411,6 +414,8 @@ function displayTitle(title: string, tripName?: string): string {
   .pl-entry { margin-bottom: 2.5rem; }
   .pl-entry-img {
     width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
     display: block;
   }
 
