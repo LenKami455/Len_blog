@@ -24,15 +24,12 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c00683.webp" alt="" />
-    <span class="pl-cap">大正らへん</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/vol1/a7c00686.webp" alt="" />
-    <span class="pl-cap">彼女・後ろ姿</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/vol1/a7c00732.webp" alt="" />
-    <span class="pl-cap">どこだこれ</span>
   </div>
 </div>
 
@@ -44,27 +41,21 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item">
     <img src="/images/photolog/vol1/a7c00778.webp" alt="" />
-    <span class="pl-cap">大阪万博・なんかのオブジェ</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/vol1/a7c00814.webp" alt="" />
-    <span class="pl-cap">大阪万博・木の丸いやつ</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/vol1/a7c00893.webp" alt="" />
-    <span class="pl-cap">大阪万博・湖</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/vol1/a7c00922.webp" alt="" />
-    <span class="pl-cap">大阪万博・ポーランドのイケオジ</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/vol1/a7c01049.webp" alt="" />
-    <span class="pl-cap">大阪万博・サンセット</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/vol1/a7c01098.webp" alt="" />
-    <span class="pl-cap">大阪万博・ミャクミャク</span>
   </div>
 </div>
 
@@ -76,11 +67,9 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item">
     <img src="/images/photolog/vol1/a7c01189.webp" alt="" />
-    <span class="pl-cap">はんばーがー！</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol1/a7c01207.webp" alt="" />
-    <span class="pl-cap">どこかのカフェ</span>
   </div>
 </div>
 

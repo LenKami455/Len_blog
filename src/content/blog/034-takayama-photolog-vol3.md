@@ -25,171 +25,129 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03005.webp" alt="" />
-    <span class="pl-cap">陣屋裏手、庭と蔵まわり。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/takayama-vol3/a7c03011.webp" alt="" />
-    <span class="pl-cap">米蔵に積まれた米俵、年貢の量。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03027.webp" alt="" />
-    <span class="pl-cap">陣屋裏手、庭と蔵まわり。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03030.webp" alt="" />
-    <span class="pl-cap">陣屋裏手、庭と蔵まわり。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03037.webp" alt="" />
-    <span class="pl-cap">陣屋裏手、庭と蔵まわり。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03038.webp" alt="" />
-    <span class="pl-cap">高山ラーメン。醤油と鶏の奥深い味わい。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03039.webp" alt="" />
-    <span class="pl-cap">高山ラーメン。醤油と鶏の奥深い味わい。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/takayama-vol3/a7c03041.webp" alt="" />
-    <span class="pl-cap">高山ラーメン。醤油と鶏の奥深い味わい。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03045.webp" alt="" />
-    <span class="pl-cap">街歩き、お昼を済ませて午後。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03053.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03062.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03064.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03068.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/takayama-vol3/a7c03073.webp" alt="" />
-    <span class="pl-cap">人が引いた裏通り、COFFEEの看板。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03086.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03096.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03099.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/takayama-vol3/a7c03102.webp" alt="" />
-    <span class="pl-cap">通り過ぎる町、写真を撮りながら。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03115.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/takayama-vol3/a7c03118.webp" alt="" />
-    <span class="pl-cap">宮川と桜山八幡宮へ向かう道。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/takayama-vol3/a7c03126.webp" alt="" />
-    <span class="pl-cap">鳥居が青空にすこっと映える。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03127.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03128.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/takayama-vol3/a7c03129.webp" alt="" />
-    <span class="pl-cap">境内の大樹、空が抜ける。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03132.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03135.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03138.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03139.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03140.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03141.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03142.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03143.webp" alt="" />
-    <span class="pl-cap">境内の小さなお社、石灯籠と杉。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03146.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/takayama-vol3/a7c03149.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03151.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/takayama-vol3/a7c03155.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03157.webp" alt="" />
-    <span class="pl-cap">桜山八幡宮、境内を歩く。</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/takayama-vol3/a7c03162.webp" alt="" />
-    <span class="pl-cap">駅までの帰路。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03163.webp" alt="" />
-    <span class="pl-cap">駅までの帰路。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03166.webp" alt="" />
-    <span class="pl-cap">高山駅。旅の終わり。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/takayama-vol3/a7c03167.webp" alt="" />
-    <span class="pl-cap">高山駅。旅の終わり。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/takayama-vol3/a7c03169.webp" alt="" />
-    <span class="pl-cap">帰路の特急ひだ、車窓も最高。</span>
   </div>
 </div>
 

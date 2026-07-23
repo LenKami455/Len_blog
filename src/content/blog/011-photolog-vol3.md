@@ -21,23 +21,18 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol3/a7c01214.webp" alt="" />
-    <span class="pl-cap">Bird Coffee</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/vol3/a7c01217.webp" alt="" />
-    <span class="pl-cap">黄色バン + TRUCK 看板</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/vol3/a7c01220.webp" alt="" />
-    <span class="pl-cap">カスタードドーナツ（くそうまい）</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/vol3/a7c01239.webp" alt="" />
-    <span class="pl-cap">ラーメン（ぐううまい）</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/vol3/a7c01248.webp" alt="" />
-    <span class="pl-cap">うおあああああ！！</span>
   </div>
 </div>
 
@@ -49,15 +44,12 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol3/a7c01260.webp" alt="" />
-    <span class="pl-cap">梅田スカイビル</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol3/a7c01267.webp" alt="" />
-    <span class="pl-cap">うめきた①</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/vol3/a7c01275.webp" alt="" />
-    <span class="pl-cap">うめきた②</span>
   </div>
 </div>
 
@@ -69,7 +61,6 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/vol3/a7c01294.webp" alt="" />
-    <span class="pl-cap">部屋のコーヒーコーナー</span>
   </div>
 </div>
 

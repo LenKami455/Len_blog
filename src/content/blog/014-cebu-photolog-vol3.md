@@ -27,31 +27,24 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol3/a7c00630.webp" alt="" />
-    <span class="pl-cap">Sugbo Mercado、また来た</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol3/a7c00632.webp" alt="" />
-    <span class="pl-cap">寝てる犬と看板</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol3/a7c00633.webp" alt="" />
-    <span class="pl-cap">レチョン、豚の丸焼き</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol3/a7c00638.webp" alt="" />
-    <span class="pl-cap">レチョンプレート</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol3/a7c00647.webp" alt="" />
-    <span class="pl-cap">これぞ豚の丸焼き</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol3/a7c00650.webp" alt="" />
-    <span class="pl-cap">マンゴージュース。これが世界一</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol3/a7c00659.webp" alt="" />
-    <span class="pl-cap">夜のジプニー</span>
   </div>
 </div>
 
@@ -63,19 +56,15 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol3/a7c00661.webp" alt="" />
-    <span class="pl-cap">マクタン空港、暖色のドーム</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol3/a7c00666.webp" alt="" />
-    <span class="pl-cap">チェックインカウンター</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol3/a7c00669.webp" alt="" />
-    <span class="pl-cap">木彫りの船、なんかかっこいい</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol3/a7c00672.webp" alt="" />
-    <span class="pl-cap">Cabin Burger Bar、空港内</span>
   </div>
 </div>
 

@@ -25,43 +25,33 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/minoh-vol2/a7c04812.webp" alt="" />
-    <span class="pl-cap">箕面大滝、落差33m。生で見るスケールがやばい。</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/minoh-vol2/a7c04819.webp" alt="" />
-    <span class="pl-cap">箕面大滝の周辺、水しぶきの近く。</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/minoh-vol2/a7c04839.webp" alt="" />
-    <span class="pl-cap">帰りの山道、行きとは違う表情。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/minoh-vol2/a7c04847.webp" alt="" />
-    <span class="pl-cap">帰りは行きと違うルートで、行きより険しい山道だったけど涼しくて景色も最高。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/minoh-vol2/a7c04848.webp" alt="" />
-    <span class="pl-cap">滝のすぐ近く、石垣と丸太のテクスチャ。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/minoh-vol2/a7c04850.webp" alt="" />
-    <span class="pl-cap">麓に近づく、静かな川。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/minoh-vol2/a7c04852.webp" alt="" />
-    <span class="pl-cap">麓に近づく、静かな川。</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/minoh-vol2/a7c04854.webp" alt="" />
-    <span class="pl-cap">麓に近づく、静かな川。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/minoh-vol2/a7c04855.webp" alt="" />
-    <span class="pl-cap">麓近くまで降りてきたあたり、水面に新緑が映り込んでフィナーレ。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/minoh-vol2/a7c04862.webp" alt="" />
-    <span class="pl-cap">参道の古い建物、白い日傘の並ぶテラスが涼しげ。</span>
   </div>
 </div>
 

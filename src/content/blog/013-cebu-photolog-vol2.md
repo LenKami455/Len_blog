@@ -27,15 +27,12 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol2/a7c00514.webp" alt="" />
-    <span class="pl-cap">朝のカフェ、空いてた</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00518.webp" alt="" />
-    <span class="pl-cap">東南アジアはペットフレンドリー</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00526.webp" alt="" />
-    <span class="pl-cap">パンケーキとベーコン。意外な組み合わせ。</span>
   </div>
 </div>
 
@@ -47,47 +44,36 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00540.webp" alt="" />
-    <span class="pl-cap">サン・ペドロ要塞</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00545.webp" alt="" />
-    <span class="pl-cap">石畳の道</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00550.webp" alt="" />
-    <span class="pl-cap">大砲</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00551.webp" alt="" />
-    <span class="pl-cap">大砲アップ</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00566.webp" alt="" />
-    <span class="pl-cap">オレンジの花</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00571.webp" alt="" />
-    <span class="pl-cap">ハイビスカス</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/cebu-vol2/a7c00573.webp" alt="" />
-    <span class="pl-cap">街灯</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00579.webp" alt="" />
-    <span class="pl-cap">子猫</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00582.webp" alt="" />
-    <span class="pl-cap">犬その1</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol2/a7c00586.webp" alt="" />
-    <span class="pl-cap">爆睡してる犬</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/cebu-vol2/a7c00589.webp" alt="" />
-    <span class="pl-cap">カメラ持ってると撮ってくれって言われる。</span>
   </div>
 </div>
 
@@ -99,31 +85,24 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00590.webp" alt="" />
-    <span class="pl-cap">マゼランクロス</span>
   </div>
   <div class="pl-item pl-item--portrait">
     <img src="/images/photolog/cebu-vol2/a7c00591.webp" alt="" />
-    <span class="pl-cap">十字架の真下から</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol2/a7c00593.webp" alt="" />
-    <span class="pl-cap">天井のフレスコ画</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol2/a7c00604.webp" alt="" />
-    <span class="pl-cap">赤いろうそく、不思議な光景</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00605.webp" alt="" />
-    <span class="pl-cap">Santo Niño 教会</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/photolog/cebu-vol2/a7c00614.webp" alt="" />
-    <span class="pl-cap">大聖堂の中</span>
   </div>
   <div class="pl-item">
     <img src="/images/photolog/cebu-vol2/a7c00616.webp" alt="" />
-    <span class="pl-cap">チャイナタウンへ</span>
   </div>
 </div>
 

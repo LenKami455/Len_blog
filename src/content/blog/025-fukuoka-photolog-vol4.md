@@ -26,43 +26,33 @@ category: 'フォトログ'
 <div class="pl-grid">
   <div class="pl-item">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02233.webp" alt="" />
-    <span class="pl-cap">博多に戻ってカフェ休憩。バスクチーズケーキ。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02237.webp" alt="" />
-    <span class="pl-cap">飛行機雲と夕方の空。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02239.webp" alt="" />
-    <span class="pl-cap">大濠公園。夕日が池に反射してた。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02240.webp" alt="" />
-    <span class="pl-cap">エモいね。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02247.webp" alt="" />
-    <span class="pl-cap">雲が幻想的だね。</span>
   </div>
   <div class="pl-item">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02252.webp" alt="" />
-    <span class="pl-cap">シルエット。</span>
   </div>
   <div class="pl-item">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02255.webp" alt="" />
-    <span class="pl-cap">散歩中の犬。かわいい。</span>
   </div>
   <div class="pl-item">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02257.webp" alt="" />
-    <span class="pl-cap">地下鉄で帰る。</span>
   </div>
   <div class="pl-item pl-item--wide">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02259.webp" alt="" />
-    <span class="pl-cap">博多一幸舎。旅の〆。</span>
   </div>
   <div class="pl-item">
     <img src="/images/025-fukuoka-photolog-vol4/a7c02261.webp" alt="" />
-    <span class="pl-cap">泡系豚骨。最高。</span>
   </div>
 </div>
 
