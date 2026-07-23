@@ -183,7 +183,7 @@ function updateFabVisibility() {
 function spawnLikeParticles(btn: HTMLElement) {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
-  const COLORS = ['#8a8a8a', '#b8b8b8', '#d4c5b0', '#a08c6e'];
+  const COLORS = ['#57735A', '#6e8871', '#9bb39d', '#c3d3c5'];
   for (let i = 0; i < 8; i++) {
     const p = document.createElement('span');
     p.className = 'plp-like-particle';

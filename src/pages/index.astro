@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
@@ -12,7 +11,7 @@ const allPosts = await getCollection('blog');
 const posts = allPosts
 	.filter(p => p.data.category !== 'フォトログ')
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 6);
+	.slice(0, 7);
 
 const latestPhotolog = allPosts
 	.filter(p => p.data.category === 'フォトログ')
@@ -71,10 +70,10 @@ const categories = [
 						)}
 						<div class="slide-overlay"></div>
 						<div class="slide-content">
-							<p class="slide-eyebrow">{post.data.category ?? 'article'}</p>
-							<h2 class="slide-title">{post.data.title}</h2>
-							<p class="slide-desc">{post.data.description}</p>
-							<a href={`/blog/${post.id}/`} class="slide-cta">Read More</a>
+							<a href={`/blog/${post.id}/`} class="slide-link">
+								<h2 class="slide-title">{post.data.title}</h2>
+								<span class="slide-cta" aria-hidden="true">→</span>
+							</a>
 						</div>
 					</div>
 				))}
@@ -160,18 +159,7 @@ const categories = [
 									</div>
 								)}
 								<div class="card-body">
-									<p class="card-date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
 									<h3 class="card-title">{post.data.title}</h3>
-									<p class="card-desc">{post.data.description}</p>
-									{post.data.tags.length > 0 && (
-										<div class="card-tags">
-											{post.data.tags.map((tag) => (
-												<span class="tag-pill">#{tag}</span>
-											))}
-										</div>
-									)}
 								</div>
 							</a>
 						</li>
@@ -243,24 +231,19 @@ const categories = [
 	justify-content: center;
 	color: #fff;
 }
-.slide-eyebrow {
-	font-family: 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
-	font-size: 0.7rem;
-	letter-spacing: 0.45em;
-	color: rgba(255,255,255,0.75);
-	text-transform: uppercase;
-	margin: 0 0 1.25rem;
-	opacity: 0;
-	transform: translateY(8px);
-	transition: opacity .8s ease .25s, transform .8s ease .25s;
+.slide-link {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.9rem;
+	text-decoration: none;
+	max-width: 720px;
 }
 .slide-title {
 	font-family: 'Hannari', 'Noto Serif JP', serif;
 	font-weight: 400;
-	font-size: clamp(1.7rem, 4vw, 2.8rem);
-	line-height: 1.5;
-	margin: 0 0 1.25rem;
-	max-width: 720px;
+	font-size: clamp(1.8rem, 4.2vw, 3rem);
+	line-height: 1.4;
+	margin: 0;
 	letter-spacing: 0.03em;
 	color: #fff;
 	text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4);
@@ -268,51 +251,31 @@ const categories = [
 	transform: translateY(12px);
 	transition: opacity .9s ease .4s, transform .9s ease .4s;
 }
-.slide-desc {
-	font-family: 'Noto Serif JP', serif;
-	font-weight: 300;
-	font-size: clamp(0.85rem, 1.3vw, 0.95rem);
-	color: rgba(255,255,255,0.85);
-	line-height: 2;
-	max-width: 540px;
-	margin: 0 0 2.25rem;
-	text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-	opacity: 0;
-	transform: translateY(12px);
-	transition: opacity .9s ease .55s, transform .9s ease .55s;
-}
 .slide-cta {
-	display: inline-block;
-	width: fit-content;
-	padding: 0.85em 2.4em;
-	border: 1px solid rgba(255,255,255,0.6);
-	border-radius: 999px;
-	color: #fff;
-	text-decoration: none;
-	font-family: 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
-	font-size: 0.78rem;
-	letter-spacing: 0.25em;
-	backdrop-filter: blur(4px);
-	transition: background .25s, border-color .25s, letter-spacing .25s;
+	flex-shrink: 0;
+	color: rgba(255,255,255,0.75);
+	font-size: 1.3rem;
+	line-height: 1;
+	transition: color .2s, transform .25s;
 	opacity: 0;
 	transform: translateY(12px);
-	transition-property: opacity, transform, background, border-color, letter-spacing;
-	transition-duration: .9s, .9s, .25s, .25s, .25s;
-	transition-delay: .7s, .7s, 0s, 0s, 0s;
+	transition-property: opacity, transform, color;
+	transition-duration: .9s, .9s, .25s;
+	transition-delay: .55s, .55s, 0s;
 }
-.slide-cta:hover {
-	background: rgba(255,255,255,0.16);
-	border-color: #fff;
-	letter-spacing: 0.3em;
+.slide-link:hover .slide-cta {
+	color: #fff;
+	transform: translateX(4px);
 }
 
 /* アクティブスライドの中身をフェードイン */
-.slide[data-active="true"] .slide-eyebrow,
 .slide[data-active="true"] .slide-title,
-.slide[data-active="true"] .slide-desc,
 .slide[data-active="true"] .slide-cta {
 	opacity: 1;
 	transform: translateY(0);
+}
+.slide[data-active="true"] .slide-link:hover .slide-cta {
+	transform: translateX(4px);
 }
 
 /* ── Arrows ─────────────────────── */
@@ -407,10 +370,8 @@ const categories = [
 	.hero-slider { height: clamp(420px, 60vh, 600px); }
 	/* 矢印（38px）+ 配置(0.75rem) と被らないよう左右パディングを広く取る */
 	.slide-content { padding: 0 3.5rem; }
-	.slide-eyebrow { font-size: 0.62rem; letter-spacing: 0.35em; margin-bottom: 0.85rem; }
-	.slide-title { font-size: clamp(1.4rem, 5.5vw, 2rem); margin-bottom: 1rem; }
-	.slide-desc { font-size: 0.82rem; line-height: 1.8; margin-bottom: 1.75rem; }
-	.slide-cta { font-size: 0.72rem; padding: 0.75em 2em; }
+	.slide-title { font-size: clamp(1.5rem, 6vw, 2.1rem); }
+	.slide-cta { font-size: 1.1rem; }
 	.slider-arrow { width: 38px; height: 38px; }
 	.slider-prev { left: 0.5rem; }
 	.slider-next { right: 0.5rem; }
