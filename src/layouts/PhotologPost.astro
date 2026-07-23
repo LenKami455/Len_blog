@@ -307,7 +307,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
   display: inline-block;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   letter-spacing: 0.18em;
   color: #999;
   text-decoration: none;
@@ -328,7 +328,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-desc {
   font-family: 'Noto Serif JP', Georgia, serif;
   font-weight: 300;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   color: #777;
   letter-spacing: 0.1em;
   line-height: 2.1;
@@ -337,7 +337,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-date {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   letter-spacing: 0.25em;
   color: #999;
 }
@@ -346,7 +346,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-prose {
   font-family: 'Noto Serif JP', Georgia, serif;
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
   line-height: 2.2;
   color: #333;
 }
@@ -355,7 +355,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-prose :global(.post-no) {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   letter-spacing: 0.25em;
   color: #aaa;
   margin: 0;
@@ -379,7 +379,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-prose :global(blockquote p) {
   font-family: 'Noto Serif JP', Georgia, serif;
   font-weight: 300;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   color: #888;
   letter-spacing: 0.1em;
   line-height: 2.4;
@@ -398,7 +398,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-prose :global(.pl-month) {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: var(--fs-md);
   letter-spacing: 0.35em;
   color: #999;
   white-space: nowrap;
@@ -443,7 +443,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-sn-next:hover { gap: 1rem; }
 .plp-sn-arrow {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
   font-weight: 300;
 }
 .plp-sn-text {
@@ -455,7 +455,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-sn-next .plp-sn-text { text-align: right; }
 .plp-sn-label {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.6rem;
+  font-size: var(--fs-3xs);
   letter-spacing: 0.4em;
   color: #bbb;
   text-transform: uppercase;
@@ -463,7 +463,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-sn-vol {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
-  font-size: 1rem;
+  font-size: var(--fs-md);
   font-weight: 300;
 }
 
@@ -516,7 +516,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-like-count {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   letter-spacing: 0.1em;
   min-width: 0.5ch;
 }
@@ -536,7 +536,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 }
 .plp-prose :global(.trip-link-card .tlc-label) {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.65rem;
+  font-size: var(--fs-2xs);
   letter-spacing: 0.4em;
   color: #999;
   text-transform: uppercase;
@@ -545,7 +545,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 }
 .plp-prose :global(.trip-link-card .tlc-link) {
   font-family: 'Noto Serif JP', Georgia, serif;
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 400;
   color: #333;
   text-decoration: none;
@@ -608,7 +608,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-prose :global(.pl-cap) {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   letter-spacing: 0.2em;
   color: #bbb;
   margin-top: 0.75rem;
@@ -637,7 +637,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   color: #bbb;
   margin-bottom: 0.5rem;
   letter-spacing: 0.06em;
@@ -645,7 +645,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
 .plp-prose :global(.sign-off .s-message) {
   font-family: 'Noto Serif JP', Georgia, serif;
   font-weight: 300;
-  font-size: 0.7rem;
+  font-size: var(--fs-2xs);
   letter-spacing: 0.25em;
   color: #ddd;
 }
@@ -684,7 +684,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') plpCloseLi
   background: rgba(255,255,255,0.1);
   border: none;
   color: #fff;
-  font-size: 1rem;
+  font-size: var(--fs-md);
   width: 2rem;
   height: 2rem;
   border-radius: 50%;

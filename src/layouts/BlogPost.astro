@@ -321,7 +321,7 @@ document.addEventListener('keydown', (e) => {
 
 /* ── 読了時間 ──────────────────────────────────── */
 .reading-time {
-	font-size: 0.85rem;
+	font-size: var(--fs-sm);
 	color: var(--color-text-muted);
 }
 
@@ -345,7 +345,7 @@ document.addEventListener('keydown', (e) => {
 	padding: 0.3em 0 0.3em 0.85em;
 	margin-left: -2px;
 	border-left: 2px solid transparent;
-	font-size: 0.8rem;
+	font-size: var(--fs-sm);
 	line-height: 1.5;
 	color: var(--color-text-muted);
 	text-decoration: none;
@@ -376,7 +376,7 @@ document.addEventListener('keydown', (e) => {
 	flex-wrap: wrap;
 }
 .share-label {
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
 	color: var(--color-text-light);
@@ -392,7 +392,7 @@ document.addEventListener('keydown', (e) => {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.45em;
-	font-size: 0.78rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.04em;
 	padding: 0.45em 1em;
 	border-radius: var(--radius-sm);
@@ -422,7 +422,7 @@ document.addEventListener('keydown', (e) => {
 }
 .comment-title {
 	font-family: var(--font-serif);
-	font-size: 1.2rem;
+	font-size: var(--fs-lg);
 	color: var(--color-text);
 	margin-bottom: 1.75rem;
 	padding-bottom: 0.75rem;
@@ -435,7 +435,7 @@ document.addEventListener('keydown', (e) => {
 	--waline-bgcolor: var(--color-surface);
 	--waline-bgcolor-light: var(--color-bg-alt);
 	--waline-border-color: var(--color-border);
-	--waline-font-size: 0.88rem;
+	--waline-font-size: var(--fs-sm);
 }
 @media (max-width: 600px) {
 	.comment-inner { padding: 0 1rem; }
@@ -480,11 +480,11 @@ document.addEventListener('keydown', (e) => {
 	display: flex;
 	flex-direction: column;
 	gap: 0.2rem;
-	font-size: 0.85rem;
+	font-size: var(--fs-sm);
 	color: var(--color-text);
 }
 .aside-label {
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	color: var(--color-text-light);
@@ -494,7 +494,7 @@ document.addEventListener('keydown', (e) => {
 .tags-list--inline { margin-top: 0.4rem; }
 .back-link {
 	display: inline-block;
-	font-size: 0.83rem;
+	font-size: var(--fs-sm);
 	color: var(--color-text-muted);
 	text-decoration: none;
 	padding-top: 1rem;
@@ -512,7 +512,7 @@ document.addEventListener('keydown', (e) => {
 	background: var(--color-accent-bg);
 	color: var(--color-accent);
 	border-radius: var(--radius-sm);
-	font-size: 0.78rem;
+	font-size: var(--fs-xs);
 	font-weight: 700;
 	letter-spacing: 0.06em;
 	text-decoration: none;
@@ -530,7 +530,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 0 0 0.8rem;
 }
 .article-description {
-	font-size: 1.05rem;
+	font-size: var(--fs-md);
 	color: var(--color-text-muted);
 	line-height: 1.7;
 	margin: 0 0 1.2rem;
@@ -541,14 +541,14 @@ document.addEventListener('keydown', (e) => {
 	flex-wrap: wrap;
 	align-items: center;
 }
-.meta-date { font-size: 0.82rem; color: var(--color-text-light); }
+.meta-date { font-size: var(--fs-sm); color: var(--color-text-light); }
 .article-divider { margin: 1.5rem 0 0; }
 
 /* ── 記事番号ラベル（No. 001 · first post） ─────── */
 .prose :global(.post-no) {
 	font-family: 'Georgia', serif;
 	font-style: italic;
-	font-size: 0.8rem;
+	font-size: var(--fs-sm);
 	letter-spacing: 0.18em;
 	color: var(--color-text-light);
 	margin: 0 0 0.5rem;
@@ -556,13 +556,13 @@ document.addEventListener('keydown', (e) => {
 
 /* ── Prose (article body) ───────────────────────── */
 .prose {
-	font-size: 1.05rem;
+	font-size: var(--fs-md);
 	line-height: 1.95;
 	color: var(--color-text);
 }
 .prose :global(h2) {
 	font-family: var(--font-serif);
-	font-size: 1.5rem;
+	font-size: var(--fs-xl);
 	font-weight: 700;
 	margin: 3rem 0 1rem;
 	color: var(--color-text);
@@ -571,7 +571,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(h3) {
 	font-family: var(--font-serif);
-	font-size: 1.2rem;
+	font-size: var(--fs-lg);
 	margin: 2.2rem 0 0.75rem;
 }
 .prose :global(p)     { margin-bottom: 1.8rem; }
@@ -633,7 +633,7 @@ document.addEventListener('keydown', (e) => {
 	background: rgba(255,255,255,0.12);
 	border: none;
 	color: #fff;
-	font-size: 1.1rem;
+	font-size: var(--fs-md);
 	width: 2.2rem;
 	height: 2.2rem;
 	border-radius: 50%;
@@ -667,7 +667,7 @@ document.addEventListener('keydown', (e) => {
 	display: block;
 }
 .prose :global(.gear-eyebrow) {
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.35em;
 	text-transform: uppercase;
 	color: var(--color-accent-h);
@@ -675,7 +675,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.gear-name) {
 	font-family: var(--font-serif);
-	font-size: 1.15rem;
+	font-size: var(--fs-md);
 	font-weight: 500;
 	color: var(--color-text);
 	letter-spacing: 0.04em;
@@ -684,13 +684,13 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.gear-name-en) {
 	display: block;
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.12em;
 	color: var(--color-text-light);
 	margin-bottom: 1.2rem;
 }
 .prose :global(.gear-desc) {
-	font-size: 0.9rem;
+	font-size: var(--fs-base);
 	line-height: 2.1;
 	color: var(--color-text-muted);
 }
@@ -705,7 +705,7 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.spec) {
 	background: var(--color-accent-bg);
 	color: var(--color-accent);
-	font-size: 0.68rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.05em;
 	padding: 0.3em 0.7em;
 	border-radius: var(--radius-sm);
@@ -762,7 +762,7 @@ document.addEventListener('keydown', (e) => {
 	margin-right: 1.25rem !important;
 }
 .prose :global(.lens-use) {
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.25em;
 	color: var(--color-accent-h);
 	text-transform: uppercase;
@@ -770,7 +770,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.lens-name) {
 	font-family: var(--font-serif);
-	font-size: 0.85rem;
+	font-size: var(--fs-sm);
 	font-weight: 500;
 	color: var(--color-text);
 	margin-bottom: 0.25rem;
@@ -778,13 +778,13 @@ document.addEventListener('keydown', (e) => {
 	padding-right: 1.5rem;
 }
 .prose :global(.lens-aperture) {
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	color: var(--color-accent-h);
 	letter-spacing: 0.08em;
 	margin-bottom: 0.875rem;
 }
 .prose :global(.lens-comment) {
-	font-size: 0.78rem;
+	font-size: var(--fs-xs);
 	line-height: 1.9;
 	color: var(--color-text-muted);
 }
@@ -802,7 +802,7 @@ document.addEventListener('keydown', (e) => {
 	box-shadow: var(--shadow-sm);
 }
 .prose :global(.summary-box .s-label) {
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	color: var(--color-accent-h);
@@ -814,7 +814,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 0;
 }
 .prose :global(.summary-box li) {
-	font-size: 0.88rem;
+	font-size: var(--fs-sm);
 	line-height: 2;
 	color: var(--color-accent);
 	display: flex;
@@ -825,7 +825,7 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.summary-box li::before) {
 	content: '→';
 	color: var(--color-accent-h);
-	font-size: 0.78rem;
+	font-size: var(--fs-xs);
 	margin-top: 0.4rem;
 	flex-shrink: 0;
 }
@@ -850,7 +850,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 0;
 }
 .prose :global(.photo-trio figcaption) {
-	font-size: 0.68rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.1em;
 	color: var(--color-text-light);
 	text-align: center;
@@ -873,7 +873,7 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.gear-link),
 .prose :global(.lens-link) {
 	display: inline-block;
-	font-size: 0.75rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.06em;
 	color: var(--color-accent);
 	text-decoration: none;
@@ -909,13 +909,13 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.lb-num) {
 	font-family: 'Georgia', serif;
 	font-style: italic;
-	font-size: 3rem;
+	font-size: var(--fs-3xl);
 	color: var(--color-border);
 	line-height: 1;
 	flex-shrink: 0;
 }
 .prose :global(.lb-category) {
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	color: var(--color-accent-h);
@@ -923,7 +923,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.lb-name) {
 	font-family: var(--font-serif);
-	font-size: 1.35rem;
+	font-size: var(--fs-lg);
 	font-weight: 500;
 	color: var(--color-text);
 	letter-spacing: 0.05em;
@@ -931,7 +931,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.lb-aperture) {
 	display: block;
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	color: var(--color-text-light);
 	letter-spacing: 0.12em;
 	margin-top: 0.2rem;
@@ -942,7 +942,7 @@ document.addEventListener('keydown', (e) => {
 	align-self: center;
 	background: var(--color-text);
 	color: rgba(255,255,255,0.82);
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.12em;
 	padding: 0.35em 0.85em;
 	border-radius: var(--radius-sm);
@@ -973,7 +973,7 @@ document.addEventListener('keydown', (e) => {
 	flex: 1;
 }
 .prose :global(.lb-desc p) {
-	font-size: 0.9rem;
+	font-size: var(--fs-base);
 	line-height: 2.1;
 	color: var(--color-text-muted);
 	margin-bottom: 1.1rem;
@@ -992,7 +992,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 0 !important;
 }
 .prose :global(.lb-caption) {
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	color: var(--color-text-light);
 	letter-spacing: 0.1em;
 	text-align: center;
@@ -1020,13 +1020,13 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.dripper-num) {
 	font-family: 'Georgia', serif;
 	font-style: italic;
-	font-size: 3rem;
+	font-size: var(--fs-3xl);
 	color: var(--color-border);
 	line-height: 1;
 	flex-shrink: 0;
 }
 .prose :global(.dripper-brand) {
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	color: var(--color-accent-h);
@@ -1034,7 +1034,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.dripper-name) {
 	font-family: var(--font-serif);
-	font-size: 1.35rem;
+	font-size: var(--fs-lg);
 	font-weight: 500;
 	color: var(--color-text);
 	letter-spacing: 0.05em;
@@ -1042,7 +1042,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.dripper-name-en) {
 	display: block;
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	color: var(--color-text-light);
 	letter-spacing: 0.12em;
 	margin-top: 0.2rem;
@@ -1053,7 +1053,7 @@ document.addEventListener('keydown', (e) => {
 	align-self: center;
 	background: var(--color-text);
 	color: rgba(255,255,255,0.82);
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.12em;
 	padding: 0.35em 0.85em;
 	border-radius: var(--radius-sm);
@@ -1078,7 +1078,7 @@ document.addEventListener('keydown', (e) => {
 	box-shadow: none !important;
 }
 .prose :global(.dripper-body p) {
-	font-size: 0.9rem;
+	font-size: var(--fs-base);
 	line-height: 2.1;
 	color: var(--color-text-muted);
 	margin-bottom: 1.1rem;
@@ -1093,21 +1093,21 @@ document.addEventListener('keydown', (e) => {
 	border-top: 1px solid var(--color-border);
 }
 .prose :global(.info-label) {
-	font-size: 0.62rem;
+	font-size: var(--fs-3xs);
 	letter-spacing: 0.25em;
 	text-transform: uppercase;
 	color: var(--color-accent-h);
 	margin-bottom: 0.2rem;
 }
 .prose :global(.info-value) {
-	font-size: 0.83rem;
+	font-size: var(--fs-sm);
 	color: var(--color-accent);
 }
 .prose :global(.personal-note) {
 	background: var(--color-accent-bg);
 	border-radius: var(--radius-md);
 	padding: 1.1rem 1.4rem;
-	font-size: 0.85rem;
+	font-size: var(--fs-sm);
 	line-height: 2;
 	color: var(--color-accent);
 	display: flex;
@@ -1115,7 +1115,7 @@ document.addEventListener('keydown', (e) => {
 	align-items: flex-start;
 }
 .prose :global(.note-icon) {
-	font-size: 1rem;
+	font-size: var(--fs-md);
 	flex-shrink: 0;
 	margin-top: 0.25rem;
 }
@@ -1129,7 +1129,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.dripper-link) {
 	display: inline-block;
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.06em;
 	padding: 0.35em 0.9em;
 	border-radius: var(--radius-sm);
@@ -1182,7 +1182,7 @@ document.addEventListener('keydown', (e) => {
 	background: var(--color-border);
 }
 .prose :global(.brand-label) {
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	white-space: nowrap;
@@ -1204,7 +1204,7 @@ document.addEventListener('keydown', (e) => {
 /* ── Color badge ─────────────────────────────────── */
 .prose :global(.color-badge) {
 	display: inline-block;
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.12em;
 	padding: 0.2em 0.65em;
 	border-radius: var(--radius-sm);
@@ -1231,7 +1231,7 @@ document.addEventListener('keydown', (e) => {
 	box-shadow: var(--shadow-sm);
 }
 .prose :global(.oc-label) {
-	font-size: 0.62rem;
+	font-size: var(--fs-3xs);
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	color: #c47a3a;
@@ -1239,7 +1239,7 @@ document.addEventListener('keydown', (e) => {
 	opacity: 0.85;
 }
 .prose :global(.origami-compare p) {
-	font-size: 0.875rem;
+	font-size: var(--fs-sm);
 	line-height: 2.1;
 	color: var(--color-text-muted);
 	margin-bottom: 0 !important;
@@ -1255,7 +1255,7 @@ document.addEventListener('keydown', (e) => {
 	box-shadow: var(--shadow-sm);
 }
 .prose :global(.w-label) {
-	font-size: 0.62rem;
+	font-size: var(--fs-3xs);
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	color: var(--color-accent-h);
@@ -1267,7 +1267,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 0;
 }
 .prose :global(.wrapup-box li) {
-	font-size: 0.875rem;
+	font-size: var(--fs-sm);
 	line-height: 2;
 	color: var(--color-accent);
 	display: flex;
@@ -1281,7 +1281,7 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.wrapup-box li::before) {
 	content: '→';
 	color: var(--color-accent-h);
-	font-size: 0.78rem;
+	font-size: var(--fs-xs);
 	margin-top: 0.4rem;
 	flex-shrink: 0;
 }
@@ -1304,7 +1304,7 @@ document.addEventListener('keydown', (e) => {
 	opacity: 0.85;
 }
 .prose :global(.nb-label) {
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	color: var(--color-accent-h);
@@ -1312,13 +1312,13 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.nb-text) {
 	font-family: var(--font-serif);
-	font-size: 0.95rem;
+	font-size: var(--fs-base);
 	color: rgba(255,255,255,0.85);
 	letter-spacing: 0.05em;
 	line-height: 1.8;
 }
 .prose :global(.next-arrow) {
-	font-size: 1.4rem;
+	font-size: var(--fs-lg);
 	color: var(--color-accent-h);
 	flex-shrink: 0;
 }
@@ -1348,7 +1348,7 @@ document.addEventListener('keydown', (e) => {
 	line-height: 1;
 }
 .prose :global(.t-label) {
-	font-size: 0.62rem;
+	font-size: var(--fs-3xs);
 	letter-spacing: 0.25em;
 	color: rgba(255,255,255,0.4);
 	text-transform: uppercase;
@@ -1361,7 +1361,7 @@ document.addEventListener('keydown', (e) => {
 	flex-shrink: 0;
 }
 .prose :global(.di-note) {
-	font-size: 0.875rem;
+	font-size: var(--fs-sm);
 	color: rgba(255,255,255,0.7);
 	line-height: 2;
 }
@@ -1373,7 +1373,7 @@ document.addEventListener('keydown', (e) => {
 /* ── Travel: Section title ───────────────────────── */
 .prose :global(.section-title) {
 	font-family: var(--font-serif);
-	font-size: 1.1rem;
+	font-size: var(--fs-md);
 	font-weight: 500;
 	color: var(--color-text);
 	margin: 3rem 0 1.25rem;
@@ -1399,7 +1399,7 @@ document.addEventListener('keydown', (e) => {
 	border-radius: var(--radius-md);
 	padding: 1.1rem 1.4rem;
 	margin: 1.5rem 0;
-	font-size: 0.875rem;
+	font-size: var(--fs-sm);
 	line-height: 2;
 	color: #2a6b8a;
 }
@@ -1427,14 +1427,14 @@ document.addEventListener('keydown', (e) => {
 	text-align: right;
 }
 .prose :global(.sb-label) {
-	font-size: 0.62rem;
+	font-size: var(--fs-3xs);
 	letter-spacing: 0.25em;
 	color: var(--color-accent-h);
 	text-transform: uppercase;
 	margin-bottom: 0.3rem;
 }
 .prose :global(.sb-title) {
-	font-size: 0.875rem;
+	font-size: var(--fs-sm);
 	color: var(--color-text);
 	font-family: var(--font-serif);
 	line-height: 1.7;
@@ -1455,7 +1455,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.photolog-cta .plc-label) {
 	font-family: var(--font-serif);
-	font-size: 0.7rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.18em;
 	color: var(--color-accent);
 	margin: 0 0 0.45rem;
@@ -1463,7 +1463,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.photolog-cta .plc-title) {
 	font-family: var(--font-serif);
-	font-size: 1rem;
+	font-size: var(--fs-md);
 	font-weight: 700;
 	color: var(--color-text);
 	margin: 0 0 1.2rem;
@@ -1492,7 +1492,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.photolog-cta .plc-vol) {
 	font-family: var(--font-serif);
-	font-size: 0.95rem;
+	font-size: var(--fs-base);
 	font-weight: 700;
 	color: var(--color-accent);
 	line-height: 1;
@@ -1500,7 +1500,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.photolog-cta .plc-desc) {
 	font-family: var(--font-serif);
-	font-size: 0.78rem;
+	font-size: var(--fs-xs);
 	font-weight: 400;
 	letter-spacing: 0.02em;
 	color: var(--color-text-muted);
@@ -1524,7 +1524,7 @@ document.addEventListener('keydown', (e) => {
 	text-align: center;
 }
 .prose :global(.tc-label) {
-	font-size: 0.62rem;
+	font-size: var(--fs-3xs);
 	letter-spacing: 0.25em;
 	text-transform: uppercase;
 	color: #2a6b8a;
@@ -1532,7 +1532,7 @@ document.addEventListener('keydown', (e) => {
 	opacity: 0.85;
 }
 .prose :global(.tc-value) {
-	font-size: 0.85rem;
+	font-size: var(--fs-sm);
 	color: var(--color-text);
 	font-family: var(--font-serif);
 	line-height: 1.8;
@@ -1546,7 +1546,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 3.5rem 0 1.75rem;
 }
 .prose :global(.day-num) {
-	font-size: 0.68rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.25em;
 	color: #fff;
 	background: #2a6b8a;
@@ -1557,7 +1557,7 @@ document.addEventListener('keydown', (e) => {
 }
 .prose :global(.day-title) {
 	font-family: var(--font-serif);
-	font-size: 1.05rem;
+	font-size: var(--fs-md);
 	font-weight: 500;
 	color: var(--color-text);
 	letter-spacing: 0.03em;
@@ -1599,7 +1599,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 1.75rem 0 0.5rem;
 }
 .prose :global(.img-caption) {
-	font-size: 0.75rem;
+	font-size: var(--fs-xs);
 	color: var(--color-text-light);
 	letter-spacing: 0.1em;
 	text-align: center;
@@ -1618,12 +1618,12 @@ document.addEventListener('keydown', (e) => {
 	display: flex;
 	gap: 0.75rem;
 	align-items: flex-start;
-	font-size: 0.875rem;
+	font-size: var(--fs-sm);
 	line-height: 2;
 	color: var(--color-text-muted);
 }
 .prose :global(.tip-icon) {
-	font-size: 1.1rem;
+	font-size: var(--fs-md);
 	flex-shrink: 0;
 	margin-top: 0.15rem;
 }
@@ -1644,20 +1644,20 @@ document.addEventListener('keydown', (e) => {
 	text-align: center;
 }
 .prose :global(.mb-icon) {
-	font-size: 2.2rem;
+	font-size: var(--fs-2xl);
 	display: block;
 	margin-bottom: 0.75rem;
 }
 .prose :global(.mb-title) {
 	font-family: var(--font-serif);
-	font-size: 1.1rem;
+	font-size: var(--fs-md);
 	font-weight: 500;
 	color: #c87800;
 	margin-bottom: 0.75rem;
 	letter-spacing: 0.04em;
 }
 .prose :global(.mb-text) {
-	font-size: 0.9rem;
+	font-size: var(--fs-base);
 	line-height: 2;
 	color: #7a4a10;
 	margin: 0;
@@ -1671,7 +1671,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 3rem 0 0;
 }
 .prose :global(.ts-label) {
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.35em;
 	color: var(--color-accent-h);
 	text-transform: uppercase;
@@ -1683,7 +1683,7 @@ document.addEventListener('keydown', (e) => {
 	margin: 0;
 }
 .prose :global(.ts-list li) {
-	font-size: 0.875rem;
+	font-size: var(--fs-sm);
 	color: rgba(255,255,255,0.72);
 	line-height: 2;
 	padding: 0.75rem 0;
@@ -1695,7 +1695,7 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.ts-list li:last-child) { border-bottom: none; }
 .prose :global(.ts-day) {
 	color: var(--color-accent-h);
-	font-size: 0.65rem;
+	font-size: var(--fs-2xs);
 	letter-spacing: 0.2em;
 	flex-shrink: 0;
 	margin-top: 0.45rem;
@@ -1743,7 +1743,7 @@ document.addEventListener('keydown', (e) => {
 	position: absolute;
 	bottom: 0.5rem;
 	right: 0.6rem;
-	font-size: 0.62rem;
+	font-size: var(--fs-3xs);
 	color: rgba(255,255,255,0.88);
 	letter-spacing: 0.1em;
 	text-shadow: 0 1px 5px rgba(0,0,0,0.7);
@@ -1759,7 +1759,7 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.pl-month) {
 	font-family: 'Georgia', serif;
 	font-style: italic;
-	font-size: 0.72rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.25em;
 	color: var(--color-accent-h);
 	white-space: nowrap;
@@ -1786,12 +1786,12 @@ document.addEventListener('keydown', (e) => {
 .prose :global(.sign-off .s-name) {
 	font-family: 'Georgia', serif;
 	font-style: italic;
-	font-size: 1.35rem;
+	font-size: var(--fs-lg);
 	color: var(--color-accent-h);
 	margin-bottom: 0.5rem;
 }
 .prose :global(.sign-off .s-message) {
-	font-size: 0.78rem;
+	font-size: var(--fs-xs);
 	letter-spacing: 0.15em;
 	color: var(--color-text-light);
 }
@@ -1806,10 +1806,10 @@ document.addEventListener('keydown', (e) => {
 	gap: 1.5rem;
 }
 .article-footer-tags { display: flex; flex-wrap: wrap; gap: 0.5em; }
-.tag-pill--lg { font-size: 0.88rem !important; padding: 0.3em 0.9em !important; }
+.tag-pill--lg { font-size: var(--fs-sm) !important; padding: 0.3em 0.9em !important; }
 .btn-back {
 	display: inline-block;
-	font-size: 0.88rem;
+	font-size: var(--fs-sm);
 	color: var(--color-text-muted);
 	text-decoration: none;
 	padding: 0.6em 1.2em;

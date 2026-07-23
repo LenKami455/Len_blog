@@ -256,7 +256,7 @@ function displayTitle(title: string, tripName?: string): string {
 .pl-eyebrow {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.65rem;
+  font-size: var(--fs-2xs);
   letter-spacing: 0.55em;
   color: #ccc;
   text-transform: uppercase;
@@ -283,7 +283,7 @@ function displayTitle(title: string, tripName?: string): string {
 .pl-index-link {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   letter-spacing: 0.28em;
   color: #bbb;
   text-decoration: none;
@@ -309,7 +309,7 @@ function displayTitle(title: string, tripName?: string): string {
   align-items: center;
   color: #ddd;
   padding: 0 0.25rem;
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
 }
 
 /* ── Trip section header ─────────────────── */
@@ -335,7 +335,7 @@ function displayTitle(title: string, tripName?: string): string {
 .pl-trip-desc {
   font-family: 'Noto Serif JP', Georgia, serif;
   font-weight: 300;
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   letter-spacing: 0.12em;
   color: #888;
   margin: 1rem 0 0;
@@ -365,9 +365,10 @@ function displayTitle(title: string, tripName?: string): string {
   height: auto;
   object-fit: cover;
   margin-left: auto;
-  transition: opacity .6s;
+  filter: saturate(0.82);
+  transition: filter .5s;
 }
-.pl-entry:hover .pl-entry-img { opacity: 0.93; }
+.pl-entry:hover .pl-entry-img { filter: saturate(1); }
 
 /* テキスト：写真の縦中央・左エリアに配置 */
 .pl-entry-text {
@@ -393,7 +394,7 @@ function displayTitle(title: string, tripName?: string): string {
 .pl-entry-desc {
   font-family: 'Noto Serif JP', Georgia, serif;
   font-weight: 300;
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   letter-spacing: 0.12em;
   line-height: 2;
   margin: 0 0 0.75rem;
@@ -402,7 +403,7 @@ function displayTitle(title: string, tripName?: string): string {
 .pl-entry-date {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   letter-spacing: 0.3em;
   display: block;
   color: #aaa;
@@ -470,7 +471,7 @@ function displayTitle(title: string, tripName?: string): string {
     padding: 1rem 1.25rem 0;
     pointer-events: auto;
   }
-  .pl-entry-title { color: #111; text-shadow: none; font-size: 1.6rem; }
+  .pl-entry-title { color: #111; text-shadow: none; font-size: var(--fs-xl); }
   .pl-entry-desc  { color: #888; text-shadow: none; }
   .pl-entry-date  { color: #bbb; text-shadow: none; }
 }

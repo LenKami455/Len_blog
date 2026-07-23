@@ -34,13 +34,13 @@ const today = new Date();
 <style>
 	.site-footer {
 		background: var(--color-text);
-		color: #B5A898;
-		margin-top: 6rem;
+		color: rgba(255,255,255,0.65);
+		margin-top: var(--sp-9);
 	}
 	.footer-inner {
 		max-width: 1100px;
 		margin: 0 auto;
-		padding: 3rem 2rem 2rem;
+		padding: var(--sp-7) var(--sp-6) var(--sp-6);
 		display: grid;
 		grid-template-columns: 1fr auto;
 		gap: 1.5rem 3rem;
@@ -49,15 +49,15 @@ const today = new Date();
 	.footer-brand { grid-column: 1; }
 	.footer-title {
 		font-family: var(--font-serif);
-		font-size: 1.1rem;
+		font-size: var(--fs-lg);
 		font-weight: 700;
-		color: #EDE6D8;
+		color: rgba(255,255,255,0.92);
 		margin: 0 0 0.4rem;
 		letter-spacing: 0.03em;
 	}
 	.footer-desc {
-		font-size: 0.83rem;
-		color: #8A7A6A;
+		font-size: var(--fs-sm);
+		color: rgba(255,255,255,0.55);
 		margin: 0;
 		line-height: 1.6;
 	}
@@ -69,12 +69,12 @@ const today = new Date();
 		align-items: center;
 	}
 	.footer-nav a {
-		font-size: 0.85rem;
-		color: #B5A898;
+		font-size: var(--fs-sm);
+		color: rgba(255,255,255,0.65);
 		text-decoration: none;
 		transition: color .2s;
 	}
-	.footer-nav a:hover { color: #EDE6D8; }
+	.footer-nav a:hover { color: rgba(255,255,255,0.92); }
 
 	.footer-social {
 		grid-column: 2;
@@ -89,25 +89,25 @@ const today = new Date();
 		justify-content: center;
 		width: 36px;
 		height: 36px;
-		color: #8A7A6A;
+		color: rgba(255,255,255,0.55);
 		border-radius: var(--radius-sm);
 		transition: color .2s;
 	}
-	.footer-social a:hover { color: #EDE6D8; }
+	.footer-social a:hover { color: rgba(255,255,255,0.92); }
 
 	.footer-copy {
 		grid-column: 1 / -1;
-		font-size: 0.78rem;
-		color: #6A5C50;
+		font-size: var(--fs-xs);
+		color: rgba(255,255,255,0.4);
 		margin: 1rem 0 0;
-		padding-top: 1.5rem;
-		border-top: 1px solid #3A2E26;
+		padding-top: var(--sp-5);
+		border-top: 1px solid rgba(255,255,255,0.12);
 	}
 
 	@media (max-width: 640px) {
 		.footer-inner {
 			grid-template-columns: 1fr;
-			padding: 2rem 1rem 1.5rem;
+			padding: var(--sp-6) var(--sp-4) var(--sp-5);
 		}
 		.footer-social { grid-column: 1; grid-row: auto; }
 	}
