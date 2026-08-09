@@ -1,0 +1,36 @@
+name: Keep Waline DB alive
+
+# Supabase の無料プランは、一定期間データベースへのアクセスがないと
+# 自動的に一時停止（pause）される。Waline（コメント・いいね機能）は
+# Supabase の PostgreSQL を使っているため、定期的に軽いGETリクエストを
+# 送ってアクティブ状態を維持する。
+
+on:
+  schedule:
+    # 毎日 JST 9:00（UTC 0:00）に実行
+    - cron: '0 0 * * *'
+  workflow_dispatch: {} # 手動実行用
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Waline counter API (read-only)
+        run: |
+          response=$(curl -s -o /tmp/response.json -w "%{http_code}" \
+            "https://waline-rho-woad.vercel.app/api/article?path=%2Fkeep-alive&type=reaction0&lang=jp-JP")
+          echo "HTTP status: $response"
+          cat /tmp/response.json
+          echo
+
+          if [ "$response" != "200" ]; then
+            echo "::warning::Waline API returned non-200 status ($response). DB may be paused or unreachable."
+            exit 1
+          fi
+
+          if ! grep -q '"errno":0' /tmp/response.json; then
+            echo "::error::Waline API responded but with an error payload — Supabase DB is likely down."
+            exit 1
+          fi
+
+          echo "Waline DB is alive."
