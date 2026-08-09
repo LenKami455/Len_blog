@@ -2,7 +2,7 @@
 title: '那智勝浦 photo log vol.2'
 description: '那智勝浦・太地フォトログ、続き。熊野那智大社・青岸渡寺・三重塔、落差日本一の那智御瀧、亀の井ホテルの夕食・朝食、星空撮影まで。'
 pubDate: '2026-08-10T00:45:00'
-heroImage: '/images/photolog/nachikatsuura-vol2/a7c05456.webp'
+heroImage: '/images/photolog/nachikatsuura-vol2/a7c05434.webp'
 tags: ['フォトログ', '那智勝浦', '和歌山', '旅行']
 category: 'フォトログ'
 ---
@@ -29,7 +29,7 @@ category: 'フォトログ'
   <div class="pl-item">
     <img src="/images/photolog/nachikatsuura-vol2/a7c05432.webp" alt="" />
   </div>
-  <div class="pl-item">
+  <div class="pl-item pl-item--wide">
     <img src="/images/photolog/nachikatsuura-vol2/a7c05434.webp" alt="" />
   </div>
   <div class="pl-item pl-item--portrait">

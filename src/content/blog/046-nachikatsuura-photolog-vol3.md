@@ -2,7 +2,7 @@
 title: '那智勝浦 photo log vol.3'
 description: '那智勝浦・太地フォトログ、2日目前半。太地町立くじらの博物館、クジラショー、ハナゴンドウ、餌やりの記録。'
 pubDate: '2026-08-10T00:46:00'
-heroImage: '/images/photolog/nachikatsuura-vol3/a7c05740.webp'
+heroImage: '/images/photolog/nachikatsuura-vol3/a7c05633.webp'
 tags: ['フォトログ', '那智勝浦', '和歌山', '旅行']
 category: 'フォトログ'
 ---
@@ -35,7 +35,7 @@ category: 'フォトログ'
   <div class="pl-item">
     <img src="/images/photolog/nachikatsuura-vol3/a7c05626.webp" alt="" />
   </div>
-  <div class="pl-item">
+  <div class="pl-item pl-item--wide">
     <img src="/images/photolog/nachikatsuura-vol3/a7c05633.webp" alt="" />
   </div>
   <div class="pl-item">

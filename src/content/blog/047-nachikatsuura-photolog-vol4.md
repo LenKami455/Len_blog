@@ -2,7 +2,7 @@
 title: '那智勝浦 photo log vol.4'
 description: '那智勝浦・太地フォトログ、2日目後半。イルカのトンネル、海水浴場でのクジラとの遊泳、道の駅たいじ、帰路までの記録。'
 pubDate: '2026-08-10T00:47:00'
-heroImage: '/images/photolog/nachikatsuura-vol4/a7c06987.webp'
+heroImage: '/images/photolog/nachikatsuura-vol4/a7c07267.webp'
 tags: ['フォトログ', '那智勝浦', '和歌山', '旅行']
 category: 'フォトログ'
 ---
