@@ -133,6 +133,13 @@ const categories = [
 					<span class="photolog-cta">見る →</span>
 				</div>
 			</a>
+			{latestPhotolog && (
+				<a href={`/blog/${latestPhotolog.id}/`} class="photolog-latest reveal">
+					<span class="pll-label">latest</span>
+					<span class="pll-title">{latestPhotolog.data.title}</span>
+					<span class="pll-arrow" aria-hidden="true">→</span>
+				</a>
+			)}
 			</div>
 		</section>
 
@@ -586,9 +593,54 @@ const categories = [
 	border-color: rgba(255,255,255,0.8);
 }
 
+/* バナー直下に最新フォトログをそっと添える一行 */
+.photolog-latest {
+	display: flex;
+	align-items: baseline;
+	gap: 0.6rem;
+	width: fit-content;
+	max-width: 100%;
+	margin: 0.9rem 0 0 auto;
+	text-decoration: none;
+}
+.pll-label {
+	flex-shrink: 0;
+	font-family: 'Georgia', serif;
+	font-size: var(--fs-3xs);
+	letter-spacing: 0.32em;
+	text-transform: uppercase;
+	color: var(--color-text-light);
+	transition: color .2s;
+}
+.pll-title {
+	font-size: var(--fs-xs);
+	letter-spacing: 0.06em;
+	color: var(--color-text-muted);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-bottom: 1px solid transparent;
+	padding-bottom: 2px;
+	transition: color .2s, border-color .2s;
+}
+.pll-arrow {
+	flex-shrink: 0;
+	font-size: var(--fs-xs);
+	color: var(--color-text-light);
+	transition: color .2s, transform .25s;
+}
+.photolog-latest:hover .pll-title {
+	color: var(--color-accent);
+	border-bottom-color: var(--color-accent);
+}
+.photolog-latest:hover .pll-label,
+.photolog-latest:hover .pll-arrow { color: var(--color-accent); }
+.photolog-latest:hover .pll-arrow { transform: translateX(3px); }
+
 @media (max-width: 640px) {
 	.photolog-banner { height: 200px; }
 	.photolog-inner { padding: 0 1.5rem; }
+	.photolog-latest { gap: 0.45rem; margin-top: 0.75rem; }
 }
 
 /* ── Posts ─────────────────────────────────────── */
